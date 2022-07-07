@@ -12,10 +12,10 @@ class UserController extends Controller
         $user_id = $request->user_id;
         $user = User::find($user_id);
         $user -> about = $about;
-        $user->save();
+        $user -> save();
 
         return response()->json([
-            'status' => "success",
+            'status' => 'success',
             'user' => $user,
         ],200);
     }
@@ -27,6 +27,19 @@ class UserController extends Controller
         return response()->json([
             'status' => 'success',
             'user' => $user,
+        ],200);
+    }
+
+    public function addProfilePic(Request $request) {
+        $user_id = $request->user_id;
+        $profile_pic = $request->profile_pic;
+        $user = User::find($user_id);
+        $user -> profile_pic = $profile_pic;
+        $user -> save();
+
+        return response()->json([
+            'status' => 'success',
+            'profile_pic' => $profile_pic,
         ],200);
     }
 
