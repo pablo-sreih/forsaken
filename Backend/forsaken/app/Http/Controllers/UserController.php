@@ -43,17 +43,4 @@ class UserController extends Controller
         ],200);
     }
 
-    public function addAddress(Request $request) {
-        $user_id = $request->user_id;
-        $address = $request->address;
-        $user = User::find($user_id);
-        $user -> address = $address;
-        $user -> save();
-
-        return response()->json([
-            'status' => 'success',
-            'address' => $address,
-        ],200);
-    }
-
 }
