@@ -32,3 +32,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/addAbout', [UserController::class, 'addAbout']);
 Route::post('/getUser', [UserController::class, 'getUser']);
 Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
+Route::post('/addAddress', [UserController::class, 'addAddress']);
