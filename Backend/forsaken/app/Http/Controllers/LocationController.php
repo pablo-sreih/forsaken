@@ -20,6 +20,8 @@ class LocationController extends Controller
         $location = new Location();
         $location->latitude = $request->latitude;
         $location->longitude = $request->longitude;
+        $location->avg_emf_reading = 0;
+        $location->avg_rating = 0;
         $location->save();
 
         return response()->json([
