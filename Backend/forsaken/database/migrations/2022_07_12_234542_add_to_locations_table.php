@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('locations', function (Blueprint $table) {
-            $table->decimal('avg_emf_reading')->default('0');
-            $table->decimal('avg_rating')->default('0');
+            $table->decimal('avg_emf_reading')->default('0')->change();
+            $table->decimal('avg_rating')->default('0')->change();
         });
     }
 
