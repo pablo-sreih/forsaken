@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LocationController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -32,3 +33,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/addAbout', [UserController::class, 'addAbout']);
 Route::post('/getUser', [UserController::class, 'getUser']);
 Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
+
+Route::get('/getAllLocations', [LocationController::class, 'getAllLocations']);
