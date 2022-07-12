@@ -14,5 +14,17 @@ class LocationController extends Controller
             'status' => 'success',
             'locations' => $locations,
         ],200);
-    } 
+    }
+
+    public function addLocation(Request $request) {
+        $location = new Location();
+        $location->latitude = $request->latitude;
+        $location->longitude = $request->longitude;
+        $location->save();
+
+        return response()->json([
+            'status' => 'success',
+            'location' => $location,
+        ],200);
+    }
 }
