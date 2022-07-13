@@ -10,8 +10,9 @@ class PhotoController extends Controller
 {
     public function addPhoto(Request $request) {
         $photo = new Photo();
+        $user_id = auth()->user()->id;
         $photo->location_id = $request->location_id;
-        $photo->user_id = $request->user_id;
+        $photo->user_id = $user_id;
         $photo->caption = $request->caption;
         $photo->image = $request->image;
         $photo->total_likes = 0;
