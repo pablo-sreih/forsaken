@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\Photo_comment;
 
 class PhotoController extends Controller
 {
@@ -27,6 +28,19 @@ class PhotoController extends Controller
 
         return response()->json([
             'status' => 'success',
+        ],200);
+    }
+
+    public function addPhotoComment (Request $request) {
+        $comment = new Photo_comment();
+        $comment->user_id = $request->user_id;
+        $comment->photo_id = $request->photo_id;
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        return response()->json([
+            'status' => 'success',
+            'comment' => $comment,
         ],200);
     }
 }
