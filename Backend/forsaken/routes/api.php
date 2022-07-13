@@ -40,6 +40,7 @@ Route::post('/addLocation', [LocationController::class, 'addLocation']);
 Route::post('/getLocationByID', [LocationController::class, 'getLocationById']);
 Route::post('/addLocationComment', [LocationController::class, 'addLocationComment']);
 Route::post('/deleteLocationComment', [LocationController::class, 'deleteLocationComment']);
+Route::post('/getAllLocationComments', [LocationController::class, 'getAllLocationComments']);
 
 Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
 Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto']);
