@@ -52,4 +52,12 @@ class LocationController extends Controller
             'comment' => $comment,
         ],200);
     }
+
+    public function deleteLocationComment(Request $request) {
+        Location_comment::where('id', $request->comment_id)->delete();
+
+        return response()->json([
+            'status' => 'success',
+        ],200);
+    }
 }
