@@ -33,7 +33,8 @@ class PhotoController extends Controller
 
     public function addPhotoComment (Request $request) {
         $comment = new Photo_comment();
-        $comment->user_id = $request->user_id;
+        $user_id = auth()->user()->id;
+        $comment->user_id = $user_id;
         $comment->photo_id = $request->photo_id;
         $comment->comment = $request->comment;
         $comment->save();
