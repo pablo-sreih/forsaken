@@ -9,8 +9,7 @@ class UserController extends Controller
 {
     public function addAbout(Request $request) {
         $about = $request->about;
-        $user_id = $request->user_id;
-        $user = User::find($user_id);
+        $user = auth()->user();
         $user -> about = $about;
         $user -> save();
 
