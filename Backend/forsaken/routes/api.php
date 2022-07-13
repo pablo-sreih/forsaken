@@ -39,6 +39,7 @@ Route::get('/getAllLocations', [LocationController::class, 'getAllLocations']);
 Route::post('/addLocation', [LocationController::class, 'addLocation']);
 Route::post('/getLocationByID', [LocationController::class, 'getLocationById']);
 Route::post('/addLocationComment', [LocationController::class, 'addLocationComment']);
+Route::post('/deleteLocationComment', [LocationController::class, 'deleteLocationComment']);
 
 Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
 Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto']);
