@@ -7,6 +7,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\LikeController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -48,3 +49,4 @@ Route::post('/addPhotoComment', [PhotoController::class, 'addPhotoComment']);
 Route::post('/deletePhotoComment', [PhotoController::class, 'deletePhotoComment']);
 Route::post('/getAllPhotoComments', [PhotoController::class, 'getAllPhotoComments']);
 
+Route::post('/addLike', [LikeController::class, 'addLike']);
