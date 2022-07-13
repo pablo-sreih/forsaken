@@ -29,4 +29,13 @@ class LocationController extends Controller
             'location' => $location,
         ],200);
     }
+
+    public function getLocationById(Request $request) {
+        $location = Location::find($request->id);
+
+        return response()->json([
+            'status' => 'success',
+            'location' => $location,
+        ],200);
+    }
 }
