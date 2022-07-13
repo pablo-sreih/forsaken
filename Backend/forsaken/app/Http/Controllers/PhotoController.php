@@ -51,4 +51,13 @@ class PhotoController extends Controller
             'status' => 'success',
         ],200);
     }
+
+    public function getAllPhotoComments (Request $request) {
+        $comments = Photo_comment::where('photo_id', $request->photo_id)->all();
+
+        return response()->json([
+            'status' => 'success',
+            'comments' => $comments,
+        ],200);
+    }
 }
