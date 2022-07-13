@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\PhotoController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -37,3 +38,5 @@ Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
 Route::get('/getAllLocations', [LocationController::class, 'getAllLocations']);
 Route::post('/addLocation', [LocationController::class, 'addLocation']);
 Route::post('/getLocationByID', [LocationController::class, 'getLocationById']);
+
+Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
