@@ -13,7 +13,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
-
 });
 
 /*
@@ -34,6 +33,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/addAbout', [UserController::class, 'addAbout']);
 Route::post('/getUser', [UserController::class, 'getUser']);
 Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
+Route::get('/profile', [UserController::class, 'profile']);
 
 Route::get('/getAllLocations', [LocationController::class, 'getAllLocations']);
 Route::post('/addLocation', [LocationController::class, 'addLocation']);
@@ -43,3 +43,4 @@ Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
 Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto']);
 Route::post('/addPhotoComment', [PhotoController::class, 'addPhotoComment']);
 Route::post('/deletePhotoComment', [PhotoController::class, 'deletePhotoComment']);
+
