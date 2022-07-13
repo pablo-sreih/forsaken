@@ -43,4 +43,12 @@ class PhotoController extends Controller
             'comment' => $comment,
         ],200);
     }
+
+    public function deletePhotoComment (Request $request) {
+        Photo_comment::where('id', $request->comment_id)->delete();
+
+        return response()->json([
+            'status' => 'success',
+        ],200);
+    }
 }
