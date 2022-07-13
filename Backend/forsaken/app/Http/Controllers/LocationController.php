@@ -60,4 +60,13 @@ class LocationController extends Controller
             'status' => 'success',
         ],200);
     }
+
+    public function getAllLocationComments (Request $request) {
+        $comments = Location_comment::where('location_id', $request->location_id)->get();
+
+        return response()->json([
+            'status' => 'success',
+            'comments' => $comments,
+        ],200);
+    }
 }
