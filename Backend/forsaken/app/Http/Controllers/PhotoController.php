@@ -23,7 +23,7 @@ class PhotoController extends Controller
     }
 
     public function deletePhoto(Request $request) {
-        Photo::where('id', $request->id)->delete();
+        Photo::where('id', $request->photo_id)->delete();
 
         return response()->json([
             'status' => 'success',
