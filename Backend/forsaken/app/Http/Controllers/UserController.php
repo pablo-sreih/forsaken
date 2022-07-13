@@ -31,9 +31,8 @@ class UserController extends Controller
     }
 
     public function addProfilePic(Request $request) {
-        $user_id = $request->user_id;
+        $user = auth()->user();
         $profile_pic = $request->profile_pic;
-        $user = User::find($user_id);
         $user -> profile_pic = $profile_pic;
         $user -> save();
 
