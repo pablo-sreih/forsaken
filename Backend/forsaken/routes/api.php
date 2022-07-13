@@ -36,3 +36,4 @@ Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
 
 Route::get('/getAllLocations', [LocationController::class, 'getAllLocations']);
 Route::post('/addLocation', [LocationController::class, 'addLocation']);
+Route::post('/getLocationByID', [LocationController::class, 'getLocationById']);
