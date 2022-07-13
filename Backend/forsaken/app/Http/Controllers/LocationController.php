@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Location;
+use App\Models\Location_comment;
 
 class LocationController extends Controller
 {
@@ -36,6 +37,19 @@ class LocationController extends Controller
         return response()->json([
             'status' => 'success',
             'location' => $location,
+        ],200);
+    }
+
+    public function addLocationComment(Request $request) {
+        $comment = new Location_comment();
+        $comment->user_id = auth()->user()->id;
+        $comment->location_id = $request->location_id;
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        return response()->json([
+            'status' => 'success',
+            'comment' => $comment,
         ],200);
     }
 }
