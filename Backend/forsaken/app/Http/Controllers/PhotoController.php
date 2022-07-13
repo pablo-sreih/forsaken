@@ -53,7 +53,7 @@ class PhotoController extends Controller
     }
 
     public function getAllPhotoComments (Request $request) {
-        $comments = Photo_comment::where('photo_id', $request->photo_id)->all();
+        $comments = Photo_comment::where('photo_id', $request->photo_id)->get();
 
         return response()->json([
             'status' => 'success',
