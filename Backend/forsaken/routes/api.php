@@ -9,6 +9,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\RatingController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -53,3 +54,5 @@ Route::post('/getAllPhotoComments', [PhotoController::class, 'getAllPhotoComment
 Route::post('/addLike', [LikeController::class, 'addLike']);
 
 Route::post('/addActivity', [ActivityController::class, 'addActivity']);
+
+Route::post('/addRating', [RatingController::class, 'addRating']);
