@@ -29,11 +29,17 @@ export default function Card(){
                 <View style={{marginRight: 20}}><FollowButton/></View>
             </View>
         <View style={styles.container}></View>
-        <View style={styles.icons}>
-            <TouchableOpacity style={styles.iconContainer}><Icon color={'red'} name='favorite'/></TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}><Icon name='share'/></TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}><Icon name='info'/></TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}><Icon name='room'/></TouchableOpacity>
+        <View style={styles.bottomContainer}>
+            <View style={styles.bottomTextContainer}>
+                <Text style={styles.locationName}>Harder Hall</Text>
+                <Text style={styles.location}>Beirut, Lebanon</Text>
+            </View>
+            <View style={styles.icons}>
+                <TouchableOpacity style={styles.iconContainer}><Icon color={'red'} name='favorite'/></TouchableOpacity>
+                <TouchableOpacity style={styles.iconContainer}><Icon name='share'/></TouchableOpacity>
+                <TouchableOpacity style={styles.iconContainer}><Icon name='info'/></TouchableOpacity>
+                <TouchableOpacity style={styles.iconContainer}><Icon name='room'/></TouchableOpacity>
+            </View>
         </View>
         </View>
     )
@@ -47,7 +53,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'gray',
         width: 320,
         height: 200,
-        borderRadius: 15
+        borderRadius: 12
     },
 
     profileContainer:{
@@ -86,11 +92,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    icons: {
+    bottomContainer: {
         flex: 1,
-        justifyContent: 'flex-end',
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginLeft: 20,
         marginRight: 20
+    },
+
+    icons: {
+        flexDirection: 'row',
     },
 
     iconContainer: {
@@ -99,5 +111,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#F1F1F1',
         padding: 7,
         borderRadius: 5
+    },
+
+    bottomTextContainer: {
+        marginTop: 10
+    },
+
+    locationName: {
+        fontSize: 15,
+        fontFamily: 'montserratSemiBold'
+    },
+
+    location: {
+        fontSize: 12,
+        fontFamily: 'montserratRegular'
     }
 })
