@@ -1,7 +1,8 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { View, Text } from "react-native";
 import { useFonts } from 'expo-font';
 import FollowButton from "./FollowButton";
+import { Icon } from "react-native-elements";
 
 export default function Card(){
 
@@ -25,9 +26,15 @@ export default function Card(){
                     <Text style={styles.name}>John Doe</Text>
                     <Text style={styles.time}>20min ago</Text>
                 </View>
-                <FollowButton/>    
+                <View style={{marginRight: 20}}><FollowButton/></View>
             </View>
         <View style={styles.container}></View>
+        <View style={styles.icons}>
+            <TouchableOpacity style={styles.iconContainer}><Icon color={'red'} name='favorite'/></TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer}><Icon name='share'/></TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer}><Icon name='info'/></TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer}><Icon name='room'/></TouchableOpacity>
+        </View>
         </View>
     )
 }
@@ -47,6 +54,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginLeft: 20,
         marginTop: 20,
         
@@ -75,5 +84,20 @@ const styles = StyleSheet.create({
         flex:1,
         marginLeft: 14,
         justifyContent: 'center',
+    },
+
+    icons: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        flexDirection: 'row',
+        marginRight: 20
+    },
+
+    iconContainer: {
+        marginLeft: 10,
+        marginTop: 10,
+        backgroundColor: '#F1F1F1',
+        padding: 7,
+        borderRadius: 5
     }
 })
