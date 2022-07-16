@@ -7,9 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <FeedPage/>
-     {/* <LoginPage/> */}
-     
-      <StatusBar style="auto" />
+      {/* <LoginPage/> */}
     </View>
   );
 }

@@ -43,26 +43,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
     shadowColor: '#7090B0',
-    elevation: 30,
+    elevation: 20,
     height: '16%'
   },
 
   headerText:{
-    
     color: 'black',
     fontSize: 25,
     marginTop: 25,
-    marginLeft: 25,
-    marginRight: 25,
+    marginLeft: 20,
     fontFamily: 'montserratExtraBold',
   },
 
   headerOpt:{
-    
     color: 'black',
-    fontSize: 25,
+    fontSize: 30,
     marginTop: 15,
-    marginRight: 30,
+    marginRight: 20,
     fontFamily: 'montserratExtraBold',
   }
 });

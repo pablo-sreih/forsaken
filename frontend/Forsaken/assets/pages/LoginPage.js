@@ -31,7 +31,7 @@ export default function LoginPage() {
         </TouchableOpacity>
         </View>
       </ImageBackground>
-      <StatusBar style="auto" />
+      <StatusBar style="inverted" />
     </View>
   );
 }

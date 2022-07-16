@@ -41,18 +41,21 @@ export default function Card(){
                 <TouchableOpacity style={styles.iconContainer}><Icon name='room'/></TouchableOpacity>
             </View>
         </View>
+        <View>
+            <Text>Comments</Text>
+        </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 15,
+        marginTop: 10,
         flex: 1,
         alignSelf: 'center',
         backgroundColor: 'gray',
-        width: 320,
-        height: 200,
+        width: '90%',
+        height: 240,
         borderRadius: 12
     },
 
@@ -64,7 +67,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginLeft: 20,
         marginTop: 20,
-        
     },
 
     profile: {
