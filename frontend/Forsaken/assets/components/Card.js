@@ -41,8 +41,9 @@ export default function Card(){
                 <TouchableOpacity style={styles.iconContainer}><Icon name='room'/></TouchableOpacity>
             </View>
         </View>
-        <View>
-            <Text>Comments</Text>
+        <View style={styles.commentTextContainer}>
+            <Icon name='chevron-right'/>
+            <Text style={{fontFamily: 'montserratSemiBold', fontSize: 15}}>Comments</Text>
         </View>
         </View>
     )
@@ -128,5 +129,13 @@ const styles = StyleSheet.create({
         marginTop: -4,
         fontSize: 12,
         fontFamily: 'montserratRegular'
+    },
+
+    commentTextContainer: {
+        marginLeft: 13,
+        marginTop: 10,
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
     }
 })
