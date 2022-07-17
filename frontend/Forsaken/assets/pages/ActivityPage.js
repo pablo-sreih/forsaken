@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity,Image, View } from 'react-native';
+import { Vibration, StyleSheet, Text, TouchableOpacity, Image, View, ScrollView } from 'react-native';
 import { Magnetometer } from 'expo-sensors';
 import { useFonts } from 'expo-font';
 import Header from '../components/Header';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const image = require ( '../logos/logo_emf.png' )
 
 export default function ActivityPage() {
+
+  const [emf, setEmf] = useState([])
 
   const [data, setData] = useState({
     x: 0,
@@ -43,6 +46,16 @@ export default function ActivityPage() {
 
   const { x, y, z } = data;
 
+  const microTesla = Math.sqrt(x**2 + y**2 + z**2).toFixed(2)
+
+  function handlePress(){
+    setEmf([microTesla, ...emf]);
+  }
+
+  function handleReset() {
+    setEmf([])
+  }
+
   const [loaded] = useFonts({
     montserratBlack : require('../fonts/Montserrat-Black.ttf'),
     montserratExtraBold: require('../fonts/Montserrat-ExtraBold.ttf'),
@@ -60,8 +73,27 @@ export default function ActivityPage() {
     <Header name='EMF TRACKER'/>
     <Image style={styles.image} source={image}/>
       <Text style={styles.emfTracker}>
-        {Math.sqrt(x**2 + y**2 + z**2).toFixed(2)} μT
+        {microTesla}  μT
+        {microTesla > 100 ? Vibration.vibrate() : Vibration.cancel()}
       </Text>
+      <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <TouchableOpacity onPress={() => handlePress()} style={styles.button}>
+          <Text style={styles.buttonText}>Add Point</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleReset}>
+          <Text style={styles.buttonText}>Reset</Text>
+        </TouchableOpacity>
+      </View>
+      <ScrollView style={styles.scroll}>
+      {emf.map((reading, index, emf) => {
+        return(
+          <View key={index} style={styles.readingsView}>
+            <Image style={styles.readingsImage} source={image}/>
+            <Text style={styles.readings}>{reading}</Text>
+          </View>
+        )
+      })}
+      </ScrollView>
     </View>
   );
 }
@@ -72,19 +104,58 @@ const styles = StyleSheet.create({
     },
 
     image:{
-        marginTop: 40,
+        marginTop: 20,
         width: 125,
         height: 125,
         alignSelf: 'center'
     },
 
     emfTracker: {
-        marginTop: 40,
+        marginTop: 20,
         fontFamily: 'montserratRegular',
         fontSize: 40,
         alignSelf: 'center'
+    },
+
+    button: {
+      alignSelf: 'center',
+      padding: 10,
+      borderWidth: 2,
+      borderRadius: 10,
+      marginTop: 20,
+      width: '35%',
+      borderColor: '#E6E6E6',
+      marginRight: 5,
+      marginLeft: 5
+    },
+
+    buttonText: {
+      alignSelf: 'center',
+      fontFamily: 'montserratSemiBold',
+      fontSize: 15
+    },
+
+    readings: {
+      fontSize: 20,
+      fontFamily: 'montserratRegular',
+      marginLeft: 10
+    },
+
+    readingsImage: {
+      width: 35,
+      height: 35,
+    },
+
+    readingsView: {
+      marginLeft: 20,
+      marginTop: 15,
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+
+    scroll: {
+      borderTopWidth: 1,
+      marginTop: 20
     }
 
 })
-
-const round = Math.floor
