@@ -41,9 +41,12 @@ export default function Card(){
                 <TouchableOpacity style={styles.iconContainer}><Icon name='room'/></TouchableOpacity>
             </View>
         </View>
-        <View style={styles.commentTextContainer}>
-            <Icon name='chevron-right'/>
-            <Text style={{fontFamily: 'montserratSemiBold', fontSize: 15}}>Comments</Text>
+        <View>
+            <TouchableOpacity style={styles.commentTextContainer}>
+                <Icon name='chevron-right'/>
+                <Text style={{fontFamily: 'montserratSemiBold', fontSize: 15}}>Comments</Text>    
+            </TouchableOpacity>
+            
         </View>
         </View>
     )
@@ -60,14 +63,14 @@ const styles = StyleSheet.create({
         borderRadius: 12
     },
 
-    profileContainer:{
+    profileContainer: {
         flex: 1,
         flexDirection: 'row',
         alignContent: 'center',
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 20,
-        marginTop: 20,
+        marginTop: 20
     },
 
     profile: {

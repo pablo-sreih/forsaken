@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import Card from '../components/Card';
+import Header from '../components/Header';
+
 
 export default function FeedPage() {
 
@@ -17,10 +19,7 @@ export default function FeedPage() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>DISCOVER</Text>
-        <Text onPress={() => alert('options')} style={styles.headerOpt}>...</Text>
-      </View>
+      <Header name="DISCOVER"/>
       <ScrollView>
         <Card/>
         <Card/>
@@ -36,30 +35,4 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
-  header:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    shadowColor: '#7090B0',
-    elevation: 20,
-    height: '16%'
-  },
-
-  headerText:{
-    color: 'black',
-    fontSize: 25,
-    marginTop: 25,
-    marginLeft: 20,
-    fontFamily: 'montserratExtraBold',
-  },
-
-  headerOpt:{
-    color: 'black',
-    fontSize: 30,
-    marginTop: 15,
-    marginRight: 20,
-    fontFamily: 'montserratExtraBold',
-  }
 });
