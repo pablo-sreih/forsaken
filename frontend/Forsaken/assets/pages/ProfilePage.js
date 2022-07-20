@@ -1,6 +1,7 @@
 import { View, StyleSheet, Text } from "react-native"
 import Header from "../components/Header"
 import { useFonts } from "expo-font"
+import FollowButton from "../components/FollowButton";
 
 
 export default function ProfilePage() {
@@ -22,6 +23,7 @@ export default function ProfilePage() {
             <Header name="PROFILE"/>
             <View style={styles.profilePicContainer}></View>
             <Text style={styles.profileName}>John Doe</Text>
+            <View style={{marginTop: 10, alignSelf: 'center'}}><FollowButton/></View>
         </View>
     )
 }
@@ -34,8 +36,8 @@ const styles = StyleSheet.create({
     profilePicContainer: {
         marginTop: 20,
         alignSelf: 'center',
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
         backgroundColor: 'gray',
         borderRadius: 100
     },
@@ -45,5 +47,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         alignSelf: 'center',
         marginTop: 10
-    }
+    },
+
 })
