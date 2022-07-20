@@ -23,6 +23,20 @@ export default function ProfilePage() {
             <Header name="PROFILE"/>
             <View style={styles.profilePicContainer}></View>
             <Text style={styles.profileName}>John Doe</Text>
+            <View style={styles.profileInfo}>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.numbers}>980</Text>
+                    <Text style={styles.category}>Followers</Text>
+                </View>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.numbers}>1412</Text>
+                    <Text style={styles.category}>Posts</Text>
+                </View>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.numbers}>312</Text>
+                    <Text style={styles.category}>Following</Text>
+                </View>
+            </View>
             <View style={{marginTop: 10, alignSelf: 'center'}}><FollowButton/></View>
         </View>
     )
@@ -43,10 +57,30 @@ const styles = StyleSheet.create({
     },
 
     profileName: {
-        fontFamily: 'montserratBold',
+        fontFamily: 'montserratExtraBold',
         fontSize: 20,
         alignSelf: 'center',
         marginTop: 10
     },
+
+    profileInfo: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 10
+    },
+
+    infoContainer: {
+        alignItems: 'center'
+    },
+
+    numbers: {
+        fontSize: 15,
+        fontFamily: 'montserratRegular'
+    },
+
+    category: {
+        fontSize: 15,
+        fontFamily: 'montserratBold'
+    }
 
 })
