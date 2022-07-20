@@ -23,12 +23,12 @@ export default function LoginPage() {
       <ImageBackground style={styles.back} resizeMode="cover" source={image}>
         <Image source={logo} style={styles.logo}/>
         <View style={styles.buttons}>
-        <TouchableOpacity onPress={() => alert('Button Pressed')} style={styles.button}>
-          <Text style={styles.text}>Sign in</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => alert('Button Pressed')} style={styles.button}>
-          <Text style={styles.text}>Create Account</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => alert('Button Pressed')} style={styles.button}>
+            <Text style={styles.text}>Sign in</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => alert('Button Pressed')} style={styles.button}>
+            <Text style={styles.text}>Create Account</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
       <StatusBar style="inverted" />

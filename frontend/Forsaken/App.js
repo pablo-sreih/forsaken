@@ -3,13 +3,15 @@ import { StyleSheet, View } from 'react-native';
 import LoginPage from './assets/pages/LoginPage';
 import FeedPage from './assets/pages/FeedPage';
 import ActivityPage from './assets/pages/ActivityPage';
+import ProfilePage from './assets/pages/ProfilePage';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <FeedPage/> */}
       {/* <LoginPage/> */}
-      <ActivityPage/>
+      {/* <ActivityPage/> */}
+      <ProfilePage/>
     </View>
   );
 }
