@@ -2,6 +2,7 @@ import * as React from 'react';
 import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 export default function MapPage() {
 
@@ -14,9 +15,11 @@ export default function MapPage() {
                 latitudeDelta: 1,
                 longitudeDelta: 1,
             }}
-            style={styles.map}>
+            style={styles.map}
+            provider={'google'}>
 
         <Marker
+            title='Beirut'
             coordinate={{
                 latitude: 33.8547,
                 longitude: 35.8623,
@@ -24,8 +27,8 @@ export default function MapPage() {
             draggable={true}
         >
         </Marker>
-
         </MapView>
+        <StatusBar style='auto'/>
     </View>
   );
 }
@@ -39,6 +42,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height - 20,
+    height: Dimensions.get('window').height,
   },
 });
