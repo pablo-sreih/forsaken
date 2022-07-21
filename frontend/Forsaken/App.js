@@ -4,6 +4,7 @@ import LoginPage from './assets/pages/LoginPage';
 import FeedPage from './assets/pages/FeedPage';
 import ActivityPage from './assets/pages/ActivityPage';
 import ProfilePage from './assets/pages/ProfilePage';
+import MapPage from './assets/pages/MapPage';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       {/* <FeedPage/> */}
       {/* <LoginPage/> */}
       {/* <ActivityPage/> */}
-      <ProfilePage/>
+      {/* <ProfilePage/> */}
+      <MapPage/>
     </View>
   );
 }
