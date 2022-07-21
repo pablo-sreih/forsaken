@@ -13,17 +13,20 @@ export default function MapPage() {
         latitudeDelta: 0.999,
         longitudeDelta: 0.999,
       }}
-      style={styles.map} />
-      <Marker 
-      title='Pablo'
-      coordinate={{
-        latitude: 33.8547,
-        longitude: 35.8623,
-      }}
-      pinColor='red'
-      draggable={true}>
+      style={styles.map}>
 
-      </Marker>
+        <Marker
+            coordinate={{
+            latitude: 33.8547,
+            longitude: 35.8623,
+        }}
+        pinColor='black'
+        draggable={true}
+        >
+
+        </Marker>
+      </MapView>
+      
     </View>
   );
 }
