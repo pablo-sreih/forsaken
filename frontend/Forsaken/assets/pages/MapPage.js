@@ -1,11 +1,29 @@
 import * as React from 'react';
 import MapView from 'react-native-maps';
+import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
 export default function MapPage() {
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} />
+      <MapView 
+      initialRegion={{
+        latitude: 33.8547,
+        longitude: 35.8623,
+        latitudeDelta: 0.999,
+        longitudeDelta: 0.999,
+      }}
+      style={styles.map} />
+      <Marker 
+      title='Pablo'
+      coordinate={{
+        latitude: 33.8547,
+        longitude: 35.8623,
+      }}
+      pinColor='red'
+      draggable={true}>
+
+      </Marker>
     </View>
   );
 }
@@ -19,6 +37,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('window').height - 20,
   },
 });
