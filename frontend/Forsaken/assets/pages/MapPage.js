@@ -4,29 +4,28 @@ import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
 export default function MapPage() {
+
   return (
     <View style={styles.container}>
-      <MapView 
-      initialRegion={{
-        latitude: 33.8547,
-        longitude: 35.8623,
-        latitudeDelta: 0.999,
-        longitudeDelta: 0.999,
-      }}
-      style={styles.map}>
+        <MapView 
+            initialRegion={{
+                latitude: 33.8547,
+                longitude: 35.8623,
+                latitudeDelta: 1,
+                longitudeDelta: 1,
+            }}
+            style={styles.map}>
 
         <Marker
             coordinate={{
-            latitude: 33.8547,
-            longitude: 35.8623,
-        }}
-        pinColor='black'
-        draggable={true}
+                latitude: 33.8547,
+                longitude: 35.8623,
+            }}
+            draggable={true}
         >
-
         </Marker>
-      </MapView>
-      
+
+        </MapView>
     </View>
   );
 }
