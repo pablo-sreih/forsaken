@@ -9,6 +9,7 @@ import ActivityPage from "../pages/ActivityPage";
 import ProfilePage from "../pages/ProfilePage";
 import MapPage from "../pages/MapPage";
 import FeedPage from "../pages/FeedPage";
+import CameraPage from "../pages/CameraPage";
 
 const Tab = createBottomTabNavigator()
 
@@ -20,12 +21,12 @@ export default function TabNavigator(){
             tabBarShowLabel: false,
             tabBarStyle: {
                 position: 'absolute',
-                bottom: 20,
+                bottom: 15,
                 left: 15,
                 right: 15,
                 elevation: 5,
                 borderRadius: 15,
-                height: 70
+                height: 50
             }
         }}>
             <Tab.Screen name="Feed" component={FeedPage} options={{
@@ -36,6 +37,11 @@ export default function TabNavigator(){
             <Tab.Screen name="Activity" component={ActivityPage} options={{
                 tabBarIcon: ({focused}) => (
                     <Icon name='track-changes' color={focused ? 'red' : 'black'}/>
+                )
+            }}/>
+            <Tab.Screen name="Camera" component={CameraPage} options={{
+                tabBarIcon: ({focused}) => (
+                    <Icon name='camera' color={focused ? 'red' : 'black'}/>
                 )
             }}/>
             <Tab.Screen name="Map" component={MapPage} options={{

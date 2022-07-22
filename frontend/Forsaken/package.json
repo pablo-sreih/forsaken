@@ -26,7 +26,8 @@
     "react-native-linear-gradient": "^2.6.2",
     "react-native-maps": "0.30.2",
     "react-native-web": "0.17.7",
-    "rn-faded-scrollview": "^1.0.13"
+    "rn-faded-scrollview": "^1.0.13",
+    "expo-camera": "~12.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

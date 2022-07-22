@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'white',
         shadowColor: '#7090B0',
-        elevation: 20,
+        elevation: 10,
         height: '16%'
       },
     

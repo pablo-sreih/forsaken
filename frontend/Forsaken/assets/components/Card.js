@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     iconContainer: {
         marginLeft: 10,
         marginTop: 10,
-        backgroundColor: '#F1F1F1',
+        backgroundColor: '#E0E0E0',
         padding: 7,
         borderRadius: 5
     },
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
 
     locationName: {
         fontSize: 15,
-        fontFamily: 'montserratSemiBold'
+        fontFamily: 'montserratBold'
     },
 
     location: {
