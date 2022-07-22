@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 import { Camera } from 'expo-camera';
 import { shareAsync } from 'expo-sharing';
+import { Icon } from 'react-native-elements';
+import Header from '../components/Header';
 import * as MediaLibrary from 'expo-media-library';
 
 export default function CameraPage() {
@@ -51,22 +53,31 @@ export default function CameraPage() {
     };
 
     return (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <Image style={styles.preview} source={{ uri: "data:image/jpg;base64," + photo.base64 }} />
-        <Button title="Share" onPress={sharePic} />
-        {hasMediaLibraryPermission ? <Button title="Save" onPress={savePhoto} /> : undefined}
-        <Button title="Discard" onPress={() => setPhoto(undefined)} />
-      </SafeAreaView>
+        <View style={styles.buttonContainer}>
+        <TouchableOpacity title="Share" onPress={sharePic}>
+            <Icon name='share'/>
+        </TouchableOpacity>
+        {hasMediaLibraryPermission ? <TouchableOpacity title="Save" onPress={savePhoto} /> : undefined}
+        <TouchableOpacity title="Discard" onPress={() => setPhoto(undefined)} />
+        </View>
+      </View>
     );
   }
 
   return (
+    <View style={styles.view}>
+    <Header name='CAMERA'/>
     <Camera style={styles.container} ref={cameraRef}>
       <View style={styles.buttonContainer}>
-        <Button title="Take Pic" onPress={takePic} />
+        <TouchableOpacity onPress={takePic}>
+            <Icon name='center-focus-strong' color={'white'} size={50}/>
+        </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
     </Camera>
+    </View>
   );
 }
 
@@ -75,13 +86,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row'
   },
   buttonContainer: {
-    backgroundColor: '#fff',
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
+    marginBottom: 90
   },
   preview: {
     alignSelf: 'stretch',
+    flex: 1
+  },
+  view: {
     flex: 1
   }
 });
