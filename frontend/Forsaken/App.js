@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import LoginPage from './assets/pages/LoginPage';
 import FeedPage from './assets/pages/FeedPage';
@@ -8,13 +8,13 @@ import MapPage from './assets/pages/MapPage';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <FeedPage/> */}
-      {/* <LoginPage/> */}
-      {/* <ActivityPage/> */}
-      {/* <ProfilePage/> */}
-      <MapPage/>
-    </View>
+      <View style={styles.container}>
+        {/* <FeedPage/> */}
+        {/* <LoginPage/> */}
+        {/* <ActivityPage/> */}
+        {/* <ProfilePage/> */}
+        <MapPage/>
+      </View>
   );
 }
 
