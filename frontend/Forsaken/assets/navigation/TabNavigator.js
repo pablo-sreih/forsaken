@@ -26,7 +26,7 @@ export default function TabNavigator(){
                 right: 15,
                 elevation: 5,
                 borderRadius: 15,
-                height: 50
+                height: 60
             }
         }}>
             <Tab.Screen name="Feed" component={FeedPage} options={{
@@ -41,7 +41,7 @@ export default function TabNavigator(){
             }}/>
             <Tab.Screen name="Camera" component={CameraPage} options={{
                 tabBarIcon: ({focused}) => (
-                    <Icon name='camera' color={focused ? 'red' : 'black'}/>
+                    <Icon name='camera' size={35} color={focused ? 'red' : 'black'}/>
                 )
             }}/>
             <Tab.Screen name="Map" component={MapPage} options={{
