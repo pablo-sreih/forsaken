@@ -40,8 +40,17 @@ export default function LocationPage(){
                     imageSize={8}
                     readonly={true}
                     startingValue={3.5}
-                    style={{alignSelf: 'flex-start', marginLeft: 20, marginTop: 5}}
+                    style={{alignSelf: 'flex-start', marginLeft: 20, marginTop: 3}}
                     />
+            </View>
+            <View>
+                <Text style={styles.description}>Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do 
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ante metus dictum at tempor commodo ullamcorper. 
+                    Egestas integer eget aliquet nibh praesent tristique 
+                    magna sit amet.
+                </Text>
             </View>
         </View>
     )
@@ -84,5 +93,13 @@ const styles = StyleSheet.create({
 
     addReviewText: {
         fontFamily: 'montserratSemiBold'
+    },
+
+    description: {
+        fontFamily: 'montserratRegular',
+        fontSize: 12,
+        marginRight: 20,
+        marginLeft: 20,
+        marginTop: 15
     }
 })
