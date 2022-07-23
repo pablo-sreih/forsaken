@@ -1,7 +1,5 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 
 // Screens

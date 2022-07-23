@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import LoginPage from './assets/pages/LoginPage';
+import LandingPage from "./assets/pages/LandingPage";
 import FeedPage from './assets/pages/FeedPage';
 import ActivityPage from './assets/pages/ActivityPage';
 import ProfilePage from './assets/pages/ProfilePage';
