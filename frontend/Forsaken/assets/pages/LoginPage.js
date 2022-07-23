@@ -1,7 +1,8 @@
+import React from "react"
 import { View, Text, TouchableOpacity } from "react-native"
 
 
-export default function LoginPage(){
+export default function LoginPage({navigation}){
     return(
         <View>
             <Text>Login Page</Text>
