@@ -31,7 +31,7 @@ export default function SigninPage({ navigation }){
         })
 
         .then(function (response){
-            console.log(response)
+            console.log(response.data['user'])
         })
 
         .catch((error) => {
