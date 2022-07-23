@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 
-export default function SignupPage(){
+export default function SignupPage({ navigation }){
     return(
         <View>
-            <Text>Signup Page</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <Text>Signup Page</Text>
+            </TouchableOpacity>
         </View>
     )
 }

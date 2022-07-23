@@ -2,11 +2,12 @@ import React from "react"
 import { View, Text, TouchableOpacity } from "react-native"
 
 
-export default function LoginPage({navigation}){
+
+export default function LoginPage({ navigation }){
     return(
         <View>
             <Text>Login Page</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                 <Text>Register</Text>
             </TouchableOpacity>
         </View>
