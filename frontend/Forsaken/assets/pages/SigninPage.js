@@ -2,10 +2,13 @@ import React from "react"
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native"
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 
 
 
 export default function SigninPage({ navigation }){
+
+    const [modalVisible, setModalVisible] = useState(false)
 
     const [loaded] = useFonts({
         montserratBlack : require('../fonts/Montserrat-Black.ttf'),
@@ -18,7 +21,6 @@ export default function SigninPage({ navigation }){
     if (!loaded) {
         return null;
     }
-
 
     return(
         <View style={styles.container}>
@@ -38,7 +40,6 @@ export default function SigninPage({ navigation }){
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 50,
         flex: 1,
         justifyContent: 'center'
     },
