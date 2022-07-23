@@ -15,9 +15,16 @@ const Stack = createStackNavigator()
 
 const Auth = () => {
   return(
-    <Stack.Navigator initialRouteName='Login'>
-      <Stack.Screen name='Login' component={LoginPage}/>
-      <Stack.Screen name='Register' component={SignupPage}/>
+    <Stack.Navigator initialRouteName='Landing' screenOptions={{animationEnabled: false}}>
+      <Stack.Screen name='Landing' component={LandingPage} options={{
+        headerShown: false
+      }}/>
+      <Stack.Screen name='Login' component={LoginPage} options={{
+        headerShown: false
+      }}/>
+      <Stack.Screen name='Register' component={SignupPage} options={{
+        headerShown: false
+      }}/>
     </Stack.Navigator>
   )
 }
@@ -27,7 +34,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name='Auth' component={Auth}/>
+      <Stack.Screen name='Auth' component={Auth} options={{
+        headerShown: false
+      }}/>
       {/* <View style={styles.container}> */}
         {/* <FeedPage/> */}
         {/* <LoginPage/> */}

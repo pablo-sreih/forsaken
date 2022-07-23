@@ -7,7 +7,7 @@ const image = require ( '../images/back.jpg' )
 const logo = require ( '../logos/logo_white.png' )
 
 
-export default function LandingPage() {
+export default function LandingPage({ navigation }) {
 
   const [loaded] = useFonts({
     montserratBlack : require('../fonts/Montserrat-Black.ttf'),
@@ -24,10 +24,10 @@ export default function LandingPage() {
       <ImageBackground style={styles.back} resizeMode="cover" source={image}>
         <Image source={logo} style={styles.logo}/>
         <View style={styles.buttons}>
-          <TouchableOpacity onPress={() => alert('Button Pressed')} style={styles.button}>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.button}>
             <Text style={styles.text}>Sign in</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => alert('Button Pressed')} style={styles.button}>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')} style={styles.button}>
             <Text style={styles.text}>Create Account</Text>
           </TouchableOpacity>
         </View>
