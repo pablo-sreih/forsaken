@@ -6,7 +6,7 @@ import 'react-native-gesture-handler'
 
 import LandingPage from "./assets/pages/LandingPage";
 import TabNavigator from './assets/navigation/TabNavigator';
-import LoginPage from './assets/pages/LoginPage';
+import SigninPage from './assets/pages/SigninPage';
 import SignupPage from './assets/pages/SignupPage';
 
 
@@ -19,7 +19,7 @@ const Auth = () => {
       <Stack.Screen name='Landing' component={LandingPage} options={{
         headerShown: false
       }}/>
-      <Stack.Screen name='Login' component={LoginPage} options={{
+      <Stack.Screen name='Login' component={SigninPage} options={{
         headerShown: false
       }}/>
       <Stack.Screen name='Register' component={SignupPage} options={{

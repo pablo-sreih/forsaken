@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 
 
 
-export default function LoginPage({ navigation }){
+export default function SigninPage({ navigation }){
 
     const [loaded] = useFonts({
         montserratBlack : require('../fonts/Montserrat-Black.ttf'),
