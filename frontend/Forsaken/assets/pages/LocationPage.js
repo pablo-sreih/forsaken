@@ -1,14 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Header from "../components/Header";
 import { useFonts } from "expo-font";
+import { Rating } from "react-native-ratings";
 
 export default function LocationPage(){
 
+    const rateImage = require('../images/circleRating.png')
+
     const [loaded] = useFonts({
-        montserratBlack : require('../fonts/Montserrat-Black.ttf'),
-        montserratExtraBold: require('../fonts/Montserrat-ExtraBold.ttf'),
-        montserratBold: require('../fonts/Montserrat-Bold.ttf')
+        montserratBlack : require ('../fonts/Montserrat-Black.ttf'),
+        montserratExtraBold: require ('../fonts/Montserrat-ExtraBold.ttf'),
+        montserratBold: require ('../fonts/Montserrat-Bold.ttf'),
+        montserratSemiBold: require ('../fonts/Montserrat-SemiBold.ttf'),
+        montserratRegular: require ('../fonts/Montserrat-Regular.ttf')
     })
     
     if (!loaded) {
@@ -26,6 +31,17 @@ export default function LocationPage(){
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.addReviewText}>Add Review</Text>
                 </TouchableOpacity>
+            </View>
+            <View>
+                <Rating 
+                    type='custom' ratingImage={rateImage}
+                    ratingBackgroundColor='#E4E4E4'
+                    ratingCount={5}
+                    imageSize={8}
+                    readonly={true}
+                    startingValue={3.5}
+                    style={{alignSelf: 'flex-start', marginLeft: 20, marginTop: 5}}
+                    />
             </View>
         </View>
     )
