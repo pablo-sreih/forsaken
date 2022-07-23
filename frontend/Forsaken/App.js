@@ -9,6 +9,7 @@ import TabNavigator from './assets/navigation/TabNavigator';
 import SigninPage from './assets/pages/SigninPage';
 import SignupPage from './assets/pages/SignupPage';
 import LocationPage from './assets/pages/LocationPage';
+import ProfilePage from './assets/pages/ProfilePage';
 
 
 const Stack = createStackNavigator()
@@ -40,7 +41,8 @@ export default function App() {
       }}/> */}
       <View style={styles.container}>
         {/* <TabNavigator/> */}
-        <LocationPage/>
+        {/* <LocationPage/> */}
+        <ProfilePage/>
       </View>
       {/* </Stack.Navigator> */}
     </NavigationContainer>

@@ -1,7 +1,8 @@
-import { View, StyleSheet, Text } from "react-native"
+import { View, StyleSheet, Text, ScrollView } from "react-native"
 import Header from "../components/Header"
 import { useFonts } from "expo-font"
 import FollowButton from "../components/FollowButton";
+import MiniPhoto from "../components/MiniPhoto";
 
 
 export default function ProfilePage() {
@@ -23,6 +24,9 @@ export default function ProfilePage() {
             <Header name="PROFILE"/>
             <View style={styles.profilePicContainer}></View>
             <Text style={styles.profileName}>John Doe</Text>
+            <View style={{marginTop: 10, alignSelf: 'center'}}>
+                <FollowButton/>
+            </View>
             <View style={styles.profileInfo}>
                 <View style={styles.infoContainer}>
                     <Text style={styles.numbers}>980</Text>
@@ -37,7 +41,25 @@ export default function ProfilePage() {
                     <Text style={styles.category}>Following</Text>
                 </View>
             </View>
-            <View style={{marginTop: 10, alignSelf: 'center'}}><FollowButton/></View>
+            <View>
+                <Text style={styles.description}>Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do 
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ante metus dictum at tempor commodo ullamcorper. 
+                    Egestas integer eget aliquet nibh praesent tristique 
+                    magna sit amet.
+                </Text>
+            </View>
+            <ScrollView contentContainerStyle={styles.photosContainer}>
+                <MiniPhoto/>
+                <MiniPhoto/>
+                <MiniPhoto/>
+                <MiniPhoto/>
+                <MiniPhoto/>
+                <MiniPhoto/>
+                <MiniPhoto/>
+                <MiniPhoto/>
+            </ScrollView>
         </View>
     )
 }
@@ -81,6 +103,23 @@ const styles = StyleSheet.create({
     category: {
         fontSize: 15,
         fontFamily: 'montserratBold'
-    }
+    },
+
+    description: {
+        fontFamily: 'montserratRegular',
+        fontSize: 12,
+        marginRight: 20,
+        marginLeft: 20,
+        marginTop: 15
+    },
+
+    photosContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginLeft: 17,
+        marginRight: 17,
+        marginTop: 10
+    },
 
 })
