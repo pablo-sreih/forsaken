@@ -8,6 +8,7 @@ import LandingPage from "./assets/pages/LandingPage";
 import TabNavigator from './assets/navigation/TabNavigator';
 import SigninPage from './assets/pages/SigninPage';
 import SignupPage from './assets/pages/SignupPage';
+import LocationPage from './assets/pages/LocationPage';
 
 
 const Stack = createStackNavigator()
@@ -33,18 +34,15 @@ const Auth = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      {/* <Stack.Navigator>
       <Stack.Screen name='Auth' component={Auth} options={{
         headerShown: false
-      }}/>
-      {/* <View style={styles.container}> */}
-        {/* <FeedPage/> */}
-        {/* <LoginPage/> */}
-        {/* <ActivityPage/> */}
-        {/* <ProfilePage/> */}
-        {/* <MapPage/> */}
-      {/* </View> */}
-      </Stack.Navigator>
+      }}/> */}
+      <View style={styles.container}>
+        {/* <TabNavigator/> */}
+        <LocationPage/>
+      </View>
+      {/* </Stack.Navigator> */}
     </NavigationContainer>
   );
 }

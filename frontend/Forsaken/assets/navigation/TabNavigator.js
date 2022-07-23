@@ -5,7 +5,7 @@ import { Icon } from "react-native-elements";
 // Screens
 import ActivityPage from "../pages/ActivityPage";
 import ProfilePage from "../pages/ProfilePage";
-// import MapPage from "../pages/MapPage";
+import MapPage from "../pages/MapPage";
 import FeedPage from "../pages/FeedPage";
 import CameraPage from "../pages/CameraPage";
 
@@ -42,11 +42,11 @@ export default function TabNavigator(){
                     <Icon name='camera' size={35} color={focused ? 'red' : 'black'}/>
                 )
             }}/>
-            {/* <Tab.Screen name="Map" component={MapPage} options={{
+            <Tab.Screen name="Map" component={MapPage} options={{
                 tabBarIcon: ({focused}) => (
                     <Icon name='explore' color={focused ? 'red' : 'black'}/>
                 )
-            }}/> */}
+            }}/>
             <Tab.Screen name="Profile" component={ProfilePage} options={{
                 tabBarIcon: ({focused}) => (
                     <Icon name='account-circle' color={focused ? 'red' : 'black'}/>

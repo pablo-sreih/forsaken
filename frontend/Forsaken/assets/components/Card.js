@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import FollowButton from "./FollowButton";
 import { Icon } from "react-native-elements";
 
+
 export default function Card(){
 
     const [loaded] = useFonts({
