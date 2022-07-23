@@ -8,8 +8,8 @@ import axios from "axios";
 
 export default function SigninPage({ navigation }){
 
-    const email = useRef()
-    const pwd = useRef()
+    const email = useRef(null)
+    const pwd = useRef(null)
 
     const [loaded] = useFonts({
         montserratBlack : require('../fonts/Montserrat-Black.ttf'),
