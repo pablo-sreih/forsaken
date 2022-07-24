@@ -6,43 +6,43 @@ import "react-native-gesture-handler";
 
 import LandingPage from "./assets/pages/LandingPage";
 import TabNavigator from "./assets/navigation/TabNavigator";
-import SigninPage from "./assets/pages/SigninPage";
-import SignupPage from "./assets/pages/SignupPage";
+// import SigninPage from "./assets/pages/SigninPage";
+// import SignupPage from "./assets/pages/SignupPage";
 import LocationPage from "./assets/pages/LocationPage";
 import ProfilePage from "./assets/pages/ProfilePage";
 
 const Stack = createStackNavigator();
 
-const Auth = () => {
-  return (
-    <Stack.Navigator
-      initialRouteName="Landing"
-      screenOptions={{ animationEnabled: false }}
-    >
-      <Stack.Screen
-        name="Landing"
-        component={LandingPage}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Login"
-        component={SigninPage}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Register"
-        component={SignupPage}
-        options={{
-          headerShown: false,
-        }}
-      />
-    </Stack.Navigator>
-  );
-};
+// const Auth = () => {
+//   return (
+//     <Stack.Navigator
+//       initialRouteName="Landing"
+//       screenOptions={{ animationEnabled: false }}
+//     >
+//       <Stack.Screen
+//         name="Landing"
+//         component={LandingPage}
+//         options={{
+//           headerShown: false,
+//         }}
+//       />
+//       <Stack.Screen
+//         name="Login"
+//         component={SigninPage}
+//         options={{
+//           headerShown: false,
+//         }}
+//       />
+//       <Stack.Screen
+//         name="Register"
+//         component={SignupPage}
+//         options={{
+//           headerShown: false,
+//         }}
+//       />
+//     </Stack.Navigator>
+//   );
+// };
 
 export default function App() {
   return (

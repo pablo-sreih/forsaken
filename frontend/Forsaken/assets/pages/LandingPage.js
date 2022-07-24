@@ -18,6 +18,7 @@ const logo = require("../logos/logo_white.png");
 
 export default function LandingPage({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modal2Visible, setmodal2Visible] = useState(false);
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -40,9 +41,27 @@ export default function LandingPage({ navigation }) {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
-            <Text>Hello from modal</Text>
-            <Icon name="close" onPress={() => setModalVisible(false)} />
-            <TextInput>SignIn</TextInput>
+            <Text style={styles.title}>Sign in</Text>
+            <View style={styles.closeIcon}>
+              {/* <Icon name="close" onPress={() => setModalVisible(false)} /> */}
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal
+        visible={modal2Visible}
+        animationType="slide"
+        onRequestClose={() => setmodal2Visible(false)}
+        presentationStyle="overFullScreen"
+        transparent={true}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modal}>
+            <Text style={styles.title}>Sign up</Text>
+            <View style={styles.closeIcon}>
+              {/* <Icon name="close" onPress={() => setmodal2Visible(false)} /> */}
+            </View>
           </View>
         </View>
       </Modal>
@@ -57,7 +76,7 @@ export default function LandingPage({ navigation }) {
             <Text style={styles.text}>Sign in</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Register")}
+            onPress={() => setmodal2Visible(true)}
             style={styles.button}
           >
             <Text style={styles.text}>Create Account</Text>
@@ -89,7 +108,7 @@ const styles = StyleSheet.create({
 
   button: {
     alignItems: "center",
-    backgroundColor: "#DDDDDD",
+    backgroundColor: "white",
     padding: 15,
     width: "60%",
     alignSelf: "center",
@@ -110,8 +129,18 @@ const styles = StyleSheet.create({
   },
 
   modal: {
+    flexDirection: "row",
     height: "70%",
     backgroundColor: "white",
-    borderRadius: 10,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    justifyContent: "space-between",
+    padding: 20,
+  },
+
+  title: {
+    fontSize: 30,
+    fontFamily: "montserratBold",
+    marginBottom: 50,
   },
 });
