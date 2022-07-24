@@ -61,7 +61,7 @@ export default function LandingPage({ navigation }) {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
-            <Text style={styles.title}>Sign up</Text>
+            <Text style={styles.title}>Create Account</Text>
             {/* <View style={styles.closeIcon}> */}
             {/* <Icon name="close" onPress={() => setmodal2Visible(false)} /> */}
             {/* </View> */}
