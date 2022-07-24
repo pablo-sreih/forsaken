@@ -60,13 +60,12 @@ export default function SignInForm() {
 const styles = StyleSheet.create({
   textInput: {
     fontFamily: "montserratSemiBold",
-    fontSize: 20,
-    borderWidth: 2,
-    width: "90%",
+    fontSize: 17,
+    borderBottomWidth: 2,
+    width: "85%",
     height: 60,
     marginBottom: 10,
-    borderRadius: 20,
-    padding: 15,
+    // padding: 15,
   },
 
   formVIew: {
@@ -75,11 +74,12 @@ const styles = StyleSheet.create({
   },
 
   button: {
+    marginTop: 30,
     borderWidth: 2,
     backgroundColor: "black",
-    width: "90%",
+    width: "86%",
     height: 60,
-    borderRadius: 20,
+    borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
   },

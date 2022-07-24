@@ -133,11 +133,10 @@ const styles = StyleSheet.create({
 
   modal: {
     flexDirection: "column",
-    height: "70%",
+    height: "85%",
     backgroundColor: "white",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    // justifyContent: "space-between",
     padding: 20,
   },
 
