@@ -40,8 +40,8 @@ export default function SignInForm() {
             }),
           })
             .then((response) => response.json())
-            .then((json) => {
-              console.log(json);
+            .then((response) => {
+              console.log(response["user"]["email"]);
             });
         }}
       >
