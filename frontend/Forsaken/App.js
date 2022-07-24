@@ -13,10 +13,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <TabNavigator />
+        {/* <TabNavigator /> */}
         {/* <LocationPage/> */}
         {/* <ProfilePage /> */}
-        {/* <LandingPage /> */}
+        <LandingPage />
       </View>
     </NavigationContainer>
   );

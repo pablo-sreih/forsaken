@@ -77,12 +77,14 @@ export default function LandingPage({ navigation }) {
           <TouchableOpacity
             onPress={() => setModalVisible(true)}
             style={styles.button}
+            activeOpacity={0.8}
           >
             <Text style={styles.text}>Sign in</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => setmodal2Visible(true)}
             style={styles.button}
+            activeOpacity={0.8}
           >
             <Text style={styles.text}>Create Account</Text>
           </TouchableOpacity>

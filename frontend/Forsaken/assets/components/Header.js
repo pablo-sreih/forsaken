@@ -1,8 +1,19 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Modal,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { useState } from "react";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
+import { Icon } from "react-native-elements";
 
 export default function Header(props) {
+  const [modalVisible, setModalVisible] = useState(false);
+
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -16,9 +27,38 @@ export default function Header(props) {
   return (
     <View style={styles.header}>
       <Text style={styles.headerText}>{props.name}</Text>
-      <TouchableOpacity onPress={() => alert("options")}>
+      <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Text style={styles.headerOpt}>...</Text>
       </TouchableOpacity>
+      <Modal
+        visible={modalVisible}
+        animationType="slide"
+        onRequestClose={() => setModalVisible(false)}
+        presentationStyle="overFullScreen"
+        transparent={true}
+      >
+        <TouchableOpacity
+          style={styles.modalContainer}
+          onPress={() => setModalVisible(false)}
+          activeOpacity={1}
+        >
+          <TouchableWithoutFeedback>
+            <View style={styles.modal}>
+              <Text style={styles.title}>Options</Text>
+              <TouchableOpacity activeOpacity={0.8} style={styles.optionButton}>
+                <Icon color={"white"} name="edit" />
+                <Text style={styles.options}>Edit Profile</Text>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.8}>
+                <Text style={styles.options}>Edit Profile</Text>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.8}>
+                <Text style={styles.options}>Edit Profile</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableWithoutFeedback>
+        </TouchableOpacity>
+      </Modal>
       <StatusBar style="auto" />
     </View>
   );
@@ -49,5 +89,43 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginRight: 20,
     fontFamily: "montserratExtraBold",
+  },
+
+  modalContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+  },
+
+  modal: {
+    flexDirection: "column",
+    width: "90%",
+    height: "60%",
+    backgroundColor: "black",
+    borderRadius: 20,
+    padding: 20,
+  },
+
+  title: {
+    color: "white",
+    fontSize: 30,
+    fontFamily: "montserratBold",
+    marginBottom: 30,
+    alignSelf: "center",
+  },
+
+  options: {
+    color: "white",
+    fontFamily: "montserratSemiBold",
+    fontSize: 20,
+    marginLeft: 15,
+  },
+
+  optionButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
   },
 });
