@@ -13,6 +13,8 @@ import {
 import { useFonts } from "expo-font/build/FontHooks";
 import { Icon } from "react-native-elements";
 
+import SignInForm from "./SignInForm";
+
 const image = require("../images/back.jpg");
 const logo = require("../logos/logo_white.png");
 
@@ -42,9 +44,10 @@ export default function LandingPage({ navigation }) {
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
             <Text style={styles.title}>Sign in</Text>
-            <View style={styles.closeIcon}>
-              {/* <Icon name="close" onPress={() => setModalVisible(false)} /> */}
-            </View>
+            {/* <View style={styles.closeIcon}> */}
+            {/* <Icon name="close" onPress={() => setModalVisible(false)} /> */}
+            {/* </View> */}
+            <SignInForm />
           </View>
         </View>
       </Modal>
@@ -59,9 +62,9 @@ export default function LandingPage({ navigation }) {
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
             <Text style={styles.title}>Sign up</Text>
-            <View style={styles.closeIcon}>
-              {/* <Icon name="close" onPress={() => setmodal2Visible(false)} /> */}
-            </View>
+            {/* <View style={styles.closeIcon}> */}
+            {/* <Icon name="close" onPress={() => setmodal2Visible(false)} /> */}
+            {/* </View> */}
           </View>
         </View>
       </Modal>
@@ -129,18 +132,19 @@ const styles = StyleSheet.create({
   },
 
   modal: {
-    flexDirection: "row",
+    flexDirection: "column",
     height: "70%",
     backgroundColor: "white",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     padding: 20,
   },
 
   title: {
     fontSize: 30,
     fontFamily: "montserratBold",
-    marginBottom: 50,
+    marginBottom: 30,
+    alignSelf: "center",
   },
 });
