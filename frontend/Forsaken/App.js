@@ -1,36 +1,48 @@
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import * as React from "react";
+import { StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import 'react-native-gesture-handler'
+import "react-native-gesture-handler";
 
 import LandingPage from "./assets/pages/LandingPage";
-import TabNavigator from './assets/navigation/TabNavigator';
-import SigninPage from './assets/pages/SigninPage';
-import SignupPage from './assets/pages/SignupPage';
-import LocationPage from './assets/pages/LocationPage';
-import ProfilePage from './assets/pages/ProfilePage';
+import TabNavigator from "./assets/navigation/TabNavigator";
+import SigninPage from "./assets/pages/SigninPage";
+import SignupPage from "./assets/pages/SignupPage";
+import LocationPage from "./assets/pages/LocationPage";
+import ProfilePage from "./assets/pages/ProfilePage";
 
-
-const Stack = createStackNavigator()
-
+const Stack = createStackNavigator();
 
 const Auth = () => {
-  return(
-    <Stack.Navigator initialRouteName='Landing' screenOptions={{animationEnabled: false}}>
-      <Stack.Screen name='Landing' component={LandingPage} options={{
-        headerShown: false
-      }}/>
-      <Stack.Screen name='Login' component={SigninPage} options={{
-        headerShown: false
-      }}/>
-      <Stack.Screen name='Register' component={SignupPage} options={{
-        headerShown: false
-      }}/>
+  return (
+    <Stack.Navigator
+      initialRouteName="Landing"
+      screenOptions={{ animationEnabled: false }}
+    >
+      <Stack.Screen
+        name="Landing"
+        component={LandingPage}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={SigninPage}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={SignupPage}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
-  )
-}
-
+  );
+};
 
 export default function App() {
   return (
@@ -42,7 +54,8 @@ export default function App() {
       <View style={styles.container}>
         {/* <TabNavigator/> */}
         {/* <LocationPage/> */}
-        <ProfilePage/>
+        {/* <ProfilePage /> */}
+        <LandingPage />
       </View>
       {/* </Stack.Navigator> */}
     </NavigationContainer>

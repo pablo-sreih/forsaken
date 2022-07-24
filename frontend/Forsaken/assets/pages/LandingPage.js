@@ -1,19 +1,29 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import {TouchableOpacity, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { useFonts } from 'expo-font/build/FontHooks';
+import React, { useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import {
+  TouchableOpacity,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  Modal,
+  TextInput,
+} from "react-native";
+import { useFonts } from "expo-font/build/FontHooks";
+import { Icon } from "react-native-elements";
 
-const image = require ( '../images/back.jpg' )
-const logo = require ( '../logos/logo_white.png' )
-
+const image = require("../images/back.jpg");
+const logo = require("../logos/logo_white.png");
 
 export default function LandingPage({ navigation }) {
+  const [modalVisible, setModalVisible] = useState(false);
 
   const [loaded] = useFonts({
-    montserratBlack : require('../fonts/Montserrat-Black.ttf'),
-    montserratExtraBold: require('../fonts/Montserrat-ExtraBold.ttf'),
-    montserratBold: require('../fonts/Montserrat-Bold.ttf')
-  })
+    montserratBlack: require("../fonts/Montserrat-Black.ttf"),
+    montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
+    montserratBold: require("../fonts/Montserrat-Bold.ttf"),
+  });
 
   if (!loaded) {
     return null;
@@ -21,13 +31,35 @@ export default function LandingPage({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Modal
+        visible={modalVisible}
+        animationType="slide"
+        onRequestClose={() => setModalVisible(false)}
+        presentationStyle="overFullScreen"
+        transparent={true}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modal}>
+            <Text>Hello from modal</Text>
+            <Icon name="close" onPress={() => setModalVisible(false)} />
+            <TextInput>SignIn</TextInput>
+          </View>
+        </View>
+      </Modal>
+
       <ImageBackground style={styles.back} resizeMode="cover" source={image}>
-        <Image source={logo} style={styles.logo}/>
+        <Image source={logo} style={styles.logo} />
         <View style={styles.buttons}>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.button}>
+          <TouchableOpacity
+            onPress={() => setModalVisible(true)}
+            style={styles.button}
+          >
             <Text style={styles.text}>Sign in</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Register')} style={styles.button}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Register")}
+            style={styles.button}
+          >
             <Text style={styles.text}>Create Account</Text>
           </TouchableOpacity>
         </View>
@@ -44,30 +76,42 @@ const styles = StyleSheet.create({
 
   back: {
     flex: 1,
-    justifyContent:'space-between',
-    paddingTop: '20%',
-    paddingBottom: '20%',
+    justifyContent: "space-between",
+    paddingTop: "20%",
+    paddingBottom: "20%",
   },
 
   logo: {
-    flex: 0.3,
-    width: '65%',
-    resizeMode: 'contain',
-    alignSelf: 'center',
+    width: "65%",
+    resizeMode: "contain",
+    alignSelf: "center",
   },
 
   button: {
     alignItems: "center",
     backgroundColor: "#DDDDDD",
     padding: 15,
-    width: '60%',
-    alignSelf: 'center',
-    borderRadius:10,
+    width: "60%",
+    alignSelf: "center",
+    borderRadius: 10,
     marginTop: 10,
   },
 
   text: {
     fontSize: 20,
-    fontFamily: 'montserratBold'
-  }
+    fontFamily: "montserratBold",
+  },
+
+  modalContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignContent: "center",
+  },
+
+  modal: {
+    height: "70%",
+    backgroundColor: "white",
+    borderRadius: 10,
+  },
 });
