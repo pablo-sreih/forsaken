@@ -8,7 +8,6 @@ import {
   Text,
 } from "react-native";
 import { useFonts } from "expo-font";
-import axios from "axios";
 
 export default function SignInForm() {
   const [loaded] = useFonts({
@@ -41,7 +40,7 @@ export default function SignInForm() {
           })
             .then((response) => response.json())
             .then((response) => {
-              console.log(response["user"]["email"]);
+              console.log(response);
             });
         }}
       >
