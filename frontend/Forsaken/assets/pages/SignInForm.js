@@ -8,6 +8,7 @@ import {
   Text,
 } from "react-native";
 import { useFonts } from "expo-font";
+import axios from "axios";
 
 export default function SignInForm() {
   const [loaded] = useFonts({
@@ -27,7 +28,21 @@ export default function SignInForm() {
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
-          console.log(values);
+          fetch("http://192.168.0.106:8000/api/login", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: values.email,
+              password: values.password,
+            }),
+          })
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+            });
         }}
       >
         {(props) => (
@@ -65,7 +80,6 @@ const styles = StyleSheet.create({
     width: "85%",
     height: 60,
     marginBottom: 10,
-    // padding: 15,
   },
 
   formVIew: {

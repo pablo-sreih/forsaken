@@ -14,6 +14,7 @@ import { useFonts } from "expo-font/build/FontHooks";
 import { Icon } from "react-native-elements";
 
 import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 
 const image = require("../images/back.jpg");
 const logo = require("../logos/logo_white.png");
@@ -65,6 +66,7 @@ export default function LandingPage({ navigation }) {
             {/* <View style={styles.closeIcon}> */}
             {/* <Icon name="close" onPress={() => setmodal2Visible(false)} /> */}
             {/* </View> */}
+            <SignUpForm />
           </View>
         </View>
       </Modal>

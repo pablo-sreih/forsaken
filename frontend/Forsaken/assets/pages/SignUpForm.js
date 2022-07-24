@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useFonts } from "expo-font";
 
-export default function SignInForm() {
+export default function SignUpForm() {
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
