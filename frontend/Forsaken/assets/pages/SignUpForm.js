@@ -27,7 +27,7 @@ export default function SignUpForm() {
       <Formik
         initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values) => {
-          fetch("http://192.168.0.106:8000/api/register", {
+          fetch("http://192.168.0.129:8000/api/register", {
             method: "POST",
             headers: {
               Accept: "application/json",

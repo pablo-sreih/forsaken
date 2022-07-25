@@ -3,8 +3,11 @@ import { View, Text } from "react-native";
 import { useFonts } from "expo-font";
 import FollowButton from "./FollowButton";
 import { Icon } from "react-native-elements";
+import { useState } from "react";
 
 export default function Card({ navigation }) {
+  const [color, setColor] = useState("black");
+
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -36,8 +39,13 @@ export default function Card({ navigation }) {
           <Text style={styles.location}>Beirut, Lebanon</Text>
         </View>
         <View style={styles.icons}>
-          <TouchableOpacity style={styles.iconContainer}>
-            <Icon color={"red"} name="favorite" />
+          <TouchableOpacity
+            onPress={() => {
+              color === "black" ? setColor("red") : setColor("black");
+            }}
+            style={styles.iconContainer}
+          >
+            <Icon color={color} name="favorite" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconContainer}>
             <Icon name="share" />

@@ -19,4 +19,12 @@ class LikeController extends Controller
             'like' => $like,
         ],200);
     }
+
+    public function deleteLike(Request $request) {
+        Like::where('id', $request->id)->delete();
+
+        return response()->json([
+            'status' => 'success'
+        ],200);
+    }
 }
