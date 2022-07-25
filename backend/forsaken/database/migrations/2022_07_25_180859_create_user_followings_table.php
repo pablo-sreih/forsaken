@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('locations', function (Blueprint $table) {
-            $table->decimal('avg_emf_reading')->default('0')->change();
-            $table->decimal('avg_rating')->default('0')->change();
+        Schema::create('user_followings', function (Blueprint $table) {
+            $table->id();
+            $table->integer("user_id");
+            $table->integer("follower_id");
+            $table->timestamps();
+            
         });
     }
 
@@ -26,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('locations', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('user_followings');
     }
 };
