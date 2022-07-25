@@ -69,7 +69,7 @@ export default function SignUpForm() {
               style={styles.button}
               onPress={props.handleSubmit}
             >
-              <Text style={styles.buttonText}>Sign in</Text>
+              <Text style={styles.buttonText}>Sign up</Text>
             </TouchableOpacity>
           </View>
         )}

@@ -8,15 +8,17 @@ import LandingPage from "./assets/pages/LandingPage";
 import TabNavigator from "./assets/navigation/TabNavigator";
 import LocationPage from "./assets/pages/LocationPage";
 import ProfilePage from "./assets/pages/ProfilePage";
+import InitialNavigator from "./assets/navigation/InitialNavigator";
 
 export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
         {/* <TabNavigator /> */}
+        <InitialNavigator />
         {/* <LocationPage/> */}
         {/* <ProfilePage /> */}
-        <LandingPage />
+        {/* <LandingPage /> */}
       </View>
     </NavigationContainer>
   );

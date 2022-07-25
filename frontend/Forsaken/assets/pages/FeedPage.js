@@ -3,8 +3,16 @@ import { ScrollView, StyleSheet, Text, View, Switch } from "react-native";
 import { useFonts } from "expo-font";
 import Card from "../components/Card";
 import Header from "../components/Header";
+import { useEffect } from "react";
 
 export default function FeedPage({ navigation }) {
+  // Prevents Going Back to Landing Page
+  useEffect(() =>
+    navigation.addListener("beforeRemove", (e) => {
+      e.preventDefault();
+    })
+  );
+
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -21,10 +29,10 @@ export default function FeedPage({ navigation }) {
     <View style={styles.container}>
       <Header name="DISCOVER" />
       <ScrollView>
-        <Card nav={navigation} />
-        <Card nav={navigation} />
-        <Card nav={navigation} />
-        <Card nav={navigation} />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
       </ScrollView>
       <StatusBar style="auto" />
     </View>

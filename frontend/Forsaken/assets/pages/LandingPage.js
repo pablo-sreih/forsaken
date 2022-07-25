@@ -8,10 +8,8 @@ import {
   Text,
   View,
   Modal,
-  TextInput,
 } from "react-native";
 import { useFonts } from "expo-font/build/FontHooks";
-import { Icon } from "react-native-elements";
 
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
@@ -45,10 +43,7 @@ export default function LandingPage({ navigation }) {
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
             <Text style={styles.title}>Sign in</Text>
-            {/* <View style={styles.closeIcon}> */}
-            {/* <Icon name="close" onPress={() => setModalVisible(false)} /> */}
-            {/* </View> */}
-            <SignInForm />
+            <SignInForm navigation={navigation} />
           </View>
         </View>
       </Modal>
@@ -63,9 +58,6 @@ export default function LandingPage({ navigation }) {
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
             <Text style={styles.title}>Create Account</Text>
-            {/* <View style={styles.closeIcon}> */}
-            {/* <Icon name="close" onPress={() => setmodal2Visible(false)} /> */}
-            {/* </View> */}
             <SignUpForm />
           </View>
         </View>

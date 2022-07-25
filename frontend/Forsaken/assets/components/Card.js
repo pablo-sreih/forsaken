@@ -4,7 +4,7 @@ import { useFonts } from "expo-font";
 import FollowButton from "./FollowButton";
 import { Icon } from "react-native-elements";
 
-export default function Card({ nav }) {
+export default function Card({ navigation }) {
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -43,13 +43,13 @@ export default function Card({ nav }) {
             <Icon name="share" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => nav.navigate("Location")}
+            onPress={() => navigation.navigate("Location")}
             style={styles.iconContainer}
           >
             <Icon name="info" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => nav.navigate("MapByLocation")}
+            onPress={() => navigation.navigate("MapByLocation")}
             style={styles.iconContainer}
           >
             <Icon name="room" />
