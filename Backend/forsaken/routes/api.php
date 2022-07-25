@@ -52,6 +52,7 @@ Route::post('/deletePhotoComment', [PhotoController::class, 'deletePhotoComment'
 Route::post('/getAllPhotoComments', [PhotoController::class, 'getAllPhotoComments']);
 
 Route::post('/addLike', [LikeController::class, 'addLike']);
+Route::post('/deleteLike', [LikeController::class, 'deleteLike']);
 
 Route::post('/addActivity', [ActivityController::class, 'addActivity']);
 
