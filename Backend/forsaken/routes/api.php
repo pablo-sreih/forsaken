@@ -10,6 +10,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\FollowingController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -57,3 +58,5 @@ Route::post('/deleteLike', [LikeController::class, 'deleteLike']);
 Route::post('/addActivity', [ActivityController::class, 'addActivity']);
 
 Route::post('/addRating', [RatingController::class, 'addRating']);
+
+Route::post('/follow', [FollowingController::class, 'follow']);
