@@ -52,12 +52,9 @@ export default function SignInForm({ navigation }) {
                 ? (AsyncStorage.clear(),
                   AsyncStorage.multiSet([
                     ["user_id", JSON.stringify(response["user"]["id"])],
-                    ["name", JSON.stringify(response["user"]["name"])],
-                    ["about", JSON.stringify(response["user"]["about"])],
-                    [
-                      "profile_pic",
-                      JSON.stringify(response["user"]["profile_pic"]),
-                    ],
+                    ["name", response["user"]["name"]],
+                    ["about", response["user"]["about"]],
+                    ["profile_pic", response["user"]["profile_pic"]],
                   ]),
                   getValues())
                 : console.log("no");
