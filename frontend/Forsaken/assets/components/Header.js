@@ -51,10 +51,7 @@ export default function Header(props) {
               </TouchableOpacity>
               <TouchableOpacity style={styles.optionButton} activeOpacity={0.8}>
                 <Icon name="logout" color={"white"} />
-                <Text style={styles.options}>Edit Profile</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8}>
-                <Text style={styles.options}>Edit Profile</Text>
+                <Text style={styles.options}>Logout</Text>
               </TouchableOpacity>
             </View>
           </TouchableWithoutFeedback>
