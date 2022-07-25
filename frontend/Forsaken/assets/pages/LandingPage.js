@@ -116,10 +116,11 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    marginTop: -40,
+    marginTop: -20,
     width: "65%",
     resizeMode: "contain",
     alignSelf: "center",
+    opacity: 0.85,
   },
 
   buttons: {

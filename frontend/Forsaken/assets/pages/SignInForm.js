@@ -8,11 +8,12 @@ import {
   Text,
 } from "react-native";
 import { useFonts } from "expo-font";
-import * as SecureStore from "expo-secure-store";
+import { AsyncStorage } from "react-native";
 import { useState } from "react";
 
 export default function SignInForm({ navigation }) {
   const [userData, setUserData] = useState([]);
+  const [userToken, setUserToken] = useState("");
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -45,7 +46,10 @@ export default function SignInForm({ navigation }) {
             .then((response) => response.json())
             .then((response) => {
               response["status"] === "success"
-                ? navigation.navigate("Tab")
+                ? (navigation.navigate("Tab"),
+                  setUserData(response["user"]),
+                  AsyncStorage.setItem(userData["user"]),
+                  console.log(AsyncStorage.getItem(userData["user"])))
                 : console.log("no");
             });
         }}
