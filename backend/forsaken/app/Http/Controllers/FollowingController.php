@@ -34,5 +34,6 @@ class FollowingController extends Controller
             "status" => "success",
             "follow" => $follow
         ],200);
+        
     }
 }
