@@ -8,12 +8,15 @@ import {
   Text,
 } from "react-native";
 import { useFonts } from "expo-font";
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState } from "react";
 
 export default function SignInForm({ navigation }) {
-  const [userData, setUserData] = useState([]);
-  const [userToken, setUserToken] = useState("");
+  async function getValues() {
+    const keys = await AsyncStorage.getAllKeys();
+    const values = await AsyncStorage.multiGet(keys);
+    console.log(values);
+  }
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -46,10 +49,17 @@ export default function SignInForm({ navigation }) {
             .then((response) => response.json())
             .then((response) => {
               response["status"] === "success"
-                ? (navigation.navigate("Tab"),
-                  setUserData(response["user"]),
-                  AsyncStorage.setItem(userData["user"]),
-                  console.log(AsyncStorage.getItem(userData["user"])))
+                ? (AsyncStorage.clear(),
+                  AsyncStorage.multiSet([
+                    ["user_id", JSON.stringify(response["user"]["id"])],
+                    ["name", JSON.stringify(response["user"]["name"])],
+                    ["about", JSON.stringify(response["user"]["about"])],
+                    [
+                      "profile_pic",
+                      JSON.stringify(response["user"]["profile_pic"]),
+                    ],
+                  ]),
+                  getValues())
                 : console.log("no");
             });
         }}
