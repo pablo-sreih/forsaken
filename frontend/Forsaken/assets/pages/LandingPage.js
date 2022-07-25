@@ -8,14 +8,18 @@ import {
   Text,
   View,
   Modal,
+  Dimensions,
 } from "react-native";
 import { useFonts } from "expo-font/build/FontHooks";
+import { Video, AVPlaybackStatus } from "expo-av";
 
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
 const image = require("../images/back.jpg");
 const logo = require("../logos/logo_white.png");
+const video = require("../videos/video.mp4");
+const { width, height } = Dimensions.get("window");
 
 export default function LandingPage({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -63,7 +67,20 @@ export default function LandingPage({ navigation }) {
         </View>
       </Modal>
 
-      <ImageBackground style={styles.back} resizeMode="cover" source={image}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
+        <Video
+          style={styles.back}
+          resizeMode="cover"
+          source={video}
+          shouldPlay={true}
+          isLooping={true}
+        />
         <Image source={logo} style={styles.logo} />
         <View style={styles.buttons}>
           <TouchableOpacity
@@ -81,7 +98,7 @@ export default function LandingPage({ navigation }) {
             <Text style={styles.text}>Create Account</Text>
           </TouchableOpacity>
         </View>
-      </ImageBackground>
+      </View>
       <StatusBar style="inverted" />
     </View>
   );
@@ -93,21 +110,25 @@ const styles = StyleSheet.create({
   },
 
   back: {
-    flex: 1,
-    justifyContent: "space-between",
-    paddingTop: "20%",
-    paddingBottom: "20%",
+    position: "absolute",
+    height: height,
+    width: width,
   },
 
   logo: {
+    marginTop: -40,
     width: "65%",
     resizeMode: "contain",
     alignSelf: "center",
   },
 
+  buttons: {
+    marginBottom: 50,
+  },
+
   button: {
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: "black",
     padding: 15,
     width: "60%",
     alignSelf: "center",
@@ -116,6 +137,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
+    color: "white",
     fontSize: 20,
     fontFamily: "montserratBold",
   },
@@ -129,7 +151,7 @@ const styles = StyleSheet.create({
 
   modal: {
     flexDirection: "column",
-    height: "85%",
+    height: "75%",
     backgroundColor: "white",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
