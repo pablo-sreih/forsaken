@@ -56,7 +56,8 @@ export default function SignInForm({ navigation }) {
                     ["about", response["user"]["about"]],
                     ["profile_pic", response["user"]["profile_pic"]],
                   ]),
-                  getValues())
+                  getValues(),
+                  navigation.navigate("Tab"))
                 : console.log("no");
             });
         }}
