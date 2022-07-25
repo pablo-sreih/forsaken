@@ -8,8 +8,9 @@ import {
   Text,
 } from "react-native";
 import { useFonts } from "expo-font";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function SignUpForm() {
+export default function SignUpForm({ navigation }) {
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -27,7 +28,7 @@ export default function SignUpForm() {
       <Formik
         initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values) => {
-          fetch("http://192.168.0.129:8000/api/register", {
+          fetch("http://192.168.0.103:8000/api/register", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -41,7 +42,16 @@ export default function SignUpForm() {
           })
             .then((response) => response.json())
             .then((response) => {
-              console.log(response);
+              response["status"] === "success"
+                ? (AsyncStorage.clear(),
+                  AsyncStorage.multiSet([
+                    ["token", response["authorisation"]["token"]],
+                    ["user_id", JSON.stringify(response["user"]["id"])],
+                    ["name", response["user"]["name"]],
+                    // ["profile_pic", response["user"]["profile_pic"]],
+                  ]),
+                  navigation.navigate("Tab"))
+                : console.log(response);
             });
         }}
       >

@@ -62,7 +62,7 @@ export default function LandingPage({ navigation }) {
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
             <Text style={styles.title}>Create Account</Text>
-            <SignUpForm />
+            <SignUpForm navigation={navigation} />
           </View>
         </View>
       </Modal>
