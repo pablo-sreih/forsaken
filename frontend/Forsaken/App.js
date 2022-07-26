@@ -14,8 +14,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        {/* <TabNavigator /> */}
-        <InitialNavigator />
+        <TabNavigator />
+        {/* <InitialNavigator /> */}
         {/* <LocationPage/> */}
         {/* <ProfilePage /> */}
         {/* <LandingPage /> */}
