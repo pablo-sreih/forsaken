@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 
 export default function FeedPage({ navigation }) {
-  const [images, setImages] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     getData();
@@ -24,9 +24,9 @@ export default function FeedPage({ navigation }) {
       .then((response) => response.json())
       .then((response) => {
         for (let i = 0; i < response.length; i++) {
-          setImages([...images, response[i]["image"]]);
+          setData([...data, response[i]]);
         }
-        console.log(images);
+        console.log(data);
       });
   }
 
@@ -53,15 +53,17 @@ export default function FeedPage({ navigation }) {
     <View style={styles.container}>
       <Header name="DISCOVER" />
       <ScrollView>
-        {images.map((image, index) => {
+        {data.map((data, index) => {
           return (
             <Card
               key={index}
               navigation={navigation}
-              image={image}
-              lat={35.12}
-              long={35.13}
-              time={moment("2022-03-01", "YYYY-MM-DD").startOf("day").fromNow()}
+              image={data.image}
+              lat={data.location["latitude"]}
+              long={data.location["longitude"]}
+              time={moment(data.creation_date, "YYYY-MM-DD")
+                .startOf("day")
+                .fromNow()}
             />
           );
         })}

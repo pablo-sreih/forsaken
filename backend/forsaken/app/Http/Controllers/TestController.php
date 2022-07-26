@@ -12,10 +12,10 @@ class TestController extends Controller
                 "id" => 1,
                 "location" => [
                     "id" => 1,
-                    "latitude" => "12.12",
-                    "longitude" => "12.13",
-                    "avg_emf_reading" => "90",
-                    "avg_rating"=> "14"
+                    "latitude" => 12.12,
+                    "longitude" => 12.13,
+                    "avg_emf_reading" => 90,
+                    "avg_rating"=> 14
                 ],
                 "user_id"=> 11,
                 "location_id"=> 5,
@@ -28,14 +28,14 @@ class TestController extends Controller
                     "id"=> 2,
                 "location" => [
                     "id"=> 1,
-                    "latitude"=> "12.12",
-                    "longitude"=> "12.13",
-                    "avg_emf_reading"=> "90",
-                    "avg_rating"=> "14"
+                    "latitude"=> 35.12,
+                    "longitude"=> 35.13,
+                    "avg_emf_reading"=> 90,
+                    "avg_rating"=> 14
                 ],
                 "location_id"=> 5,
                 "user_id"=> 8,
-                "creation_date"=> "2022-03-01",
+                "creation_date"=> "2022-07-01",
                 "caption"=> "Test",
                 "image"=> "https://cdn.wallpapersafari.com/29/46/EVshyr.jpg",
                 "total_likes"=> 5
