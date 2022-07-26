@@ -66,3 +66,4 @@ Route::post('/addFollower', [FollowingController::class, 'addFollower']);
 Route::post('/getFollowers', [UserFollowingController::class, 'getFollowers']);
 
 Route::get('/testAPI', [TestController::class, 'testAPI']);
+Route::get('/testGetAllLocations', [TestController::class, 'testGetAllLocations']);

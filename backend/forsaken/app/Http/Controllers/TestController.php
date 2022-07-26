@@ -64,5 +64,29 @@ class TestController extends Controller
                     ]
             ];
         return response()->json($posts);
+
+        }
+
+    public function testGetAllLocations() {
+        $locations = [
+            [
+                "id" => 1,
+                "name" => "Ain Sofar Train Station",
+                "city" => "Saoufar, Lebanon",
+                "latitude" => 33.80,
+                "longitude" => 35.70,
+                "avg_emf_reading" => 60,
+                "avg_rating" => 4.0,
+            ],
+            [
+                "id" => 2,
+                "name" => "Bhamdoun Synagogue",
+                "city" => "Bhamdoun, Lebanon",
+                "latitude" => 33.80, 
+                "longitude" => 35.66,
+                "avg_emf_reading" => 80,
+                "avg_rating" => 4.5,
+            ]
+        ];
     }
 }
