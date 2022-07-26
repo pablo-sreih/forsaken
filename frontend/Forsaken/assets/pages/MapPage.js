@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
 
-export default function MapPage() {
+export default function MapPage(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -52,6 +52,13 @@ export default function MapPage() {
                 longitude: data.longitude,
               }}
               draggable={false}
+              onPress={() =>
+                props.navigation.navigate("Location", {
+                  name: data.name,
+                  city: data.city,
+                  description: data.description,
+                })
+              }
             ></Marker>
           );
         })}

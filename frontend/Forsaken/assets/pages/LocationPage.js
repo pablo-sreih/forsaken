@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { useFonts } from "expo-font";
 import { Rating } from "react-native-ratings";
 
-export default function LocationPage() {
+export default function LocationPage({ route }) {
   const rateImage = require("../images/circleRating.png");
 
   const [loaded] = useFonts({
@@ -24,8 +24,8 @@ export default function LocationPage() {
       <Header name="LOCATION" />
       <View style={styles.reviewContainer}>
         <View>
-          <Text style={styles.locationName}>HARDER HALL</Text>
-          <Text style={styles.location}>Beirut, Lebanon</Text>
+          <Text style={styles.locationName}>{route.params.name}</Text>
+          <Text style={styles.location}>{route.params.city}</Text>
         </View>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.addReviewText}>Add Review</Text>
@@ -44,12 +44,7 @@ export default function LocationPage() {
         />
       </View>
       <View>
-        <Text style={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper. Egestas integer eget aliquet
-          nibh praesent tristique magna sit amet.
-        </Text>
+        <Text style={styles.description}>{route.params.description}</Text>
       </View>
     </View>
   );
@@ -78,7 +73,6 @@ const styles = StyleSheet.create({
   location: {
     fontFamily: "montserratRegular",
     fontSize: 12,
-    marginTop: -4,
   },
 
   button: {

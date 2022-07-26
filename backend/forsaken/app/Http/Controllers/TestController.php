@@ -77,6 +77,7 @@ class TestController extends Controller
                 "longitude" => 35.70,
                 "avg_emf_reading" => 60,
                 "avg_rating" => 4.0,
+                "description" => "Sofar holds an amazing amount of history. The train station, dating back to the 1960s, was taken by travelers coming from Beirut to visit the Grand Sofar Hotel, famous for its notorious casinos and nightclubs."
             ],
             [
                 "id" => 2,
@@ -86,6 +87,7 @@ class TestController extends Controller
                 "longitude" => 35.66,
                 "avg_emf_reading" => 80,
                 "avg_rating" => 4.5,
+                "description" => "Known as 'The Last Temple', this place of worship belonged to the Lebanese Jewish Community and was built in the early 20th century."
             ],
             [
                 "id" => 3,
@@ -95,6 +97,7 @@ class TestController extends Controller
                 "longitude" => 35.49,
                 "avg_emf_reading" => 70,
                 "avg_rating" => 3.9,
+                "description" => "An abandoned palace situated Zokak el-Blat. According to a source, the palace has been abandoned for a long time and is now occupied by a carpenter who claims to pay rent to the Municipality."
             ],
             [
                 "id" => 4,
@@ -104,6 +107,7 @@ class TestController extends Controller
                 "longitude" => 35.71,
                 "avg_emf_reading" => 120,
                 "avg_rating" => 4.7,
+                "description" => "A beautiful hotel that was built in the 1930s and damaged by the war. With plans to renovate the hotel, the place still stands as one of the biggest abandoned hotels in the country."
             ],
             [
                 "id" => 5,
@@ -113,6 +117,7 @@ class TestController extends Controller
                 "longitude" => 35.66,
                 "avg_emf_reading" => 230,
                 "avg_rating" => 4.9,
+                "description" => "Another hotel that will give you the creeps. This place dates back to the 1960s and is famous for its theatre and indoor cinema."
             ],
             [
                 "id" => 6,
@@ -122,6 +127,7 @@ class TestController extends Controller
                 "longitude" => 35.65,
                 "avg_emf_reading" => 68,
                 "avg_rating" => 3.6,
+                "description" => "Dominating Batroun's skyline, this place was originally intended to be an aquarium but was stalled by the civil war."
             ],
             [
                 "id" => 7,
@@ -131,6 +137,7 @@ class TestController extends Controller
                 "longitude" => 35.60,
                 "avg_emf_reading" => 83,
                 "avg_rating" => 3.9,
+                "description" => "This iconic kids park closed in the 90s but all games remain until today."
             ],
             [
                 "id" => 8,
@@ -140,6 +147,7 @@ class TestController extends Controller
                 "longitude" => 35.69,
                 "avg_emf_reading" => 56,
                 "avg_rating" => 4.2,
+                "description" => "Built in 1909 by Alfred Bey Sursock as a gift to his wife, Donna Maria Teresa Serra, the villa looks like a fairytale castle complete with turrets. It is located above the municipality building in Sofar on a hill overlooking the old Damascus Road. Although Villa Donna Maria suffered damage during the Civil War, some restoration work has begun and its spectacular garden is now used as a venue for weddings and parties."
             ],
             [
                 "id" => 9,
@@ -149,6 +157,7 @@ class TestController extends Controller
                 "longitude" => 35.59,
                 "avg_emf_reading" => 90,
                 "avg_rating" => 4.4,
+                "description" => "Forming part of the Aley district, the village of Kfar Aamay was once home to no fewer than seven silk factories. Most were destroyed during times of conflict and this particular factory, owned by the Assaf family, was abandoned around 1914. It has since been partially renovated from the inside for personal use by the descendants of the family."
             ],
             [
                 "id" => 10,
@@ -158,6 +167,7 @@ class TestController extends Controller
                 "longitude" => 35.59,
                 "avg_emf_reading" => 130,
                 "avg_rating" => 4.7,
+                "description" => "Also known as the Gebeily Hotel, the Grand Aley was built by a wealthy family from Beirut in 1926 on a hill overlooking the main road of the city of Aley in Mount Lebanon. The hotel was highly regarded for hosting lively parties, gambling, exclusive fashion shows and many other events, which attracted people like Farid Al Atrash and Umm Kulthum. It was also renowned for serving superb French cuisine. During World War Two, however, it became a military base after which it reopened its doors only to be closed again with the onset of the Lebanese Civil War in 1975."
             ]
         ];
 
