@@ -4,13 +4,13 @@ import { Marker } from "react-native-maps";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-export default function MapPageByLocation() {
+export default function MapPageByLocation({ route }) {
   return (
     <View style={styles.container}>
       <MapView
         initialRegion={{
-          latitude: 33.8547,
-          longitude: 35.8623,
+          latitude: route.params.lat,
+          longitude: route.params.long,
           latitudeDelta: 1,
           longitudeDelta: 1,
         }}
@@ -20,8 +20,8 @@ export default function MapPageByLocation() {
         <Marker
           title="Beirut"
           coordinate={{
-            latitude: 33.8547,
-            longitude: 35.8623,
+            latitude: route.params.lat,
+            longitude: route.params.long,
           }}
           draggable={true}
         ></Marker>

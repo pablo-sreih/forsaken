@@ -1,11 +1,11 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, Image } from "react-native";
 import { View, Text } from "react-native";
 import { useFonts } from "expo-font";
 import FollowButton from "./FollowButton";
 import { Icon } from "react-native-elements";
 import { useState } from "react";
 
-export default function Card({ navigation }) {
+export default function Card(props) {
   const [color, setColor] = useState("black");
 
   const [loaded] = useFonts({
@@ -26,13 +26,18 @@ export default function Card({ navigation }) {
         <View style={styles.profile}></View>
         <View style={styles.profileInfo}>
           <Text style={styles.name}>John Doe</Text>
-          <Text style={styles.time}>20min ago</Text>
+          <Text style={styles.time}>{props.time}</Text>
         </View>
         <View style={{ marginRight: 20 }}>
           <FollowButton />
         </View>
       </View>
-      <View style={styles.container}></View>
+      <View style={styles.container}>
+        <Image
+          style={{ flex: 1, resizeMode: "cover", borderRadius: 12 }}
+          source={{ uri: props.image }}
+        />
+      </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomTextContainer}>
           <Text style={styles.locationName}>Harder Hall</Text>
@@ -51,13 +56,18 @@ export default function Card({ navigation }) {
             <Icon name="share" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Location")}
+            onPress={() => props.navigation.navigate("Location")}
             style={styles.iconContainer}
           >
             <Icon name="info" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("MapByLocation")}
+            onPress={() =>
+              props.navigation.navigate("MapByLocation", {
+                lat: props.lat,
+                long: props.long,
+              })
+            }
             style={styles.iconContainer}
           >
             <Icon name="room" />
