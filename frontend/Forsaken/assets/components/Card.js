@@ -40,8 +40,8 @@ export default function Card(props) {
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomTextContainer}>
-          <Text style={styles.locationName}>Harder Hall</Text>
-          <Text style={styles.location}>Beirut, Lebanon</Text>
+          <Text style={styles.locationName}>{props.name}</Text>
+          <Text style={styles.location}>{props.city}</Text>
         </View>
         <View style={styles.icons}>
           <TouchableOpacity
@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
   locationName: {
     fontSize: 15,
     fontFamily: "montserratBold",
+    flexWrap: "wrap",
   },
 
   location: {

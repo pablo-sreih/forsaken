@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import { Component } from "react";
 
 export default function FeedPage({ navigation }) {
   const [data, setData] = useState([]);
@@ -23,10 +24,11 @@ export default function FeedPage({ navigation }) {
     })
       .then((response) => response.json())
       .then((response) => {
+        const array = [];
         for (let i = 0; i < response.length; i++) {
-          setData([...data, response[i]]);
+          array.push(response[i]);
         }
-        console.log(data);
+        setData(array);
       });
   }
 
@@ -64,6 +66,8 @@ export default function FeedPage({ navigation }) {
               time={moment(data.creation_date, "YYYY-MM-DD")
                 .startOf("day")
                 .fromNow()}
+              name={data.location["name"]}
+              city={data.location["city"]}
             />
           );
         })}

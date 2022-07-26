@@ -12,34 +12,56 @@ class TestController extends Controller
                 "id" => 1,
                 "location" => [
                     "id" => 1,
-                    "latitude" => 12.12,
-                    "longitude" => 12.13,
+                    "name" => "Moundsville",
+                    "city" => "West Virginia, U.S.",
+                    "latitude" => 39.0,
+                    "longitude" => -80.5,
                     "avg_emf_reading" => 90,
-                    "avg_rating"=> 14
+                    "avg_rating"=> 3.8
                 ],
                 "user_id"=> 11,
                 "location_id"=> 5,
                 "creation_date"=> "2022-03-01",
                 "caption"=> "Test",
-                "image"=> "https://cdn.wallpapersafari.com/29/46/EVshyr.jpg",
+                "image"=> "https://thumbor.thedailymeal.com/pe1zAOfjSXLQdXC81Xy5Ndn2_mQ=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/uploads/1/14_Gulliver's%20Kingdom_FLcirk_edit.jpg",
                 "total_likes"=> 13
                 ],
                 [
                     "id"=> 2,
                 "location" => [
                     "id"=> 1,
-                    "latitude"=> 35.12,
-                    "longitude"=> 35.13,
-                    "avg_emf_reading"=> 90,
-                    "avg_rating"=> 14
+                    "name" => "Dolls Island",
+                    "city" => "Mexico",
+                    "latitude"=> 19.43,
+                    "longitude"=> -99.13,
+                    "avg_emf_reading"=> 230,
+                    "avg_rating"=> 4.5
                 ],
                 "location_id"=> 5,
                 "user_id"=> 8,
                 "creation_date"=> "2022-07-01",
                 "caption"=> "Test",
-                "image"=> "https://cdn.wallpapersafari.com/29/46/EVshyr.jpg",
-                "total_likes"=> 5
-                ]
+                "image"=> "https://thumbor.thedailymeal.com/tB7uXTA17gwKykDsP0EyhLxFKFY=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/uploads/1/12_Island%20of%20the%20dolls_Slide_edit.jpg",
+                "total_likes"=> 53
+                ],
+                [
+                    "id" => 1,
+                    "location" => [
+                        "id" => 1,
+                        "name" => "Moundsville",
+                        "city" => "West Virginia, U.S.",
+                        "latitude" => 39.0,
+                        "longitude" => -80.5,
+                        "avg_emf_reading" => 90,
+                        "avg_rating"=> 3.8
+                    ],
+                    "user_id"=> 11,
+                    "location_id"=> 5,
+                    "creation_date"=> "2022-03-01",
+                    "caption"=> "Test",
+                    "image"=> "https://thumbor.thedailymeal.com/pe1zAOfjSXLQdXC81Xy5Ndn2_mQ=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/uploads/1/14_Gulliver's%20Kingdom_FLcirk_edit.jpg",
+                    "total_likes"=> 13
+                    ]
             ];
         return response()->json($posts);
     }
