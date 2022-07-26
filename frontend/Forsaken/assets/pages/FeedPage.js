@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 export default function FeedPage({ navigation }) {
   const [images, setImages] = useState([]);
@@ -60,6 +61,7 @@ export default function FeedPage({ navigation }) {
               image={image}
               lat={35.12}
               long={35.13}
+              time={moment("2022-03-01", "YYYY-MM-DD").startOf("day").fromNow()}
             />
           );
         })}
