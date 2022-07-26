@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function Card(props) {
   const [color, setColor] = useState("black");
-
+  const [likes, setLikes] = useState(props.likes);
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -37,6 +37,16 @@ export default function Card(props) {
           style={{ flex: 1, resizeMode: "cover", borderRadius: 12 }}
           source={{ uri: props.image }}
         />
+        <View style={styles.infoContainer}>
+          <View style={styles.infoChild}>
+            <Icon name="favorite" color={"red"} size={14} />
+            <Text style={styles.infoText}>{likes}</Text>
+          </View>
+          <View style={styles.infoChild}>
+            <Icon name="track-changes" color={"black"} size={14} />
+            <Text style={styles.infoText}>{props.emf}</Text>
+          </View>
+        </View>
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomTextContainer}>
@@ -46,7 +56,9 @@ export default function Card(props) {
         <View style={styles.icons}>
           <TouchableOpacity
             onPress={() => {
-              color === "black" ? setColor("red") : setColor("black");
+              color === "black"
+                ? (setColor("red"), setLikes(likes + 1))
+                : (setColor("black"), setLikes(likes - 1));
             }}
             style={styles.iconContainer}
           >
@@ -74,14 +86,16 @@ export default function Card(props) {
           </TouchableOpacity>
         </View>
       </View>
-      <View>
+
+      {/* <View>
         <TouchableOpacity style={styles.commentTextContainer}>
           <Icon name="chevron-right" />
           <Text style={{ fontFamily: "montserratSemiBold", fontSize: 15 }}>
             Comments
           </Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
+      <View style={styles.borderLine}></View>
     </View>
   );
 }
@@ -175,5 +189,36 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
+  },
+
+  borderLine: {
+    marginTop: 30,
+    marginBottom: 10,
+    alignSelf: "center",
+    width: "60%",
+    borderBottomWidth: 1,
+    borderBottomColor: "lightgray",
+  },
+
+  infoChild: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 5,
+    marginRight: 5,
+  },
+
+  infoContainer: {
+    padding: 5,
+    backgroundColor: "white",
+    borderRadius: 8,
+    position: "absolute",
+    flexDirection: "row",
+    margin: 9,
+  },
+
+  infoText: {
+    marginLeft: 5,
+    fontFamily: "montserratRegular",
+    fontSize: 13,
   },
 });

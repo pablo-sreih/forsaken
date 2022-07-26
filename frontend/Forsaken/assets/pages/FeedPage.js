@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View, Switch } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import { Component } from "react";
 
 export default function FeedPage({ navigation }) {
   const [data, setData] = useState([]);
@@ -68,6 +67,8 @@ export default function FeedPage({ navigation }) {
                 .fromNow()}
               name={data.location["name"]}
               city={data.location["city"]}
+              likes={data.total_likes}
+              emf={data.location["avg_emf_reading"]}
             />
           );
         })}
@@ -80,5 +81,6 @@ export default function FeedPage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom: 50,
   },
 });
