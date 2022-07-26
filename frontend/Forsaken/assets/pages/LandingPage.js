@@ -11,7 +11,7 @@ import {
   Dimensions,
 } from "react-native";
 import { useFonts } from "expo-font/build/FontHooks";
-import { Video, AVPlaybackStatus } from "expo-av";
+import { Video } from "expo-av";
 
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     width: "65%",
     resizeMode: "contain",
     alignSelf: "center",
-    opacity: 0.85,
+    opacity: 0.8,
   },
 
   buttons: {
