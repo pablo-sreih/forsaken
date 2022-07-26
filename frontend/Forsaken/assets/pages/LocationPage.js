@@ -39,7 +39,7 @@ export default function LocationPage({ route }) {
           ratingCount={5}
           imageSize={8}
           readonly={true}
-          startingValue={3.5}
+          startingValue={route.params.rating}
           style={{ alignSelf: "flex-start", marginLeft: 20, marginTop: 3 }}
         />
       </View>

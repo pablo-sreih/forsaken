@@ -57,6 +57,7 @@ export default function MapPage(props) {
                   name: data.name,
                   city: data.city,
                   description: data.description,
+                  rating: data.avg_rating,
                 })
               }
             ></Marker>
