@@ -19,6 +19,14 @@ class TestController extends Controller
                     "avg_emf_reading" => 90,
                     "avg_rating"=> 3.8
                 ],
+                "user" => [
+                    "id" => 1,
+                    "name" => "Charbel Daoud",
+                    "email" => "charbeld@sefactory.io",
+                    "about" => "test",
+                    "is_admin" => 1,
+                    "profile_pic" => "https://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg"
+                ],
                 "user_id"=> 11,
                 "location_id"=> 5,
                 "creation_date"=> "2022-03-01",
@@ -37,6 +45,14 @@ class TestController extends Controller
                     "avg_emf_reading"=> 230,
                     "avg_rating"=> 4.5
                 ],
+                "user" => [
+                    "id" => 1,
+                    "name" => "Charbel Daoud",
+                    "email" => "charbeld@sefactory.io",
+                    "about" => "test",
+                    "is_admin" => 1,
+                    "profile_pic" => "https://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg"
+                ],
                 "location_id"=> 5,
                 "user_id"=> 8,
                 "creation_date"=> "2022-07-01",
@@ -54,6 +70,14 @@ class TestController extends Controller
                         "longitude" => -80.5,
                         "avg_emf_reading" => 90,
                         "avg_rating"=> 3.8
+                    ],
+                    "user" => [
+                        "id" => 1,
+                        "name" => "Charbel Daoud",
+                        "email" => "charbeld@sefactory.io",
+                        "about" => "test",
+                        "is_admin" => 1,
+                        "profile_pic" => "https://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg"
                     ],
                     "user_id"=> 11,
                     "location_id"=> 5,

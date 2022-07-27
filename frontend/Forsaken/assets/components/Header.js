@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   modal: {
     flexDirection: "column",
     width: "90%",
-    height: "60%",
+    height: "32%",
     backgroundColor: "black",
     borderRadius: 20,
     padding: 20,

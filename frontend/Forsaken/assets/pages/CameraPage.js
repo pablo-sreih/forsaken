@@ -108,14 +108,14 @@ export default function CameraPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
   },
   buttonContainer: {
-    alignSelf: "flex-end",
+    // alignSelf: "flex-end",
     position: "absolute",
-    marginBottom: 90,
+    marginTop: "100%",
   },
   preview: {
     alignSelf: "stretch",

@@ -28,6 +28,7 @@ export default function FeedPage({ navigation }) {
           array.push(response[i]);
         }
         setData(array);
+        console.log(array);
       });
   }
 
@@ -60,6 +61,7 @@ export default function FeedPage({ navigation }) {
               key={index}
               navigation={navigation}
               image={data.image}
+              prof={data.user["profile_pic"]}
               lat={data.location["latitude"]}
               long={data.location["longitude"]}
               time={moment(data.creation_date, "YYYY-MM-DD")
@@ -69,6 +71,7 @@ export default function FeedPage({ navigation }) {
               city={data.location["city"]}
               likes={data.total_likes}
               emf={data.location["avg_emf_reading"]}
+              prof_name={data.user["name"]}
             />
           );
         })}

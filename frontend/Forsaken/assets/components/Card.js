@@ -23,9 +23,14 @@ export default function Card(props) {
   return (
     <View>
       <View style={styles.profileContainer}>
-        <View style={styles.profile}></View>
+        <View style={styles.profile}>
+          <Image
+            source={{ uri: props.prof }}
+            style={{ flex: 1, resizeMode: "cover", borderRadius: 100 }}
+          />
+        </View>
         <View style={styles.profileInfo}>
-          <Text style={styles.name}>John Doe</Text>
+          <Text style={styles.name}>{props.prof_name}</Text>
           <Text style={styles.time}>{props.time}</Text>
         </View>
         <View style={{ marginRight: 20 }}>

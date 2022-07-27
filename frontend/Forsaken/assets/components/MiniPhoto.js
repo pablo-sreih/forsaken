@@ -11,7 +11,6 @@ import {
   ImageBackground,
 } from "react-native";
 import { useState } from "react";
-import { BlurView, VibrancyView } from "@react-native-community/blur";
 
 const image = require("../images/back.jpg");
 const windowWidth = Dimensions.get("screen").width;
