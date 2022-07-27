@@ -9,11 +9,13 @@ import TabNavigator from "./assets/navigation/TabNavigator";
 import LocationPage from "./assets/pages/LocationPage";
 import ProfilePage from "./assets/pages/ProfilePage";
 import InitialNavigator from "./assets/navigation/InitialNavigator";
+import AddReview from "./assets/pages/AddReview";
 
 export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
+        {/* <AddReview /> */}
         <TabNavigator />
         {/* <InitialNavigator /> */}
         {/* <LocationPage/> */}

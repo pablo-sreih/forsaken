@@ -11,6 +11,7 @@ import FeedPage from "../pages/FeedPage";
 import CameraPage from "../pages/CameraPage";
 import LocationPage from "../pages/LocationPage";
 import MapPageByLocation from "../pages/MapPageByLocation";
+import AddReview from "../pages/AddReview";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -21,6 +22,7 @@ function StackNavigator() {
       <Stack.Screen name="Feed" component={FeedPage} />
       <Stack.Screen name="Location" component={LocationPage} />
       <Stack.Screen name="MapByLocation" component={MapPageByLocation} />
+      <Stack.Screen name="Review" component={AddReview} />
     </Stack.Navigator>
   );
 }

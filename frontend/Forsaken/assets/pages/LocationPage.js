@@ -12,7 +12,7 @@ import { useFonts } from "expo-font";
 import { Rating } from "react-native-ratings";
 import MiniPhoto from "../components/MiniPhoto";
 
-export default function LocationPage({ route }) {
+export default function LocationPage({ route, navigation }) {
   const rateImage = require("../images/circleRating.png");
 
   const [loaded] = useFonts({
@@ -36,7 +36,10 @@ export default function LocationPage({ route }) {
             <Text style={styles.locationName}>{route.params.name}</Text>
             <Text style={styles.location}>{route.params.city}</Text>
           </View>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Review")}
+            style={styles.button}
+          >
             <Text style={styles.addReviewText}>Add Review</Text>
           </TouchableOpacity>
         </View>

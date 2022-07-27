@@ -71,8 +71,12 @@ export default function CameraPage() {
           source={{ uri: "data:image/jpg;base64," + photo.base64 }}
         />
         <View style={styles.buttonContainer}>
-          <TouchableOpacity title="Share" onPress={sharePic}>
-            <Icon name="share" />
+          <TouchableOpacity
+            title="Share"
+            onPress={sharePic}
+            style={styles.share}
+          >
+            <Icon name="share" color={"black"} />
           </TouchableOpacity>
           {hasMediaLibraryPermission ? (
             <TouchableOpacity title="Save" onPress={savePhoto} />
@@ -110,6 +114,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     alignSelf: "flex-end",
+    position: "absolute",
     marginBottom: 90,
   },
   preview: {
@@ -118,5 +123,11 @@ const styles = StyleSheet.create({
   },
   view: {
     flex: 1,
+  },
+  share: {
+    padding: 5,
+    backgroundColor: "white",
+    borderRadius: 5,
+    marginBottom: 100,
   },
 });

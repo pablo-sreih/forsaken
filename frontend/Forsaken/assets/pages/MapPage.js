@@ -13,7 +13,7 @@ export default function MapPage(props) {
   }, []);
 
   async function getData() {
-    await fetch("http://192.168.0.103:8000/api/testGetAllLocations", {
+    await fetch("http://192.168.8.139:8000/api/testGetAllLocations", {
       method: "GET",
       headers: {
         Accept: "application/json",
