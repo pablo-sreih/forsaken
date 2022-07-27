@@ -44,7 +44,7 @@ export default function ProfilePage() {
       </View>
       <Text style={styles.profileName}>{name}</Text>
       <View style={{ marginTop: 10, alignSelf: "center" }}>
-        <FollowButton />
+        {/* <FollowButton /> */}
       </View>
       <View style={styles.profileInfo}>
         <View style={styles.infoContainer}>
@@ -101,8 +101,10 @@ const styles = StyleSheet.create({
 
   profileInfo: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     marginTop: 10,
+    marginLeft: 20,
+    marginRight: 20,
   },
 
   infoContainer: {
@@ -128,11 +130,10 @@ const styles = StyleSheet.create({
   },
 
   photosContainer: {
-    flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    marginLeft: 17,
-    marginRight: 17,
     marginTop: 10,
+    marginLeft: 20,
+    marginRight: 20,
   },
 });
