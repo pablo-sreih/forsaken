@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
   profileInfo: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
   },
