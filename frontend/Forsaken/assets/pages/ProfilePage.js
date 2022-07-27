@@ -36,42 +36,44 @@ export default function ProfilePage() {
   return (
     <View style={styles.container}>
       <Header name="PROFILE" />
-      <View style={styles.profilePicContainer}>
-        <Image
-          style={{ flex: 1, resizeMode: "cover", borderRadius: 100 }}
-          source={{ uri: profilePic }}
-        />
-      </View>
-      <Text style={styles.profileName}>{name}</Text>
-      <View style={{ marginTop: 10, alignSelf: "center" }}>
-        {/* <FollowButton /> */}
-      </View>
-      <View style={styles.profileInfo}>
-        <View style={styles.infoContainer}>
-          <Text style={styles.numbers}>980</Text>
-          <Text style={styles.category}>Followers</Text>
+      <ScrollView contentContainerStyle={{ marginTop: 10, paddingBottom: 100 }}>
+        <View style={styles.profilePicContainer}>
+          <Image
+            style={{ flex: 1, resizeMode: "cover", borderRadius: 100 }}
+            source={{ uri: profilePic }}
+          />
         </View>
-        <View style={styles.infoContainer}>
-          <Text style={styles.numbers}>1412</Text>
-          <Text style={styles.category}>Posts</Text>
+        <Text style={styles.profileName}>{name}</Text>
+        <View style={{ marginTop: 10, alignSelf: "center" }}>
+          {/* <FollowButton /> */}
         </View>
-        <View style={styles.infoContainer}>
-          <Text style={styles.numbers}>312</Text>
-          <Text style={styles.category}>Following</Text>
+        <View style={styles.profileInfo}>
+          <View style={styles.infoContainer}>
+            <Text style={styles.numbers}>980</Text>
+            <Text style={styles.category}>Followers</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.numbers}>1412</Text>
+            <Text style={styles.category}>Posts</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.numbers}>312</Text>
+            <Text style={styles.category}>Following</Text>
+          </View>
         </View>
-      </View>
-      <View>
-        <Text style={styles.description}>{about}</Text>
-      </View>
-      <ScrollView contentContainerStyle={styles.photosContainer}>
-        <MiniPhoto />
-        <MiniPhoto />
-        <MiniPhoto />
-        <MiniPhoto />
-        <MiniPhoto />
-        <MiniPhoto />
-        <MiniPhoto />
-        <MiniPhoto />
+        <View>
+          <Text style={styles.description}>{about}</Text>
+        </View>
+        <View style={styles.photosContainer}>
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+        </View>
       </ScrollView>
     </View>
   );
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
   profileInfo: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 10,
+    // marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
   },
@@ -124,15 +126,16 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: "montserratRegular",
     fontSize: 12,
+    textAlign: "justify",
     marginRight: 20,
     marginLeft: 20,
     marginTop: 15,
+    marginBottom: 15,
   },
 
   photosContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
   },
