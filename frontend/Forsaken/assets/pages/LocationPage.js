@@ -1,8 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from "react-native";
 import Header from "../components/Header";
 import { useFonts } from "expo-font";
 import { Rating } from "react-native-ratings";
+import MiniPhoto from "../components/MiniPhoto";
 
 export default function LocationPage({ route }) {
   const rateImage = require("../images/circleRating.png");
@@ -22,30 +30,42 @@ export default function LocationPage({ route }) {
   return (
     <View style={styles.container}>
       <Header name="LOCATION" />
-      <View style={styles.reviewContainer}>
-        <View>
-          <Text style={styles.locationName}>{route.params.name}</Text>
-          <Text style={styles.location}>{route.params.city}</Text>
+      <ScrollView contentContainerStyle={{ marginTop: 10, paddingBottom: 100 }}>
+        <View style={styles.reviewContainer}>
+          <View>
+            <Text style={styles.locationName}>{route.params.name}</Text>
+            <Text style={styles.location}>{route.params.city}</Text>
+          </View>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.addReviewText}>Add Review</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.addReviewText}>Add Review</Text>
-        </TouchableOpacity>
-      </View>
-      <View>
-        <Rating
-          type="custom"
-          ratingImage={rateImage}
-          ratingBackgroundColor="#E4E4E4"
-          ratingCount={5}
-          imageSize={8}
-          readonly={true}
-          startingValue={route.params.rating}
-          style={{ alignSelf: "flex-start", marginLeft: 20, marginTop: 3 }}
-        />
-      </View>
-      <View>
-        <Text style={styles.description}>{route.params.description}</Text>
-      </View>
+        <View>
+          <Rating
+            type="custom"
+            ratingImage={rateImage}
+            ratingBackgroundColor="#E4E4E4"
+            ratingCount={5}
+            imageSize={8}
+            readonly={true}
+            startingValue={route.params.rating}
+            style={{ alignSelf: "flex-start", marginLeft: 20, marginTop: 3 }}
+          />
+        </View>
+        <View>
+          <Text style={styles.description}>{route.params.description}</Text>
+        </View>
+        <View style={styles.photosContainer}>
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+          <MiniPhoto />
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -95,5 +115,13 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginLeft: 20,
     marginTop: 15,
+  },
+
+  photosContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 10,
+    marginLeft: 20,
+    marginRight: 20,
   },
 });
