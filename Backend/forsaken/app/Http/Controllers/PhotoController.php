@@ -8,6 +8,13 @@ use App\Models\Photo_comment;
 
 class PhotoController extends Controller
 {
+    public function getPhotosByLoggedInUserId(Request $request) {
+        $user_id = auth()->user()->id;
+        
+
+    }
+
+
     public function addPhoto(Request $request) {
         $photo = new Photo();
         $user_id = auth()->user()->id;
