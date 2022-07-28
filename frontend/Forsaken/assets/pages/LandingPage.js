@@ -16,8 +16,8 @@ import { Video } from "expo-av";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
-const image = require("../images/back.jpg");
-const logo = require("../logos/logo_white.png");
+const image = require("../images/back2.jpg");
+const logo = require("../logos/FORSAKEN.png");
 const video = require("../videos/video.mp4");
 const { width, height } = Dimensions.get("window");
 
@@ -29,6 +29,8 @@ export default function LandingPage({ navigation }) {
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
     montserratBold: require("../fonts/Montserrat-Bold.ttf"),
+    montserratSemiBold: require("../fonts/Montserrat-SemiBold.ttf"),
+    montserratRegular: require("../fonts/Montserrat-Regular.ttf"),
   });
 
   if (!loaded) {
@@ -74,14 +76,16 @@ export default function LandingPage({ navigation }) {
           justifyContent: "space-between",
         }}
       >
-        <Video
+        {/* <Video
           style={styles.back}
           resizeMode="cover"
           source={video}
           shouldPlay={true}
           isLooping={true}
-        />
+        /> */}
+        <Image source={image} style={styles.back} />
         <Image source={logo} style={styles.logo} />
+        <Text style={styles.slogan}>It's like being Home Alone</Text>
         <View style={styles.buttons}>
           <TouchableOpacity
             onPress={() => setModalVisible(true)}
@@ -116,11 +120,11 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    marginTop: -20,
-    width: "65%",
+    marginTop: 60,
+    width: 170,
+    height: 170,
     resizeMode: "contain",
     alignSelf: "center",
-    opacity: 0.8,
   },
 
   buttons: {
@@ -129,7 +133,7 @@ const styles = StyleSheet.create({
 
   button: {
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: "white",
     padding: 15,
     width: "60%",
     alignSelf: "center",
@@ -138,7 +142,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: "white",
+    color: "black",
     fontSize: 20,
     fontFamily: "montserratBold",
   },
@@ -164,5 +168,14 @@ const styles = StyleSheet.create({
     fontFamily: "montserratBold",
     marginBottom: 30,
     alignSelf: "center",
+  },
+
+  slogan: {
+    fontSize: 14,
+    fontFamily: "montserratRegular",
+    marginTop: -320,
+    alignSelf: "center",
+    color: "white",
+    textAlign: "center",
   },
 });

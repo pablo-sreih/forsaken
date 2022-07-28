@@ -26,7 +26,7 @@ export default function AddReview(props) {
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <Header name="ADD REVIEW" />
-      <Text style={styles.title}>Harder Hall</Text>
+      <Text style={styles.title}>{props.name}</Text>
       <View>
         <Rating
           type="custom"
