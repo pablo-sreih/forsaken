@@ -10,13 +10,15 @@ import LocationPage from "./assets/pages/LocationPage";
 import ProfilePage from "./assets/pages/ProfilePage";
 import InitialNavigator from "./assets/navigation/InitialNavigator";
 import AddReview from "./assets/pages/AddReview";
+import EditProfile from "./assets/pages/EditProfile";
 
 export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
+        <EditProfile />
         {/* <AddReview /> */}
-        <TabNavigator />
+        {/* <TabNavigator /> */}
         {/* <InitialNavigator /> */}
         {/* <LocationPage/> */}
         {/* <ProfilePage /> */}
