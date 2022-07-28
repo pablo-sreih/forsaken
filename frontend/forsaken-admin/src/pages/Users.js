@@ -1,5 +1,5 @@
 import React from "react";
-import img0 from "../assets/images/profile pictures/0.jfif";
+import img0 from "../assets/images/profile pictures/0.jpg";
 import img1 from "../assets/images/profile pictures/1.jpg";
 import img2 from "../assets/images/profile pictures/2.jpg";
 import img3 from "../assets/images/profile pictures/3.jpg";

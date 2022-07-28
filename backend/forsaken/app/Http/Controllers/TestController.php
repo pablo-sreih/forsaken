@@ -21,11 +21,11 @@ class TestController extends Controller
                 ],
                 "user" => [
                     "id" => 1,
-                    "name" => "Charbel Daoud",
+                    "name" => "Vladimir Mawla",
                     "email" => "charbeld@sefactory.io",
                     "about" => "test",
                     "is_admin" => 1,
-                    "profile_pic" => "https://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg"
+                    "profile_pic" => "https://randomuser.me/api/portraits/men/81.jpg"
                 ],
                 "user_id"=> 11,
                 "location_id"=> 5,
@@ -47,11 +47,11 @@ class TestController extends Controller
                 ],
                 "user" => [
                     "id" => 1,
-                    "name" => "Charbel Daoud",
+                    "name" => "Candy Sbeih",
                     "email" => "charbeld@sefactory.io",
                     "about" => "test",
                     "is_admin" => 1,
-                    "profile_pic" => "https://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg"
+                    "profile_pic" => "https://randomuser.me/api/portraits/women/2.jpg"
                 ],
                 "location_id"=> 5,
                 "user_id"=> 8,
@@ -64,8 +64,8 @@ class TestController extends Controller
                     "id" => 1,
                     "location" => [
                         "id" => 1,
-                        "name" => "Moundsville",
-                        "city" => "West Virginia, U.S.",
+                        "name" => "Sidney",
+                        "city" => "Australia",
                         "latitude" => 39.0,
                         "longitude" => -80.5,
                         "avg_emf_reading" => 90,
@@ -73,17 +73,17 @@ class TestController extends Controller
                     ],
                     "user" => [
                         "id" => 1,
-                        "name" => "Charbel Daoud",
+                        "name" => "Hanady Nehme",
                         "email" => "charbeld@sefactory.io",
                         "about" => "test",
                         "is_admin" => 1,
-                        "profile_pic" => "https://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg"
+                        "profile_pic" => "https://randomuser.me/api/portraits/women/12.jpg"
                     ],
                     "user_id"=> 11,
                     "location_id"=> 5,
                     "creation_date"=> "2022-03-01",
                     "caption"=> "Test",
-                    "image"=> "https://thumbor.thedailymeal.com/pe1zAOfjSXLQdXC81Xy5Ndn2_mQ=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/uploads/1/14_Gulliver's%20Kingdom_FLcirk_edit.jpg",
+                    "image"=> "https://thumbor.thedailymeal.com/iW2RWY0pLO2N6J-gkPg5xv49fFk=/870x565/https://www.theactivetimes.com/sites/default/files/uploads/0/0-iStock-528919280_1.jpg",
                     "total_likes"=> 13
                     ]
             ];

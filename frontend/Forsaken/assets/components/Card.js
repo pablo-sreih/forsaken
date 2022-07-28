@@ -73,7 +73,12 @@ export default function Card(props) {
             <Icon name="share" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate("Location")}
+            onPress={() =>
+              props.navigation.navigate("Location", {
+                name: props.name,
+                city: props.city,
+              })
+            }
             style={styles.iconContainer}
           >
             <Icon name="info" />

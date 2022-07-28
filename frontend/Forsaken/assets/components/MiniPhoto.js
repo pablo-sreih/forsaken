@@ -12,17 +12,17 @@ import {
 } from "react-native";
 import { useState } from "react";
 
-const image = require("../images/back.jpg");
+const image = require("../images/abandonedplaces/1.jpg");
 const windowWidth = Dimensions.get("screen").width;
 
-export default function MiniPhoto() {
+export default function MiniPhoto(props) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <TouchableOpacity
       onPress={() => setModalVisible(true)}
       style={styles.container}
     >
-      <Image style={styles.image} source={image} />
+      <Image style={styles.image} source={props.image} />
       <Modal
         visible={modalVisible}
         animationType="slide"
@@ -38,7 +38,7 @@ export default function MiniPhoto() {
           <TouchableWithoutFeedback>
             <View style={styles.modal}>
               <View style={{ flex: 1 }}>
-                <Image source={image} style={styles.imageContainer} />
+                <Image source={props.image} style={styles.imageContainer} />
               </View>
             </View>
           </TouchableWithoutFeedback>

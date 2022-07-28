@@ -6,6 +6,15 @@ import MiniPhoto from "../components/MiniPhoto";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState, useEffect } from "react";
 
+const image = require("../images/abandonedplaces/1.jpg");
+const image1 = require("../images/abandonedplaces/2.jpg");
+const image2 = require("../images/abandonedplaces/3.jpg");
+const image3 = require("../images/abandonedplaces/4.jpg");
+const image4 = require("../images/abandonedplaces/5.jpg");
+const image5 = require("../images/abandonedplaces/6.jpg");
+const image6 = require("../images/abandonedplaces/7.jpg");
+const image7 = require("../images/abandonedplaces/8.jpg");
+
 export default function ProfilePage() {
   const [name, setName] = useState();
   const [about, setAbout] = useState();
@@ -65,14 +74,14 @@ export default function ProfilePage() {
           <Text style={styles.description}>{about}</Text>
         </View>
         <View style={styles.photosContainer}>
-          <MiniPhoto />
-          <MiniPhoto />
-          <MiniPhoto />
-          <MiniPhoto />
-          <MiniPhoto />
-          <MiniPhoto />
-          <MiniPhoto />
-          <MiniPhoto />
+          <MiniPhoto image={image} />
+          <MiniPhoto image={image1} />
+          <MiniPhoto image={image2} />
+          <MiniPhoto image={image3} />
+          <MiniPhoto image={image4} />
+          <MiniPhoto image={image5} />
+          <MiniPhoto image={image6} />
+          <MiniPhoto image={image7} />
         </View>
       </ScrollView>
     </View>
