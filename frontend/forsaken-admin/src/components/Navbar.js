@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 
 export default function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
-
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <div className="navbar"></div>
-        <nav className={"nav-menu active"}>
+        <nav className={"nav-menu"}>
           <ul className="nav-menu-items">
             {SidebarData.map((item, index) => {
               return (
