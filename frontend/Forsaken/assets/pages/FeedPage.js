@@ -14,7 +14,7 @@ export default function FeedPage({ navigation }) {
   }, []);
 
   async function getData() {
-    await fetch("http://192.168.8.139:8000/api/testAPI", {
+    await fetch("http://192.168.0.103:8000/api/testAPI", {
       method: "GET",
       headers: {
         Accept: "application/json",
