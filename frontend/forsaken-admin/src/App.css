@@ -10,9 +10,9 @@
 .home, .posts, .locations, .users {
   display: flex;
   height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  justify-content: flex-start;
+  margin-left: 250px;
+  font-size: 1rem;
 }
 
 .nav-menu {
@@ -71,4 +71,14 @@
 
 span {
   margin-left: 16px;
+}
+
+.card-container {
+  border: 0px solid black;
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #060b26;
+  color: white;
+  padding: 10px;
 }
