@@ -1,9 +1,12 @@
 import React from "react";
 
-export default function Card() {
+export default function Card(props) {
   return (
     <div className="card-container">
-      <h1>Users</h1>
+      <h2>{props.title}</h2>
+      <div className="card-info">
+        <h3>{props.info}</h3>
+      </div>
     </div>
   );
 }
