@@ -9,6 +9,7 @@ import image3 from "../assets/images/abandoned places/10.jpg";
 function Posts() {
   return (
     <div className="posts">
+      <h1>Pending Posts</h1>
       <table>
         <tr>
           <th className="first-tr">ID</th>

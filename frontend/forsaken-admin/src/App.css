@@ -13,6 +13,7 @@
   height: 90vh;
   font-size: 1rem;
   margin: 120px;
+  margin-top: 80px;
   margin-left: 300px;
   gap: 50px;
   align-items: center;
@@ -144,4 +145,10 @@ td img {
   height: 100px;
   width: 180px;
   border-radius: 10px;
+}
+
+.prof-img-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
 }
