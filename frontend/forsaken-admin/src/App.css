@@ -24,6 +24,7 @@
   height: 90vh;
   font-size: 1rem;
   margin: 120px;
+  margin-top: 50px;
   margin-left: 300px;
   gap: 50px;
 }
@@ -130,10 +131,6 @@ td button {
 
 td img {
   height: 100px;
-  width: 200px;
+  width: 180px;
   border-radius: 10px;
-}
-
-.first-tr {
-  gap: 10px;
 }
