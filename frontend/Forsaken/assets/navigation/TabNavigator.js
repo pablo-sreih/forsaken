@@ -13,6 +13,7 @@ import LocationPage from "../pages/LocationPage";
 import MapPageByLocation from "../pages/MapPageByLocation";
 import AddReview from "../pages/AddReview";
 import AddPost from "../pages/AddPost";
+import EditProfile from "../pages/EditProfile";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ function StackNavigator() {
       <Stack.Screen name="MapByLocation" component={MapPageByLocation} />
       <Stack.Screen name="Review" component={AddReview} />
       <Stack.Screen name="AddPost" component={AddPost} />
+      <Stack.Screen name="EditProfile" component={EditProfile} />
     </Stack.Navigator>
   );
 }

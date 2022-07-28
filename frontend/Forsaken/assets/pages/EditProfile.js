@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { useFonts } from "expo-font";
 import { TextInput } from "react-native";
 
-export default function EditProfile() {
+export default function EditProfile({ navigation }) {
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -89,6 +89,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 180,
     borderColor: "#24A0ED",
-    marginRight: 20,
   },
 });

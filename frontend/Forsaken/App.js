@@ -16,9 +16,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <EditProfile />
+        {/* <EditProfile /> */}
         {/* <AddReview /> */}
-        {/* <TabNavigator /> */}
+        <TabNavigator />
         {/* <InitialNavigator /> */}
         {/* <LocationPage/> */}
         {/* <ProfilePage /> */}
