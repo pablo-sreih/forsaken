@@ -1,9 +1,16 @@
 import React from "react";
+import * as MdIcons from "react-icons/md";
 
 function Locations() {
   return (
     <div className="locations">
       <h1>Locations</h1>
+      <button className="add-location-button">
+        <div>
+          <MdIcons.MdAddLocation size={20} />
+        </div>
+        <div style={{ fontSize: 15 }}>Add Location</div>
+      </button>
       <table>
         <tr>
           <th>ID</th>
