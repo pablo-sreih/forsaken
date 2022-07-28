@@ -12,6 +12,7 @@ import CameraPage from "../pages/CameraPage";
 import LocationPage from "../pages/LocationPage";
 import MapPageByLocation from "../pages/MapPageByLocation";
 import AddReview from "../pages/AddReview";
+import AddPost from "../pages/AddPost";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -23,6 +24,7 @@ function StackNavigator() {
       <Stack.Screen name="Location" component={LocationPage} />
       <Stack.Screen name="MapByLocation" component={MapPageByLocation} />
       <Stack.Screen name="Review" component={AddReview} />
+      <Stack.Screen name="AddPost" component={AddPost} />
     </Stack.Navigator>
   );
 }
@@ -63,11 +65,15 @@ export default function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Camera"
-        component={CameraPage}
+        name="AddPost"
+        component={AddPost}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Icon name="camera" size={35} color={focused ? "red" : "black"} />
+            <Icon
+              name="add-circle"
+              size={35}
+              color={focused ? "red" : "black"}
+            />
           ),
         }}
       />
