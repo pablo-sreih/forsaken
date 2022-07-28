@@ -17,7 +17,7 @@ function Posts() {
           <th>User</th>
         </tr>
         <tr>
-          <td>1</td>
+          <td>13</td>
           <td>
             <img src={image} />
           </td>
@@ -32,7 +32,7 @@ function Posts() {
           </td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>17</td>
           <td>
             <img src={image1} />
           </td>
@@ -47,7 +47,7 @@ function Posts() {
           </td>
         </tr>
         <tr>
-          <td>3</td>
+          <td>19</td>
           <td>
             <img src={image2} />
           </td>
@@ -62,11 +62,11 @@ function Posts() {
           </td>
         </tr>
         <tr>
-          <td>4</td>
+          <td>20</td>
           <td>
             <img src={image3} />
           </td>
-          <td>Charbel Daoud</td>
+          <td>Mohammad Jaffal</td>
           <td>
             <button className="check">
               <BsIcons.BsCheckLg />
