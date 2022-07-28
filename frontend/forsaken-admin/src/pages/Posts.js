@@ -3,7 +3,11 @@ import React from "react";
 function Posts() {
   return (
     <div className="posts">
-      <h1>Pending Posts</h1>
+      <table>
+        <th>ID</th>
+        <th>Picture</th>
+        <th>User</th>
+      </table>
     </div>
   );
 }
