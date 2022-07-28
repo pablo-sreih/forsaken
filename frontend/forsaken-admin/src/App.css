@@ -69,21 +69,8 @@
   background-color: #1a83ff;
 }
 
-.nav-text a:active {
-  background-color: #1a83ff;
-}
-
 .nav-menu-items {
   width: 100%;
-}
-
-.navbar-toggle {
-  background-color: #060b26;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
 }
 
 span {
