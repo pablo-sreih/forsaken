@@ -7,10 +7,15 @@
   font-family:  "Montserrat", sans-serif;
 }
 
-
+.home, .posts, .locations, .users {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
 
 .navbar {
-  background-color: #060b26;
   height: 80px;
   display: flex;
   justify-content: start;
@@ -31,13 +36,12 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  /* left: -100%; */
-  transition: 850ms;
+  left: -100%;
 }
 
 .nav-menu.active {
   left: 0;
-  transition: 350ms;
+
 }
 
 .nav-text {
@@ -62,6 +66,10 @@
 }
 
 .nav-text a:hover{
+  background-color: #1a83ff;
+}
+
+.nav-text a:active {
   background-color: #1a83ff;
 }
 
