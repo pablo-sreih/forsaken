@@ -11,6 +11,7 @@ import ProfilePage from "./assets/pages/ProfilePage";
 import InitialNavigator from "./assets/navigation/InitialNavigator";
 import AddReview from "./assets/pages/AddReview";
 import EditProfile from "./assets/pages/EditProfile";
+import AddPost from "./assets/pages/AddPost";
 
 export default function App() {
   return (
@@ -18,11 +19,12 @@ export default function App() {
       <View style={styles.container}>
         {/* <EditProfile /> */}
         {/* <AddReview /> */}
-        <TabNavigator />
-        {/* <InitialNavigator /> */}
+        {/* <TabNavigator /> */}
+        <InitialNavigator />
         {/* <LocationPage/> */}
         {/* <ProfilePage /> */}
         {/* <LandingPage /> */}
+        {/* <AddPost /> */}
       </View>
     </NavigationContainer>
   );

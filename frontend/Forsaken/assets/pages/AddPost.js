@@ -1,21 +1,50 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text, Image } from "react-native";
 import Header from "../components/Header";
 import { useFonts } from "expo-font";
 import { TextInput } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import * as ImagePicker from "expo-image-picker";
 
 export default function AddPost() {
+  const [image, setImage] = useState(null);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {}, []);
+
+  async function getData() {
+    await fetch("http://192.168.0.103:8000/api/testGetAllLocations", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        const array = [];
+        for (let i = 0; i < response.length; i++) {
+          array.push(response[i]);
+        }
+        console.log(array);
+        setData(array);
+        setItems(
+          data.map((location) => ({
+            label: location.name,
+            value: location.id,
+          }))
+        );
+      });
+  }
+
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    { label: "Amrieh Hotel", value: "apple" },
-    { label: "Kassouf Hotel", value: "kassouf" },
-    { label: "Donna Maria", value: "donna" },
-    { label: "Abandoned Aquarium", value: "aquarium" },
-    { label: "Grand Hotel Aaley", value: "aaley" },
-  ]);
+  const [items, setItems] = useState([]);
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -29,19 +58,37 @@ export default function AddPost() {
     return null;
   }
 
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Header name="ADD POST" />
       <View style={styles.div}>
         <Text style={styles.label}>Choose Image:</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={pickImage} style={styles.button}>
           <Text style={styles.label1}>Choose From Gallery</Text>
         </TouchableOpacity>
       </View>
-      <View>
-        <Text style={styles.label}>Add Caption</Text>
-        <TextInput style={styles.input}></TextInput>
-      </View>
+      {image && (
+        <View style={styles.modal}>
+          <Image source={{ uri: image }} style={styles.imageContainer} />
+        </View>
+      )}
+
       <View>
         <Text style={styles.label}>Choose Location</Text>
         <DropDownPicker
@@ -121,5 +168,19 @@ const styles = StyleSheet.create({
     borderColor: "#24A0ED",
     width: "89%",
     marginLeft: 20,
+  },
+
+  modal: {
+    // flexDirection: "column",
+    width: "90%",
+    backgroundColor: "black",
+    borderRadius: 20,
+    alignSelf: "center",
+  },
+  imageContainer: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
+    borderRadius: 20,
   },
 });

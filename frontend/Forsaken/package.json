@@ -41,7 +41,8 @@
     "react-native-maps": "0.30.2",
     "react-native-ratings": "^8.1.0",
     "react-native-web": "0.17.7",
-    "rn-faded-scrollview": "^1.0.13"
+    "rn-faded-scrollview": "^1.0.13",
+    "expo-image-picker": "~13.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
