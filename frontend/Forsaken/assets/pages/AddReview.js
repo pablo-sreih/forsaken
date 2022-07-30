@@ -10,7 +10,7 @@ import {
 import { useFonts } from "expo-font";
 import { Rating } from "react-native-elements";
 
-export default function AddReview(props) {
+export default function AddReview({ route }) {
   const rateImage = require("../images/circleRating.png");
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -26,7 +26,7 @@ export default function AddReview(props) {
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <Header name="ADD REVIEW" />
-      <Text style={styles.title}>{props.name}</Text>
+      <Text style={styles.title}>{route.params.name}</Text>
       <View>
         <Rating
           type="custom"

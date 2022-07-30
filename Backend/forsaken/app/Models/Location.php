@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     use HasFactory;
+
+    public function Photos(){
+        return $this->hasMany(Photo::class, 'location_id');
+    }
+    
 }

@@ -26,6 +26,7 @@ export default function MapPage(props) {
         for (let i = 0; i < response.length; i++) {
           array.push(response[i]);
         }
+        console.log(array);
         setData(array);
       });
   }

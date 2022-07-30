@@ -19,10 +19,13 @@ class LocationController extends Controller
 
     public function addLocation(Request $request) {
         $location = new Location();
+        $location->name = $request->name;
+        $location->city = $request->city;
+        $location->description = $request->description;
         $location->latitude = $request->latitude;
         $location->longitude = $request->longitude;
-        $location->avg_emf_reading = 0;
-        $location->avg_rating = 0;
+        $location->avg_emf_reading = $request->avg_emf_reading;
+        $location->avg_rating = 5;
         $location->save();
 
         return response()->json([
