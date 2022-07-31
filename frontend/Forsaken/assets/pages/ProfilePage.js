@@ -6,15 +6,6 @@ import MiniPhoto from "../components/MiniPhoto";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState, useEffect } from "react";
 
-const image = require("../images/abandonedplaces/1.jpg");
-const image1 = require("../images/abandonedplaces/2.jpg");
-const image2 = require("../images/abandonedplaces/3.jpg");
-const image3 = require("../images/abandonedplaces/4.jpg");
-const image4 = require("../images/abandonedplaces/5.jpg");
-const image5 = require("../images/abandonedplaces/6.jpg");
-const image6 = require("../images/abandonedplaces/7.jpg");
-const image7 = require("../images/abandonedplaces/8.jpg");
-
 export default function ProfilePage() {
   const [name, setName] = useState();
   const [about, setAbout] = useState();
@@ -26,12 +17,6 @@ export default function ProfilePage() {
     await AsyncStorage.getItem("token").then((token) => {
       setToken(token);
     });
-
-  useEffect(() => {
-    getToken();
-    getData();
-    getProfileInfo();
-  }, []);
 
   const getData = () => {
     AsyncStorage.getItem("name").then((value) => setName(value));
@@ -55,9 +40,15 @@ export default function ProfilePage() {
           imagesArray.push(response.photos[i]["image"]);
         }
         setImages(imagesArray);
-        console.log(images);
+        console.log(imagesArray);
       });
   }
+
+  useEffect(() => {
+    getToken();
+    getProfileInfo();
+    getData();
+  }, []);
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -103,11 +94,9 @@ export default function ProfilePage() {
           <Text style={styles.description}>{about}</Text>
         </View>
         <View style={styles.photosContainer}>
-          {images
-            ? images.map((image, index) => {
-                return <MiniPhoto key={index} image={image} />;
-              })
-            : ""}
+          {images.map((image, index) => {
+            return <MiniPhoto key={index} image={image} />;
+          })}
         </View>
       </ScrollView>
     </View>

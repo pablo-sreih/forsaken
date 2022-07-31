@@ -48,7 +48,6 @@ class TestController extends Controller
     }
 
     public function addRating(Request $request) {
-        // $id = Auth()::id();
         $location_id = $request->location_id;
         $rating = $request->rating;
 

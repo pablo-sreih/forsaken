@@ -65,7 +65,10 @@ export default function LocationPage({ route, navigation }) {
           </View>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate("Review", { name: route.params.name })
+              navigation.navigate("Review", {
+                name: route.params.name,
+                id: route.params.id,
+              })
             }
             style={styles.button}
           >

@@ -9,9 +9,33 @@ import {
 } from "react-native";
 import { useFonts } from "expo-font";
 import { Rating } from "react-native-elements";
+import { useEffect } from "react";
 
 export default function AddReview({ route }) {
   const rateImage = require("../images/circleRating.png");
+
+  async function rate(rating) {
+    await fetch("http://192.168.0.103:8000/api/addRating", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        location_id: route.params.id,
+        rating: rating,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  useEffect(() => {
+    console.log(JSON.stringify(route.params.id));
+  }, []);
+
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -36,6 +60,10 @@ export default function AddReview({ route }) {
           imageSize={30}
           readonly={false}
           startingValue={0}
+          showRating
+          onFinishRating={(rating) => {
+            rate(rating);
+          }}
           style={{ alignSelf: "center", marginLeft: 20, marginTop: 3 }}
         />
       </View>
