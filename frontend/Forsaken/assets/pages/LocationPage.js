@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -12,17 +12,45 @@ import { useFonts } from "expo-font";
 import { Rating } from "react-native-ratings";
 import MiniPhoto from "../components/MiniPhoto";
 
-const image = require("../images/abandonedplaces/1.jpg");
-const image1 = require("../images/abandonedplaces/2.jpg");
-const image2 = require("../images/abandonedplaces/3.jpg");
-const image3 = require("../images/abandonedplaces/4.jpg");
-const image4 = require("../images/abandonedplaces/5.jpg");
-const image5 = require("../images/abandonedplaces/6.jpg");
-const image6 = require("../images/abandonedplaces/7.jpg");
-const image7 = require("../images/abandonedplaces/8.jpg");
+// const image = require("../images/abandonedplaces/1.jpg");
+// const image1 = require("../images/abandonedplaces/2.jpg");
+// const image2 = require("../images/abandonedplaces/3.jpg");
+// const image3 = require("../images/abandonedplaces/4.jpg");
+// const image4 = require("../images/abandonedplaces/5.jpg");
+// const image5 = require("../images/abandonedplaces/6.jpg");
+// const image6 = require("../images/abandonedplaces/7.jpg");
+// const image7 = require("../images/abandonedplaces/8.jpg");
 
 export default function LocationPage({ route, navigation }) {
   const rateImage = require("../images/circleRating.png");
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  async function getLocation() {
+    await fetch("http://192.168.0.103:8000/api/get_location", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        location_id: route.params.id,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        // console.log(response[0]["photos"][0]["image"]);
+        let imagesArray = [];
+        for (var i = 0; i < response[0]["photos"].length; i++) {
+          imagesArray.push(response[0]["photos"][i]["image"]);
+        }
+        setImages(imagesArray);
+        console.log(images);
+      });
+  }
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -70,14 +98,9 @@ export default function LocationPage({ route, navigation }) {
           <Text style={styles.description}>{route.params.description}</Text>
         </View>
         <View style={styles.photosContainer}>
-          <MiniPhoto image={image} />
-          <MiniPhoto image={image1} />
-          <MiniPhoto image={image2} />
-          <MiniPhoto image={image3} />
-          <MiniPhoto image={image4} />
-          <MiniPhoto image={image5} />
-          <MiniPhoto image={image6} />
-          <MiniPhoto image={image7} />
+          {images.map((image, index) => {
+            return <MiniPhoto image={image} key={index} />;
+          })}
         </View>
       </ScrollView>
     </View>

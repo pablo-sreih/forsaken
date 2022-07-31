@@ -22,7 +22,7 @@ export default function MiniPhoto(props) {
       onPress={() => setModalVisible(true)}
       style={styles.container}
     >
-      <Image style={styles.image} source={props.image} />
+      <Image style={styles.image} source={{ uri: props.image }} />
       <Modal
         visible={modalVisible}
         animationType="slide"
@@ -38,7 +38,10 @@ export default function MiniPhoto(props) {
           <TouchableWithoutFeedback>
             <View style={styles.modal}>
               <View style={{ flex: 1 }}>
-                <Image source={props.image} style={styles.imageContainer} />
+                <Image
+                  source={{ uri: props.image }}
+                  style={styles.imageContainer}
+                />
               </View>
             </View>
           </TouchableWithoutFeedback>

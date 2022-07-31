@@ -25,8 +25,9 @@ class TestController extends Controller
         return response()->json($result); 
     }
     
-    public function getLocation($location_id){
-        $location = Location::find($location_id)->with("Photos")->get();
+    public function getLocation(Request $request){
+        $location_id = $request->location_id;
+        $location = Location::where("id", $location_id)->with("Photos")->get();
         return response()->json($location);
     }
 
@@ -77,14 +78,14 @@ class TestController extends Controller
     public function getUserInfo(Request $request){
         $user = Auth::user();
         $posts = Photo::where("user_id", Auth::id())->get();
-        $followers = UserFollowing::where("follower_id", $id)->count();
-        $following = UserFollowing::where("user_id", $id)->count();
+        // $followers = UserFollowing::where("follower_id", $id)->count();
+        // $following = UserFollowing::where("user_id", $id)->count();
 
         $results = [
             "user" => $user,
             "photos" => $posts,
-            "followers" => $followers,
-            "following" => $following
+            // "followers" => $followers,
+            // "following" => $following
         ];
 
         return response()->json($results); 

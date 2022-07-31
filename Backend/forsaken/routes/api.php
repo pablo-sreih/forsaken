@@ -62,15 +62,15 @@ Route::controller(AuthController::class)->group(function () {
 
 // Route::post('/addRating', [RatingController::class, 'addRating']);
 
-// Route::post('/follow', [FollowingController::class, 'follow']);
-// Route::post('/addFollower', [FollowingController::class, 'addFollower']);
-// Route::post('/getFollowers', [UserFollowingController::class, 'getFollowers']);
+Route::post('/follow', [FollowingController::class, 'follow']);
+Route::post('/addFollower', [FollowingController::class, 'addFollower']);
+Route::post('/getFollowers', [UserFollowingController::class, 'getFollowers']);
 
 Route::get('/testAPI', [TestController::class, 'testAPI']);
 Route::get('/testGetAllLocations', [TestController::class, 'testGetAllLocations']);
 Route::post('/add_emf', [TestController::class, 'addEMF']);
 Route::post('/unfollow/{id}', [TestController::class, 'unfollow']);
 Route::post('/add_post', [TestController::class, 'addPost']);
-Route::get('/user_info', [TestController::class, 'getUserInfo']);
+Route::post('/user_info', [TestController::class, 'getUserInfo']);
 Route::get('/add_review', [TestController::class, 'addReview']);
-Route::get('/get_location/{id}', [TestController::class, 'getLocation']);
+Route::post('/get_location', [TestController::class, 'getLocation']);

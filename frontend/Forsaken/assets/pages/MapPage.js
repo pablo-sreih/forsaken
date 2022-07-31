@@ -55,6 +55,7 @@ export default function MapPage(props) {
               draggable={false}
               onPress={() =>
                 props.navigation.navigate("Location", {
+                  id: data.id,
                   name: data.name,
                   city: data.city,
                   description: data.description,

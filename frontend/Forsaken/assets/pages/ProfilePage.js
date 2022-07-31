@@ -19,9 +19,18 @@ export default function ProfilePage() {
   const [name, setName] = useState();
   const [about, setAbout] = useState();
   const [profilePic, setProfilePic] = useState();
+  const [token, setToken] = useState("");
+  const [images, setImages] = useState([]);
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
 
   useEffect(() => {
+    getToken();
     getData();
+    getProfileInfo();
   }, []);
 
   const getData = () => {
@@ -29,6 +38,26 @@ export default function ProfilePage() {
     AsyncStorage.getItem("about").then((value) => setAbout(value));
     AsyncStorage.getItem("profile_pic").then((value) => setProfilePic(value));
   };
+
+  async function getProfileInfo() {
+    await fetch("http://192.168.0.103:8000/api/user_info", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        let imagesArray = [];
+        for (var i = 0; i < response.photos.length; i++) {
+          imagesArray.push(response.photos[i]["image"]);
+        }
+        setImages(imagesArray);
+        console.log(images);
+      });
+  }
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -74,14 +103,11 @@ export default function ProfilePage() {
           <Text style={styles.description}>{about}</Text>
         </View>
         <View style={styles.photosContainer}>
-          <MiniPhoto image={image} />
-          <MiniPhoto image={image1} />
-          <MiniPhoto image={image2} />
-          <MiniPhoto image={image3} />
-          <MiniPhoto image={image4} />
-          <MiniPhoto image={image5} />
-          <MiniPhoto image={image6} />
-          <MiniPhoto image={image7} />
+          {images
+            ? images.map((image, index) => {
+                return <MiniPhoto key={index} image={image} />;
+              })
+            : ""}
         </View>
       </ScrollView>
     </View>
