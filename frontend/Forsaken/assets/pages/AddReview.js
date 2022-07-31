@@ -52,6 +52,7 @@ export default function AddReview({ route }) {
 
 const styles = StyleSheet.create({
   title: {
+    alignSelf: "center",
     fontFamily: "montserratBold",
     fontSize: 20,
     margin: 20,

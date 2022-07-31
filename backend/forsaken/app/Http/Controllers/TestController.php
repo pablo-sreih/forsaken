@@ -17,7 +17,7 @@ class TestController extends Controller
         $id = Auth::id();
         $review = $request->review;
         $rating = $request->rating;
-        // save it
+        
         $result = [
             "success" => true
         ];
@@ -45,6 +45,22 @@ class TestController extends Controller
         ];
 
         return response()->json($result); 
+    }
+
+    public function addRating(Request $request) {
+        // $id = Auth()::id();
+        $location_id = $request->location_id;
+        $rating = $request->rating;
+
+        $location = Location::find($location_id);
+        $location->avg_rating = ($location->avg_rating + $rating) / 2;
+        $location->save();
+
+        $result = [
+            "success" => true
+        ];
+
+        return response()->json($result);
     }
 
     public function unfollow($user_id){

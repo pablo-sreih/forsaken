@@ -4,22 +4,12 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Image,
   ScrollView,
 } from "react-native";
 import Header from "../components/Header";
 import { useFonts } from "expo-font";
 import { Rating } from "react-native-ratings";
 import MiniPhoto from "../components/MiniPhoto";
-
-// const image = require("../images/abandonedplaces/1.jpg");
-// const image1 = require("../images/abandonedplaces/2.jpg");
-// const image2 = require("../images/abandonedplaces/3.jpg");
-// const image3 = require("../images/abandonedplaces/4.jpg");
-// const image4 = require("../images/abandonedplaces/5.jpg");
-// const image5 = require("../images/abandonedplaces/6.jpg");
-// const image6 = require("../images/abandonedplaces/7.jpg");
-// const image7 = require("../images/abandonedplaces/8.jpg");
 
 export default function LocationPage({ route, navigation }) {
   const rateImage = require("../images/circleRating.png");
