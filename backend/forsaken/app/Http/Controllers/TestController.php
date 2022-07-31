@@ -62,9 +62,10 @@ class TestController extends Controller
         $post->user_id = $id;
         $post->location_id = $request->location_id;
         $post->caption = $request->caption;
-        $url = "";
-        $post->image = $url;
+        $uri = $request->uri;
+        $post->image = $uri;
         $post->total_likes = 0;
+        $post->save();
 
         $result = [
             "success" => true

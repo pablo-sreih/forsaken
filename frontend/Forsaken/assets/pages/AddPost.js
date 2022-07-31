@@ -2,20 +2,31 @@ import React from "react";
 import { View, StyleSheet, TouchableOpacity, Text, Image } from "react-native";
 import Header from "../components/Header";
 import { useFonts } from "expo-font";
-import { TextInput } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import { useState, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AddPost() {
   const [image, setImage] = useState(null);
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
+  const [token, setToken] = useState("");
+
+  // Use State for DropDown Menu
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const [items, setItems] = useState([]);
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
 
   useEffect(() => {
     getData();
+    getToken();
+    console.log(typeof token);
   }, []);
-
-  useEffect(() => {}, []);
 
   async function getData() {
     await fetch("http://192.168.0.103:8000/api/testGetAllLocations", {
@@ -32,9 +43,9 @@ export default function AddPost() {
           array.push(response[i]);
         }
         console.log(array);
-        setData(array);
+        // setData(array);
         setItems(
-          data.map((location) => ({
+          array.map((location) => ({
             label: location.name,
             value: location.id,
           }))
@@ -42,9 +53,25 @@ export default function AddPost() {
       });
   }
 
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
-  const [items, setItems] = useState([]);
+  async function addPost() {
+    await fetch("http://192.168.0.103:8000/api/add_post", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+      body: JSON.stringify({
+        location_id: value,
+        caption: "caption",
+        uri: image,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -102,7 +129,7 @@ export default function AddPost() {
           placeholder="Select a Location"
         />
       </View>
-      <TouchableOpacity style={styles.button2}>
+      <TouchableOpacity onPress={addPost} style={styles.button2}>
         <Text style={styles.label1}>Save</Text>
       </TouchableOpacity>
     </View>
