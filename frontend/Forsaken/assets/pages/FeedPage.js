@@ -5,9 +5,20 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function FeedPage({ navigation }) {
   const [data, setData] = useState([]);
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    getToken();
+  }, []);
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
 
   useEffect(() => {
     getData();
@@ -19,6 +30,7 @@ export default function FeedPage({ navigation }) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
       },
     })
       .then((response) => response.json())
@@ -64,7 +76,7 @@ export default function FeedPage({ navigation }) {
               prof={data.user["profile_pic"]}
               lat={data.location["latitude"]}
               long={data.location["longitude"]}
-              time={moment(data.creation_date, "YYYY-MM-DD")
+              time={moment(data.created_at, "YYYY-MM-DD")
                 .startOf("day")
                 .fromNow()}
               name={data.location["name"]}
