@@ -8,12 +8,12 @@ import ActivityPage from "../pages/ActivityPage";
 import ProfilePage from "../pages/ProfilePage";
 import MapPage from "../pages/MapPage";
 import FeedPage from "../pages/FeedPage";
-import CameraPage from "../pages/CameraPage";
 import LocationPage from "../pages/LocationPage";
 import MapPageByLocation from "../pages/MapPageByLocation";
 import AddReview from "../pages/AddReview";
 import AddPost from "../pages/AddPost";
 import EditProfile from "../pages/EditProfile";
+import LandingPage from "../pages/LandingPage";
 import Header from "../components/Header";
 
 const Tab = createBottomTabNavigator();

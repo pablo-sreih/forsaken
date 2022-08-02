@@ -6,13 +6,39 @@ import {
   Modal,
   TouchableWithoutFeedback,
 } from "react-native";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { Icon } from "react-native-elements";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Header(props) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    getToken();
+  }, []);
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
+
+  async function logout() {
+    await fetch("http://192.168.0.103:8000/api/logout", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
@@ -55,7 +81,11 @@ export default function Header(props) {
                 <Icon color={"white"} name="edit" />
                 <Text style={styles.options}>Edit Profile</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.optionButton} activeOpacity={0.8}>
+              <TouchableOpacity
+                onPress={logout}
+                style={styles.optionButton}
+                activeOpacity={0.8}
+              >
                 <Icon name="logout" color={"white"} />
                 <Text style={styles.options}>Logout</Text>
               </TouchableOpacity>
