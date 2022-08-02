@@ -6,10 +6,13 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { RefreshControl } from "react-native";
+import { ActivityIndicator } from "react-native";
 
 export default function FeedPage({ navigation }) {
   const [data, setData] = useState([]);
   const [token, setToken] = useState("");
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     getToken();
@@ -65,7 +68,12 @@ export default function FeedPage({ navigation }) {
   return (
     <View style={styles.container}>
       <Header name="DISCOVER" />
-      <ScrollView>
+      {refreshing ? <ActivityIndicator /> : null}
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={getData} />
+        }
+      >
         {data.map((data, index) => {
           return (
             <Card
