@@ -76,8 +76,8 @@ export default function FeedPage({ navigation }) {
               prof={data.user["profile_pic"]}
               lat={data.location["latitude"]}
               long={data.location["longitude"]}
-              time={moment(data.created_at, "YYYY-MM-DD")
-                .startOf("day")
+              time={moment(data.created_at, "YYYY-MM-DD, hh:mm:ss a")
+                .startOf("hour")
                 .fromNow()}
               name={data.location["name"]}
               city={data.location["city"]}

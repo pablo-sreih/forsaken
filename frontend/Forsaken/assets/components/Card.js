@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   },
 
   location: {
-    marginTop: -4,
+    marginTop: -2,
     fontSize: 12,
     fontFamily: "montserratRegular",
   },
