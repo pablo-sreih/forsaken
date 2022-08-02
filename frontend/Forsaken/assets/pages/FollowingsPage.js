@@ -4,10 +4,13 @@ import { ScrollView } from "react-native-gesture-handler";
 import Header from "../components/Header";
 import FollowerCard from "../components/FollowerCard";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { RefreshControl } from "react-native";
+import { ActivityIndicator } from "react-native";
 
 export default function FollowingsPage() {
   const [data, setData] = useState([]);
   const [token, setToken] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     getToken();
@@ -42,7 +45,12 @@ export default function FollowingsPage() {
   return (
     <View style={styles.container}>
       <Header name="FOLLOWING" />
-      <ScrollView>
+      {refreshing ? <ActivityIndicator /> : null}
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={getData} />
+        }
+      >
         {data.map((user, index) => {
           return (
             <FollowerCard
