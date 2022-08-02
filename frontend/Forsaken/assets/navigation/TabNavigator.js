@@ -14,6 +14,7 @@ import AddReview from "../pages/AddReview";
 import AddPost from "../pages/AddPost";
 import EditProfile from "../pages/EditProfile";
 import FollowersPage from "../pages/FollowersPage";
+import FollowingsPage from "../pages/FollowingsPage";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -28,6 +29,7 @@ function StackNavigator() {
       <Stack.Screen name="AddPost" component={AddPost} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Followers" component={FollowersPage} />
+      <Stack.Screen name="Followings" component={FollowingsPage} />
     </Stack.Navigator>
   );
 }

@@ -102,7 +102,10 @@ export default function ProfilePage({ navigation }) {
             <Text style={styles.numbers}>{images.length}</Text>
             <Text style={styles.category}>Posts</Text>
           </View>
-          <TouchableOpacity style={styles.infoContainer}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Followings")}
+            style={styles.infoContainer}
+          >
             <Text style={styles.numbers}>{following}</Text>
             <Text style={styles.category}>Following</Text>
           </TouchableOpacity>
