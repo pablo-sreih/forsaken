@@ -40,7 +40,6 @@ export default function FeedPage({ navigation }) {
           array.push(response[i]);
         }
         setData(array);
-        console.log(array);
       });
   }
 
