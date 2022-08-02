@@ -13,8 +13,7 @@ import MapPageByLocation from "../pages/MapPageByLocation";
 import AddReview from "../pages/AddReview";
 import AddPost from "../pages/AddPost";
 import EditProfile from "../pages/EditProfile";
-import LandingPage from "../pages/LandingPage";
-import Header from "../components/Header";
+import FollowersPage from "../pages/FollowersPage";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -28,6 +27,7 @@ function StackNavigator() {
       <Stack.Screen name="Review" component={AddReview} />
       <Stack.Screen name="AddPost" component={AddPost} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
+      <Stack.Screen name="Followers" component={FollowersPage} />
     </Stack.Navigator>
   );
 }

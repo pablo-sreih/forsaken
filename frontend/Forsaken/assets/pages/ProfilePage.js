@@ -7,8 +7,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState, useEffect } from "react";
 import { RefreshControl } from "react-native";
 import { ActivityIndicator } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function ProfilePage() {
+export default function ProfilePage({ navigation }) {
   const [name, setName] = useState();
   const [about, setAbout] = useState();
   const [profilePic, setProfilePic] = useState();
@@ -90,18 +91,21 @@ export default function ProfilePage() {
           {/* <FollowButton /> */}
         </View>
         <View style={styles.profileInfo}>
-          <View style={styles.infoContainer}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Followers")}
+            style={styles.infoContainer}
+          >
             <Text style={styles.numbers}>{followers}</Text>
             <Text style={styles.category}>Followers</Text>
-          </View>
+          </TouchableOpacity>
           <View style={styles.infoContainer}>
             <Text style={styles.numbers}>{images.length}</Text>
             <Text style={styles.category}>Posts</Text>
           </View>
-          <View style={styles.infoContainer}>
+          <TouchableOpacity style={styles.infoContainer}>
             <Text style={styles.numbers}>{following}</Text>
             <Text style={styles.category}>Following</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View>
           <Text style={styles.description}>{about}</Text>

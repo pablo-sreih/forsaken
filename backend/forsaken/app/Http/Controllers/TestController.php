@@ -120,10 +120,17 @@ class TestController extends Controller
         return response()->json($results); 
     }
 
+    public function getFollowers() {
+        $id = Auth::id();
+        $followers = UserFollowing::where("follower_id", $id)->select("user_id")->with("User")->get()->toArray();
+
+        return response()->json($followers);
+    }
+
     public function testAPI() {
         $id = Auth::id();
         $following = UserFollowing::where("user_id", $id)->select("follower_id")->get()->toArray();
-        $posts = Photo::whereIn("user_id", $following)->with("Location")->with("User")->orderBy("created_at")->get();
+        $posts = Photo::whereIn("user_id", $following)->with("Location")->with("User")->orderBy("created_at", 'DESC')->get();
 
         // $posts = [
         //     [
