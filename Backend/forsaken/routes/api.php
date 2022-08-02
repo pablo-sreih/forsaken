@@ -70,6 +70,7 @@ Route::get('/testAPI', [TestController::class, 'testAPI']);
 Route::get('/testGetAllLocations', [TestController::class, 'testGetAllLocations']);
 Route::post('/add_emf', [TestController::class, 'addEMF']);
 Route::post('/unfollow/{id}', [TestController::class, 'unfollow']);
+Route::post('/follow/{id}', [TestController::class, 'follow']);
 Route::post('/add_post', [TestController::class, 'addPost']);
 Route::post('/user_info', [TestController::class, 'getUserInfo']);
 Route::get('/add_review', [TestController::class, 'addReview']);
