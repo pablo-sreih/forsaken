@@ -127,6 +127,13 @@ class TestController extends Controller
         return response()->json($followers);
     }
 
+    public function getFollowings() {
+        $id= Auth::id();
+        $followings= UserFollowing::where("user_id", $id)->select("follower_id")->with("UserFollowing")->get()->toArray();
+
+        return response()->json($followings);
+    }
+
     public function testAPI() {
         $id = Auth::id();
         $following = UserFollowing::where("user_id", $id)->select("follower_id")->get()->toArray();
