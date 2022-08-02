@@ -5,6 +5,8 @@ import FollowButton from "../components/FollowButton";
 import MiniPhoto from "../components/MiniPhoto";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState, useEffect } from "react";
+import { RefreshControl } from "react-native";
+import { ActivityIndicator } from "react-native";
 
 export default function ProfilePage() {
   const [name, setName] = useState();
@@ -14,6 +16,7 @@ export default function ProfilePage() {
   const [images, setImages] = useState([]);
   const [followers, setFollowers] = useState();
   const [following, setFollowing] = useState();
+  const [refreshing, setRefreshing] = useState(false);
 
   const getToken = async () =>
     await AsyncStorage.getItem("token").then((token) => {
@@ -69,7 +72,13 @@ export default function ProfilePage() {
   return (
     <View style={styles.container}>
       <Header name="PROFILE" />
-      <ScrollView contentContainerStyle={{ marginTop: 10, paddingBottom: 100 }}>
+      {refreshing ? <ActivityIndicator /> : null}
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={getProfileInfo} />
+        }
+        contentContainerStyle={{ marginTop: 10, paddingBottom: 100 }}
+      >
         <View style={styles.profilePicContainer}>
           <Image
             style={{ flex: 1, resizeMode: "cover", borderRadius: 100 }}
