@@ -45,7 +45,13 @@ export default function Header(props) {
           <TouchableWithoutFeedback>
             <View style={styles.modal}>
               <Text style={styles.title}>Options</Text>
-              <TouchableOpacity activeOpacity={0.8} style={styles.optionButton}>
+              <TouchableOpacity
+                onPress={() => {
+                  props.navigation.navigate("EditProfile");
+                }}
+                activeOpacity={0.8}
+                style={styles.optionButton}
+              >
                 <Icon color={"white"} name="edit" />
                 <Text style={styles.options}>Edit Profile</Text>
               </TouchableOpacity>

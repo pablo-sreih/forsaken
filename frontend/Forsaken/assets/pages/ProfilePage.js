@@ -12,6 +12,8 @@ export default function ProfilePage() {
   const [profilePic, setProfilePic] = useState();
   const [token, setToken] = useState("");
   const [images, setImages] = useState([]);
+  const [followers, setFollowers] = useState();
+  const [following, setFollowing] = useState();
 
   const getToken = async () =>
     await AsyncStorage.getItem("token").then((token) => {
@@ -40,6 +42,8 @@ export default function ProfilePage() {
           imagesArray.push(response.photos[i]["image"]);
         }
         setImages(imagesArray);
+        setFollowers(response.followers);
+        setFollowing(response.following);
         console.log(imagesArray);
       });
   }
@@ -78,15 +82,15 @@ export default function ProfilePage() {
         </View>
         <View style={styles.profileInfo}>
           <View style={styles.infoContainer}>
-            <Text style={styles.numbers}>980</Text>
+            <Text style={styles.numbers}>{followers}</Text>
             <Text style={styles.category}>Followers</Text>
           </View>
           <View style={styles.infoContainer}>
-            <Text style={styles.numbers}>1412</Text>
+            <Text style={styles.numbers}>{images.length}</Text>
             <Text style={styles.category}>Posts</Text>
           </View>
           <View style={styles.infoContainer}>
-            <Text style={styles.numbers}>312</Text>
+            <Text style={styles.numbers}>{following}</Text>
             <Text style={styles.category}>Following</Text>
           </View>
         </View>

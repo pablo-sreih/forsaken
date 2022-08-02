@@ -62,6 +62,19 @@ class TestController extends Controller
         return response()->json($result);
     }
 
+    public function follow($user_id){
+        $id = Auth::id();
+        $following = new UserFollowing;
+        $following->user_id = Auth::id();
+        $following->follower_id = $user_id;
+        $following->save();
+
+        $result = [
+            "success" => true
+        ];
+        return response()->json($result); 
+    }
+
     public function unfollow($user_id){
         $id = Auth::id();
         $following = UserFollowing::where("user_id", $id)->where("follower_id", $user_id)->delete();
@@ -92,15 +105,16 @@ class TestController extends Controller
 
     public function getUserInfo(Request $request){
         $user = Auth::user();
+        $id = Auth::id();
         $posts = Photo::where("user_id", Auth::id())->get();
-        // $followers = UserFollowing::where("follower_id", $id)->count();
-        // $following = UserFollowing::where("user_id", $id)->count();
+        $followers = UserFollowing::where("follower_id", $id)->count();
+        $following = UserFollowing::where("user_id", $id)->count();
 
         $results = [
             "user" => $user,
             "photos" => $posts,
-            // "followers" => $followers,
-            // "following" => $following
+            "followers" => $followers,
+            "following" => $following
         ];
 
         return response()->json($results); 

@@ -14,6 +14,7 @@ import MapPageByLocation from "../pages/MapPageByLocation";
 import AddReview from "../pages/AddReview";
 import AddPost from "../pages/AddPost";
 import EditProfile from "../pages/EditProfile";
+import Header from "../components/Header";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

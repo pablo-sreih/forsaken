@@ -25,7 +25,6 @@ export default function AddPost() {
   useEffect(() => {
     getData();
     getToken();
-    console.log(typeof token);
   }, []);
 
   async function getData() {
