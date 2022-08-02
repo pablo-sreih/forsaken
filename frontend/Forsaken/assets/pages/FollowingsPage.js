@@ -33,7 +33,7 @@ export default function FollowingsPage() {
         // console.log(response[1]["user"]);
         const array = [];
         for (let i = 0; i < response.length; i++) {
-          array.push(response[i]["user"]);
+          array.push(response[i]["user_following"]);
         }
         setData(array);
       });
@@ -41,7 +41,7 @@ export default function FollowingsPage() {
 
   return (
     <View style={styles.container}>
-      <Header name="FOLLOWERS" />
+      <Header name="FOLLOWING" />
       <ScrollView>
         {data.map((user, index) => {
           return (
