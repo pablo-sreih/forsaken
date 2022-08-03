@@ -1,13 +1,25 @@
+import React from "react";
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
 import { View, Text } from "react-native";
 import { useFonts } from "expo-font";
 import FollowButton from "./FollowButton";
 import { Icon } from "react-native-elements";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import * as Sharing from "expo-sharing";
 
 export default function Card(props) {
   const [color, setColor] = useState("black");
   const [likes, setLikes] = useState(props.likes);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    setSelectedImage(props.image);
+  }, []);
+
+  let openShareDialogAsync = async () => {
+    await Sharing.shareAsync(selectedImage);
+  };
+
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),
     montserratExtraBold: require("../fonts/Montserrat-ExtraBold.ttf"),
@@ -74,7 +86,10 @@ export default function Card(props) {
           >
             <Icon color={color} name="favorite" />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.iconContainer}>
+          <TouchableOpacity
+            onPress={openShareDialogAsync}
+            style={styles.iconContainer}
+          >
             <Icon name="share" />
           </TouchableOpacity>
           <TouchableOpacity
