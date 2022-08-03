@@ -78,3 +78,5 @@ Route::post('/get_location', [TestController::class, 'getLocation']);
 Route::post('/addRating', [TestController::class, 'addRating']);
 Route::get('/getFollowers', [TestController::class, 'getFollowers']);
 Route::get('/getFollowings', [TestController::class, 'getFollowings']);
+
+Route::get('/getUsersCount', [TestController::class, 'getUsersCount']);

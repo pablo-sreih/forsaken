@@ -12,6 +12,12 @@ use Auth;
 
 class TestController extends Controller
 {
+    public function getUsersCount() {
+        $users = User::all()->count();
+
+        return response()->json($users);
+    }
+
 
     public function addReview(Request $request){
         $id = Auth::id();
