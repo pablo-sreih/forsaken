@@ -53,7 +53,7 @@ export default function AddPost() {
   }
 
   async function addPost() {
-    await fetch("http://192.168.0.103:8000/api/add_post", {
+    await fetch("http://192.168.0.105:8000/api/add_post", {
       method: "POST",
       headers: {
         Accept: "application/json",
