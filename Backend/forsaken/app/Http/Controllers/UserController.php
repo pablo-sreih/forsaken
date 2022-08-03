@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Photo;
+use App\Models\UserFollowing;
 
 class UserController extends Controller
 {
@@ -22,10 +24,16 @@ class UserController extends Controller
     public function getUser(Request $request) {
         $user_id = $request->user_id;
         $user = User::find($user_id);
+        $photos = Photo::where("user_id", $user_id)->get();
+        $followers = UserFollowing::where("follower_id", $user_id)->count();
+        $followings = UserFollowing::where("user_id", $user_id)->count();
 
         return response()->json([
             'status' => 'success',
             'user' => $user,
+            'photos' => $photos,
+            'followers' => $followers,
+            'followings' => $followings
         ],200);
     }
 

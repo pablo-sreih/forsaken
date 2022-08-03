@@ -38,7 +38,7 @@ Route::controller(AuthController::class)->group(function () {
 // });
 
 // Route::post('/addAbout', [UserController::class, 'addAbout']);
-// Route::post('/getUser', [UserController::class, 'getUser']);
+Route::post('/getUser', [UserController::class, 'getUser']);
 Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
 // Route::get('/profile', [UserController::class, 'profile']);
 
