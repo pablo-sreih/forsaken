@@ -12,20 +12,24 @@ use Auth;
 
 class TestController extends Controller
 {
-    public function getUsersCount() {
+    public function getCounts() {
         $users = User::all()->count();
+        $posts = Photo::all()->count();
+        $locations = Location::all()->count();
 
-        return response()->json($users);
+        return response()->json([
+            'users' => $users,
+            'posts' => $posts,
+            'locations' => $locations
+        ],200);
     }
 
     public function getPostsCount() {
-        $posts = Photo::all()->count();
 
         return response()->json($posts);
     }
 
     public function getLocationsCount(){
-        $locations = Location::all()->count();
 
         return response()->json($locations);
     }
