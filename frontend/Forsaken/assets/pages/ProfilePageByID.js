@@ -6,7 +6,7 @@ import MiniPhoto from "../components/MiniPhoto";
 import { useState, useEffect } from "react";
 import { RefreshControl } from "react-native";
 import { ActivityIndicator } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function ProfilePageByID({ navigation, route }) {
   const [name, setName] = useState();
@@ -16,6 +16,34 @@ export default function ProfilePageByID({ navigation, route }) {
   const [followers, setFollowers] = useState();
   const [following, setFollowing] = useState();
   const [refreshing, setRefreshing] = useState(false);
+  const [token, setToken] = useState("");
+  const [followed, setFollowed] = useState([]);
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
+
+  async function getData() {
+    await fetch("http://192.168.0.105:8000/api/getFollowings", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        // console.log(response[1]["user"]);
+        const array = [];
+        for (let i = 0; i < response.length; i++) {
+          array.push(response[i]["follower_id"]);
+        }
+        setFollowed(array);
+        console.log(array);
+      });
+  }
 
   async function getProfileInfo() {
     await fetch("http://192.168.0.105:8000/api/getUser", {
@@ -30,7 +58,6 @@ export default function ProfilePageByID({ navigation, route }) {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.user);
         let imagesArray = [];
         for (var i = 0; i < response.photos.length; i++) {
           imagesArray.push(response.photos[i]["image"]);
@@ -41,11 +68,13 @@ export default function ProfilePageByID({ navigation, route }) {
         setProfilePic(response.user["profile_pic"]);
         setFollowers(response.followers);
         setFollowing(response.followings);
-        // console.log(imagesArray);
+        console.log(followed.includes(route.params.id));
       });
   }
 
   useEffect(() => {
+    getToken();
+    getData();
     getProfileInfo();
   }, []);
 
@@ -67,7 +96,10 @@ export default function ProfilePageByID({ navigation, route }) {
       {refreshing ? <ActivityIndicator /> : null}
       <ScrollView
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={getProfileInfo} />
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={(getProfileInfo, getData)}
+          />
         }
         contentContainerStyle={{ marginTop: 10, paddingBottom: 100 }}
       >
@@ -79,7 +111,7 @@ export default function ProfilePageByID({ navigation, route }) {
         </View>
         <Text style={styles.profileName}>{name}</Text>
         <View style={{ marginTop: 10, alignSelf: "center", marginBottom: 10 }}>
-          <FollowButton />
+          <FollowButton state={followed.includes(route.params.id)} />
         </View>
         <View style={styles.profileInfo}>
           <View

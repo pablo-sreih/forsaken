@@ -1,11 +1,27 @@
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { useFonts } from "expo-font";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function FollowButton() {
-  const [followColor, setFollowColor] = useState("white");
-  const [followText, setFollowText] = useState("Follow");
-  const [followTextColor, setFollowTextColor] = useState("black");
+export default function FollowButton(props) {
+  useEffect(() => {
+    props.state === true
+      ? (setFollowColor("#24A0ED"),
+        setFollowText("Following"),
+        setFollowTextColor("white"))
+      : (setFollowColor("white"),
+        setFollowText("Follow"),
+        setFollowTextColor("black"));
+  }, []);
+
+  const [followColor, setFollowColor] = useState(
+    props.state === true ? "#24A0ED" : "white"
+  );
+  const [followText, setFollowText] = useState(
+    props.state === true ? "Following" : "Follow"
+  );
+  const [followTextColor, setFollowTextColor] = useState(
+    props.state === true ? "white" : "black"
+  );
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),

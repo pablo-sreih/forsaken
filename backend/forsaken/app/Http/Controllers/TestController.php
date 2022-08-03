@@ -62,21 +62,22 @@ class TestController extends Controller
         return response()->json($result);
     }
 
-    public function follow($user_id){
+    public function follow(Request $request){
         $id = Auth::id();
         $following = new UserFollowing;
         $following->user_id = Auth::id();
-        $following->follower_id = $user_id;
+        $following->follower_id = $request->user_id;
         $following->save();
 
         $result = [
             "success" => true
         ];
-        return response()->json($result); 
+        return response()->json($result);
     }
 
-    public function unfollow($user_id){
+    public function unfollow(Request $request){
         $id = Auth::id();
+        $user_id = $request->user_id;
         $following = UserFollowing::where("user_id", $id)->where("follower_id", $user_id)->delete();
         $result = [
             "success" => true
