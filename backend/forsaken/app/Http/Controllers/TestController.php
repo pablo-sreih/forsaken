@@ -24,6 +24,12 @@ class TestController extends Controller
         return response()->json($posts);
     }
 
+    public function getLocationsCount(){
+        $locations = Location::all()->count();
+
+        return response()->json($locations);
+    }
+
 
     public function addReview(Request $request){
         $id = Auth::id();
