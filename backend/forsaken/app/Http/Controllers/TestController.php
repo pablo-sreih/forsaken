@@ -16,24 +16,15 @@ class TestController extends Controller
         $users = User::all()->count();
         $posts = Photo::all()->count();
         $locations = Location::all()->count();
+        $high_emf = Location::max('avg_emf_reading');
 
         return response()->json([
             'users' => $users,
             'posts' => $posts,
-            'locations' => $locations
+            'locations' => $locations,
+            'high_emf' => $high_emf
         ],200);
     }
-
-    public function getPostsCount() {
-
-        return response()->json($posts);
-    }
-
-    public function getLocationsCount(){
-
-        return response()->json($locations);
-    }
-
 
     public function addReview(Request $request){
         $id = Auth::id();
