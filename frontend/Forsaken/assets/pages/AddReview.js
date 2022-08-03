@@ -15,7 +15,7 @@ export default function AddReview({ route }) {
   const rateImage = require("../images/circleRating.png");
 
   async function rate(rating) {
-    await fetch("http://192.168.0.103:8000/api/addRating", {
+    await fetch("http://192.168.0.105:8000/api/addRating", {
       method: "POST",
       headers: {
         Accept: "application/json",

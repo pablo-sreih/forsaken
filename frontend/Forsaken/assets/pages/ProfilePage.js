@@ -31,7 +31,7 @@ export default function ProfilePage({ navigation }) {
   };
 
   async function getProfileInfo() {
-    await fetch("http://192.168.0.103:8000/api/user_info", {
+    await fetch("http://192.168.0.105:8000/api/user_info", {
       method: "POST",
       headers: {
         Accept: "application/json",

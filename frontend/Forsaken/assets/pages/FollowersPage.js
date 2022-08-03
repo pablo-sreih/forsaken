@@ -23,7 +23,7 @@ export default function FollowersPage() {
     });
 
   async function getData() {
-    await fetch("http://192.168.0.103:8000/api/getFollowers", {
+    await fetch("http://192.168.0.105:8000/api/getFollowers", {
       method: "GET",
       headers: {
         Accept: "application/json",
