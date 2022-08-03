@@ -18,6 +18,12 @@ class TestController extends Controller
         return response()->json($users);
     }
 
+    public function getPostsCount() {
+        $posts = Photo::all()->count();
+
+        return response()->json($posts);
+    }
+
 
     public function addReview(Request $request){
         $id = Auth::id();
