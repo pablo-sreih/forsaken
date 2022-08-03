@@ -43,6 +43,7 @@ export default function FeedPage({ navigation }) {
           array.push(response[i]);
         }
         setData(array);
+        console.log(array);
       });
   }
 
@@ -92,6 +93,8 @@ export default function FeedPage({ navigation }) {
               likes={data.total_likes}
               emf={data.location["avg_emf_reading"]}
               prof_name={data.user["name"]}
+              location_id={data.location["id"]}
+              description={data.location["description"]}
             />
           );
         })}

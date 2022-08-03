@@ -21,6 +21,7 @@
     "expo-av": "~11.2.3",
     "expo-camera": "~12.2.0",
     "expo-font": "~10.1.0",
+    "expo-image-picker": "~13.1.1",
     "expo-linear-gradient": "~11.3.0",
     "expo-media-library": "~14.1.0",
     "expo-secure-store": "~11.2.0",
@@ -41,8 +42,7 @@
     "react-native-maps": "0.30.2",
     "react-native-ratings": "^8.1.0",
     "react-native-web": "0.17.7",
-    "rn-faded-scrollview": "^1.0.13",
-    "expo-image-picker": "~13.1.1"
+    "rn-faded-scrollview": "^1.0.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

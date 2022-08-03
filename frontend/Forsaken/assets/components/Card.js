@@ -97,6 +97,8 @@ export default function Card(props) {
               props.navigation.navigate("Location", {
                 name: props.name,
                 city: props.city,
+                id: props.location_id,
+                description: props.description,
               })
             }
             style={styles.iconContainer}
