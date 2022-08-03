@@ -78,6 +78,7 @@ export default function FeedPage({ navigation }) {
           return (
             <Card
               key={index}
+              id={data.user["id"]}
               navigation={navigation}
               image={data.image}
               prof={data.user["profile_pic"]}

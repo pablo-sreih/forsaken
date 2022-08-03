@@ -23,12 +23,17 @@ export default function Card(props) {
   return (
     <View>
       <View style={styles.profileContainer}>
-        <View style={styles.profile}>
+        <TouchableOpacity
+          onPress={() =>
+            props.navigation.navigate("ProfileById", { id: props.id })
+          }
+          style={styles.profile}
+        >
           <Image
             source={{ uri: props.prof }}
             style={{ flex: 1, resizeMode: "cover", borderRadius: 100 }}
           />
-        </View>
+        </TouchableOpacity>
         <View style={styles.profileInfo}>
           <Text style={styles.name}>{props.prof_name}</Text>
           <Text style={styles.time}>{props.time}</Text>

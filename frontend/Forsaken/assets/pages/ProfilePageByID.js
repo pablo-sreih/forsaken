@@ -3,59 +3,50 @@ import Header from "../components/Header";
 import { useFonts } from "expo-font";
 import FollowButton from "../components/FollowButton";
 import MiniPhoto from "../components/MiniPhoto";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState, useEffect } from "react";
 import { RefreshControl } from "react-native";
 import { ActivityIndicator } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function ProfilePageByID({ navigation }) {
+export default function ProfilePageByID({ navigation, route }) {
   const [name, setName] = useState();
   const [about, setAbout] = useState();
   const [profilePic, setProfilePic] = useState();
-  const [token, setToken] = useState("");
   const [images, setImages] = useState([]);
   const [followers, setFollowers] = useState();
   const [following, setFollowing] = useState();
   const [refreshing, setRefreshing] = useState(false);
 
-  const getToken = async () =>
-    await AsyncStorage.getItem("token").then((token) => {
-      setToken(token);
-    });
-
-  const getData = () => {
-    AsyncStorage.getItem("name").then((value) => setName(value));
-    AsyncStorage.getItem("about").then((value) => setAbout(value));
-    AsyncStorage.getItem("profile_pic").then((value) => setProfilePic(value));
-  };
-
   async function getProfileInfo() {
-    await fetch("http://192.168.0.105:8000/api/user_info", {
+    await fetch("http://192.168.0.105:8000/api/getUser", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer  ${token}`,
       },
+      body: JSON.stringify({
+        user_id: route.params.id,
+      }),
     })
       .then((response) => response.json())
       .then((response) => {
+        console.log(response.user);
         let imagesArray = [];
         for (var i = 0; i < response.photos.length; i++) {
           imagesArray.push(response.photos[i]["image"]);
         }
         setImages(imagesArray);
+        setName(response.user["name"]);
+        setAbout(response.user["about"]);
+        setProfilePic(response.user["profile_pic"]);
         setFollowers(response.followers);
-        setFollowing(response.following);
-        console.log(imagesArray);
+        setFollowing(response.followings);
+        // console.log(imagesArray);
       });
   }
 
   useEffect(() => {
-    getToken();
     getProfileInfo();
-    getData();
   }, []);
 
   const [loaded] = useFonts({
@@ -87,28 +78,28 @@ export default function ProfilePageByID({ navigation }) {
           />
         </View>
         <Text style={styles.profileName}>{name}</Text>
-        <View style={{ marginTop: 10, alignSelf: "center" }}>
-          {/* <FollowButton /> */}
+        <View style={{ marginTop: 10, alignSelf: "center", marginBottom: 10 }}>
+          <FollowButton />
         </View>
         <View style={styles.profileInfo}>
-          <TouchableOpacity
+          <View
             onPress={() => navigation.navigate("Followers")}
             style={styles.infoContainer}
           >
             <Text style={styles.numbers}>{followers}</Text>
             <Text style={styles.category}>Followers</Text>
-          </TouchableOpacity>
+          </View>
           <View style={styles.infoContainer}>
             <Text style={styles.numbers}>{images.length}</Text>
             <Text style={styles.category}>Posts</Text>
           </View>
-          <TouchableOpacity
+          <View
             onPress={() => navigation.navigate("Followings")}
             style={styles.infoContainer}
           >
             <Text style={styles.numbers}>{following}</Text>
             <Text style={styles.category}>Following</Text>
-          </TouchableOpacity>
+          </View>
         </View>
         <View>
           <Text style={styles.description}>{about}</Text>

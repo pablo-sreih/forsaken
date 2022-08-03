@@ -15,6 +15,7 @@ import AddPost from "../pages/AddPost";
 import EditProfile from "../pages/EditProfile";
 import FollowersPage from "../pages/FollowersPage";
 import FollowingsPage from "../pages/FollowingsPage";
+import ProfilePageByID from "../pages/ProfilePageByID";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -30,6 +31,7 @@ function StackNavigator() {
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Followers" component={FollowersPage} />
       <Stack.Screen name="Followings" component={FollowingsPage} />
+      <Stack.Screen name="ProfileById" component={ProfilePageByID} />
     </Stack.Navigator>
   );
 }
