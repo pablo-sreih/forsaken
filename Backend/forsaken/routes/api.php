@@ -79,8 +79,5 @@ Route::post('/addRating', [TestController::class, 'addRating']);
 Route::get('/getFollowers', [TestController::class, 'getFollowers']);
 Route::get('/getFollowings', [TestController::class, 'getFollowings']);
 
-Route::get('/getUsersCount', [TestController::class, 'getUsersCount']);
-Route::get('/getPostsCount', [TestController::class, 'getPostsCount']);
-Route::get('/getLocationsCount', [TestController::class, 'getLocationsCount']);
 
 Route::get('/getCounts', [TestController::class, 'getCounts']);
