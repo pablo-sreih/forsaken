@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react";
 
 function AddLocation() {
   return (
@@ -28,6 +29,10 @@ function AddLocation() {
         <label className="label-location">Average EMF</label>
         <input className="location-input"></input>
       </div>
+
+      <button className="location-button" type="submit">
+        Submit
+      </button>
     </div>
   );
 }
