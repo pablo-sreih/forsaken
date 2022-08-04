@@ -1,7 +1,35 @@
 import React from "react";
 
 function AddLocation() {
-  return <div>AddLocation</div>;
+  return (
+    <div className="add-location">
+      <h1>Add Location</h1>
+      <div className="input-location">
+        <label className="label-location">Location Name</label>
+        <input></input>
+      </div>
+      <div className="input-location">
+        <label className="label-location">Location City</label>
+        <input></input>
+      </div>
+      <div className="input-location">
+        <label className="label-location">Location Description</label>
+        <textarea></textarea>
+      </div>
+      <div className="input-location">
+        <label className="label-location">Latitude</label>
+        <input></input>
+      </div>
+      <div className="input-location">
+        <label className="label-location">Longitude</label>
+        <input></input>
+      </div>
+      <div className="input-location">
+        <label className="label-location">Average EMF</label>
+        <input></input>
+      </div>
+    </div>
+  );
 }
 
 export default AddLocation;

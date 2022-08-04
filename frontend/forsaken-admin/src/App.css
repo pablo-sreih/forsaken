@@ -41,6 +41,14 @@
   gap: 50px;
 }
 
+.add-location {
+  height: 90vh;
+  font-size: 1rem;
+  margin: 120px;
+  margin-top: 50px;
+  margin-left: 300px;
+  gap: 50px;
+}
 .nav-menu {
   background-color: #060b26;
   width: 250px;
@@ -166,4 +174,17 @@ td img {
   justify-items: center;
   align-items: center;
   text-align: center;
+}
+
+.input-location {
+  display: flex;
+  margin-right: 50%;
+  justify-content: space-between;
+}
+
+.label-location {
+  font-weight: 700;
+  font-size: 15pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
