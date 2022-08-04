@@ -53,7 +53,7 @@ function AddLocation() {
         <input ref={avg_emf} className="location-input"></input>
       </div>
 
-      <button className="location-button" type="submit">
+      <button onClick={addLocation} className="location-button" type="submit">
         Submit
       </button>
     </div>

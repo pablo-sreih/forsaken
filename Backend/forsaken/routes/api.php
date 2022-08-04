@@ -32,35 +32,35 @@ Route::controller(AuthController::class)->group(function () {
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
     
-// });
+});
 
-// Route::post('/addAbout', [UserController::class, 'addAbout']);
+Route::post('/addAbout', [UserController::class, 'addAbout']);
 Route::post('/getUser', [UserController::class, 'getUser']);
 Route::post('/addProfilePic', [UserController::class, 'addProfilePic']);
-// Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile', [UserController::class, 'profile']);
 
 Route::get('/getAllLocations', [LocationController::class, 'getAllLocations']);
-// Route::post('/addLocation', [LocationController::class, 'addLocation']);
-// Route::post('/getLocationByID', [LocationController::class, 'getLocationById']);
-// Route::post('/addLocationComment', [LocationController::class, 'addLocationComment']);
-// Route::post('/deleteLocationComment', [LocationController::class, 'deleteLocationComment']);
-// Route::post('/getAllLocationComments', [LocationController::class, 'getAllLocationComments']);
+Route::post('/addLocation', [LocationController::class, 'addLocation']);
+Route::post('/getLocationByID', [LocationController::class, 'getLocationById']);
+Route::post('/addLocationComment', [LocationController::class, 'addLocationComment']);
+Route::post('/deleteLocationComment', [LocationController::class, 'deleteLocationComment']);
+Route::post('/getAllLocationComments', [LocationController::class, 'getAllLocationComments']);
 
-// Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
-// Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto']);
-// Route::post('/addPhotoComment', [PhotoController::class, 'addPhotoComment']);
-// Route::post('/deletePhotoComment', [PhotoController::class, 'deletePhotoComment']);
-// Route::post('/getAllPhotoComments', [PhotoController::class, 'getAllPhotoComments']);
+Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
+Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto']);
+Route::post('/addPhotoComment', [PhotoController::class, 'addPhotoComment']);
+Route::post('/deletePhotoComment', [PhotoController::class, 'deletePhotoComment']);
+Route::post('/getAllPhotoComments', [PhotoController::class, 'getAllPhotoComments']);
 
 Route::post('/addLike', [LikeController::class, 'addLike']);
 Route::post('/deleteLike', [LikeController::class, 'deleteLike']);
 
-// Route::post('/addActivity', [ActivityController::class, 'addActivity']);
+Route::post('/addActivity', [ActivityController::class, 'addActivity']);
 
-// Route::post('/addRating', [RatingController::class, 'addRating']);
+Route::post('/addRating', [RatingController::class, 'addRating']);
 
 Route::post('/follow', [FollowingController::class, 'follow']);
 Route::post('/addFollower', [FollowingController::class, 'addFollower']);
