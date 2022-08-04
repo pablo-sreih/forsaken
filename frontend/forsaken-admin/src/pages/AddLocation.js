@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddLocation() {
   const name = useRef(null);
@@ -9,6 +10,8 @@ function AddLocation() {
   const latitude = useRef(null);
   const longitude = useRef(null);
   const avg_emf = useRef(null);
+
+  const navigate = useNavigate();
 
   async function addLocation() {
     await axios
@@ -22,6 +25,7 @@ function AddLocation() {
       })
       .then((response) => {
         console.log(response);
+        navigate("/locations");
       });
   }
 
