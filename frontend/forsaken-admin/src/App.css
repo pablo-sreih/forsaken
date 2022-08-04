@@ -154,6 +154,7 @@ td img {
 }
 
 .add-location-button {
+  text-decoration: none;
   width: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -163,4 +164,6 @@ td img {
   color: white;
   cursor: pointer;
   justify-items: center;
+  align-items: center;
+  text-align: center;
 }
