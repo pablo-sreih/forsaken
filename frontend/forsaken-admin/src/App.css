@@ -178,7 +178,7 @@ td img {
 
 .input-location {
   display: flex;
-  margin-right: 50%;
+  margin-right: 40%;
   justify-content: space-between;
 }
 
@@ -187,4 +187,9 @@ td img {
   font-size: 15pt;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.location-input {
+  margin-bottom: 10px;
+  width: 300px;
 }
