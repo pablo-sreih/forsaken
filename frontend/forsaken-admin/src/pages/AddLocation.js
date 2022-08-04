@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import axios from "axios";
 
 function AddLocation() {
   const name = useRef(null);
@@ -8,6 +9,21 @@ function AddLocation() {
   const latitude = useRef(null);
   const longitude = useRef(null);
   const avg_emf = useRef(null);
+
+  async function addLocation() {
+    await axios
+      .post("http://127.0.0.1:8000/api/addLocation", {
+        name: name.current.value,
+        city: city.current.value,
+        description: description.current.value,
+        latitude: latitude.current.value,
+        longitude: longitude.current.value,
+        avg_emf_reading: avg_emf.current.value,
+      })
+      .then((response) => {
+        console.log(response);
+      });
+  }
 
   return (
     <div className="add-location">
