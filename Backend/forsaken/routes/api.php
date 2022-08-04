@@ -82,3 +82,6 @@ Route::get('/getFollowings', [TestController::class, 'getFollowings']);
 
 Route::get('/getCounts', [TestController::class, 'getCounts']);
 Route::get('/getAllUsers', [TestController::class, 'getAllUsers']);
+Route::get('/getPendingPosts', [TestController::class, 'getPendingPosts']);
+Route::post('/approvePost', [TestController::class, 'approvePost']);
+Route::post('/deletePost', [TestController::class, 'deletePost']);

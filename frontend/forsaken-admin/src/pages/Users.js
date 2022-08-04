@@ -49,9 +49,11 @@ function Users() {
                 <td>{data.name}</td>
                 <td>{data.email}</td>
                 <td>
-                  <img className="prof-img-container" />
+                  <img className="prof-img-container" src={data.profile_pic} />
                 </td>
-                <td></td>
+                <td>{data.followers.length}</td>
+                <td>{data.followings.length}</td>
+                <td>{data.posts.length}</td>
               </tr>
             );
           })}

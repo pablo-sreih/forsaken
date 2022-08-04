@@ -13,8 +13,31 @@ use Auth;
 class TestController extends Controller
 {
 
+    public function deletePost(Request $request){
+        $post_id = $request->post_id;
+        Photo::where("id", $post_id)->delete();
+
+        return response()->json([
+            "status" => "success"
+        ],200);
+    }
+
+    public function approvePost(Request $request){
+        $post_id = $request->post_id;
+        Photo::where("id", $post_id)->update(["approved" => 1]);
+
+        return response()->json([
+            "status" => "success"
+        ],200);
+    }
+
+    public function getPendingPosts(){
+        $posts = Photo::where("approved", 0)->with("User")->orderBy("created_at", 'DESC')->get();
+        return response()->json($posts);
+    }
+
     public function getAllUsers() {
-        $users = User::all();
+        $users = User::with("followers", "followings", "posts")->get();
 
         return response()->json($users);
     }
@@ -158,7 +181,7 @@ class TestController extends Controller
     public function testAPI() {
         $id = Auth::id();
         $following = UserFollowing::where("user_id", $id)->select("follower_id")->get()->toArray();
-        $posts = Photo::whereIn("user_id", $following)->with("Location")->with("User")->inRandomOrder("created_at", 'DESC')->get();
+        $posts = Photo::whereIn("user_id", $following)->where("approved", 1)->with("Location")->with("User")->inRandomOrder("created_at", 'DESC')->get();
 
         return response()->json($posts);
 
