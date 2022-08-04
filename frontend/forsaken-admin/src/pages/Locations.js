@@ -1,7 +1,21 @@
 import React from "react";
 import * as MdIcons from "react-icons/md";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Locations() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const array = [];
+    axios.get("http://127.0.0.1:8000/api/getAllLocations").then((response) => {
+      for (var i = 0; i < response.data.locations.length; i++) {
+        array.push(response.data.locations[i]);
+      }
+      setData(array);
+    });
+  }, []);
+
   return (
     <div className="locations">
       <h1>Locations</h1>
@@ -20,7 +34,19 @@ function Locations() {
           <th>Average Rating</th>
           <th>Average EMF</th>
         </tr>
-        <tr>
+        {data.map((location, index) => {
+          return (
+            <tr key={index}>
+              <td>{location.id}</td>
+              <td>{location.name}</td>
+              <td>{location.latitude}</td>
+              <td>{location.longitude}</td>
+              <td>{location.avg_rating}</td>
+              <td>{location.avg_emf_reading}</td>
+            </tr>
+          );
+        })}
+        {/* <tr>
           <td>1</td>
           <td>Ain Saoufar Train Station</td>
           <td>33.80</td>
@@ -99,7 +125,7 @@ function Locations() {
           <td>35.59</td>
           <td>4.7</td>
           <td>130</td>
-        </tr>
+        </tr> */}
       </table>
     </div>
   );

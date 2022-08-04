@@ -14,7 +14,7 @@ function Home(props) {
         array.push(response.data);
       })
       .then(() => {
-        console.log(data);
+        console.log(array);
         setData(array);
       });
   }, []);
