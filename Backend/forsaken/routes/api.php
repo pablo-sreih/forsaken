@@ -81,3 +81,4 @@ Route::get('/getFollowings', [TestController::class, 'getFollowings']);
 
 
 Route::get('/getCounts', [TestController::class, 'getCounts']);
+Route::get('/getAllUsers', [TestController::class, 'getAllUsers']);

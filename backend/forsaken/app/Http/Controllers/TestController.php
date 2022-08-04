@@ -12,6 +12,13 @@ use Auth;
 
 class TestController extends Controller
 {
+
+    public function getAllUsers() {
+        $users = User::all();
+
+        return response()->json($users);
+    }
+
     public function getCounts() {
         $users = User::all()->count();
         $posts = Photo::all()->count();

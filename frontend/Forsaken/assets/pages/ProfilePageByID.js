@@ -111,7 +111,7 @@ export default function ProfilePageByID({ navigation, route }) {
         </View>
         <Text style={styles.profileName}>{name}</Text>
         <View style={{ marginTop: 10, alignSelf: "center", marginBottom: 10 }}>
-          <FollowButton state={followed.includes(route.params.id)} />
+          <FollowButton state={true} />
         </View>
         <View style={styles.profileInfo}>
           <View
