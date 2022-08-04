@@ -3,7 +3,7 @@ import React from "react";
 function AddLocation() {
   return (
     <div className="add-location">
-      <h1>Add Location</h1>
+      <h1 style={{ marginBottom: 50 }}>Add Location</h1>
       <div className="input-location">
         <label className="label-location">Location Name</label>
         <input className="location-input"></input>
