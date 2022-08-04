@@ -3,32 +3,38 @@ import Card from "../components/Card";
 import axios from "axios";
 import { useEffect } from "react";
 
-function Home(props) {
+function Home() {
   const [data, setData] = useState([]);
+  const array = [];
 
   useEffect(() => {
-    const array = [];
-    axios
-      .get(`http://127.0.0.1:8000/api/getCounts`)
-      .then((response) => {
-        array.push(response.data);
-      })
-      .then(() => {
-        console.log(array);
-        setData(array);
-      });
+    async function getData() {
+      await axios
+        .get(`http://127.0.0.1:8000/api/getCounts`)
+        .then((response) => {
+          array.push(
+            response["data"]["users"],
+            response["data"]["posts"],
+            response["data"]["locations"],
+            response["data"]["high_emf"]
+          );
+        });
+      setData(array);
+      console.log(array);
+    }
+    getData();
   }, []);
 
   return (
     <div className="home">
       <h1>Statistics</h1>
       <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
-        <Card title="Total Users" info={data[0].users} />
-        <Card title="Total Posts" info={data[0].posts} />
+        <Card title="Total Users" info={data[0]} />
+        <Card title="Total Posts" info={data[1]} />
       </div>
       <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
-        <Card title="Total Locations" info={data[0].locations} />
-        <Card title="Highest EMF" info={data[0].high_emf} />
+        <Card title="Total Locations" info={data[2]} />
+        <Card title="Highest EMF" info={data[3]} />
       </div>
     </div>
   );

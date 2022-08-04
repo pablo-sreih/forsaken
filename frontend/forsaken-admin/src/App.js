@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Locations from "./pages/Locations";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
+import AddLocation from "./pages/AddLocation";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/locations" element={<Locations />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/addLocation" element={<AddLocation />} />
         </Routes>
       </Router>
     </>

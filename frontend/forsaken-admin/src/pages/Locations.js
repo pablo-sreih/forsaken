@@ -2,6 +2,7 @@ import React from "react";
 import * as MdIcons from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Locations() {
   const [data, setData] = useState([]);
@@ -19,12 +20,12 @@ function Locations() {
   return (
     <div className="locations">
       <h1>Locations</h1>
-      <button className="add-location-button">
+      <Link to="/addLocation" className="add-location-button">
         <div>
           <MdIcons.MdAddLocation size={20} />
         </div>
         <div style={{ fontSize: 15 }}>Add Location</div>
-      </button>
+      </Link>
       <table>
         <tr>
           <th>ID</th>
