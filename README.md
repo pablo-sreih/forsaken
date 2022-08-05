@@ -62,6 +62,14 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 > |<kbd><img src="./readme/screenshots/1.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/2.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/3.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/4.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/5.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/6.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/7.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/8.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/9.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/10.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/11.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/12.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/13.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/15.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/16.jpg" width="245"></kbd>
 
 <br><br>
+
+> | Admin Screenshots |
+> | --------------- |
+>
+> |<kbd><img src="./readme/admin_screenshots/1.jpg" width="400"></kbd> <kbd><img src="./readme/admin_screenshots/2.jpg" width="400"></kbd> <kbd><img src="./readme/admin_screenshots/3.jpg" width="400"></kbd> <kbd><img src="./readme/admin_screenshots/4.jpg" width="400"></kbd> <kbd><img src="./readme/admin_screenshots/5.jpg" width="400"></kbd> 
+
+<br><br>
+
 <img src="./readme/title6.svg"/>
 
 > This is an example of how you may give instructions on setting up your project locally.
