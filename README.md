@@ -51,7 +51,12 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="./readme/title5.svg"/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
-> <br><br> > <kbd><img src="./readme/gifs/1.gif" width="245"></kbd> <kbd><img src="./readme/gifs/2.gif" width="245"></kbd> <kbd><img src="./readme/gifs/3.gif" width="245"></kbd> <kbd><img src="./readme/gifs/4.gif" width="245"></kbd> <kbd><img src="./readme/gifs/5.gif" width="245"></kbd> <kbd><img src="./readme/gifs/6.gif" width="245"></kbd> <kbd><img src="./readme/gifs/7.gif" width="245"></kbd> <kbd><img src="./readme/gifs/8.gif" width="245"></kbd> <kbd><img src="./readme/gifs/9.gif" width="245"></kbd>
+> <br><br>
+
+> | App GIFs |
+> | -------- |
+>
+> <kbd><img src="./readme/gifs/1.gif" width="245"></kbd> <kbd><img src="./readme/gifs/2.gif" width="245"></kbd> <kbd><img src="./readme/gifs/3.gif" width="245"></kbd> <kbd><img src="./readme/gifs/4.gif" width="245"></kbd> <kbd><img src="./readme/gifs/5.gif" width="245"></kbd> <kbd><img src="./readme/gifs/6.gif" width="245"></kbd> <kbd><img src="./readme/gifs/7.gif" width="245"></kbd> <kbd><img src="./readme/gifs/8.gif" width="245"></kbd> <kbd><img src="./readme/gifs/9.gif" width="245"></kbd>
 
 <br><br>
 
