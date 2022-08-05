@@ -3,27 +3,39 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-> **[PROJECT PHILOSOPHY](https://github.com/julescript/well_app#-project-philosophy) • [WIREFRAMES](https://github.com/julescript/well_app#-wireframes) • [TECH STACK](https://github.com/julescript/well_app#-tech-stack) • [IMPLEMENTATION](https://github.com/julescript/well_app#-impplementation) • [HOW TO RUN?](https://github.com/julescript/well_app#-how-to-run)**
+> **[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#tech-stack) • [IMPLEMENTATION](#implementation) • [HOW TO RUN?](#how-to-run)**
 
 </div>
 
+<a id="project-philosophy"></a>
 <br><br>
+
 
 <img src="./readme/title2.svg"/>
 
-> The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
+> Forsaken app is for the Abandoned Spaces Lovers where they can gather in one place. It's a social media app with an 
+> EMF meter where users can detect paranormal activities around the forgotten place.
 >
-> There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
+> The EMF meter uses the magnetometer built in most modern phones and detects the variations of the magnetic field around > it. These variations are what we call a distraction caused by natural forces, be it a strong wave of electric vibrations or something else.
 
 ### User Stories
 
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
+- As a user, I want to browse photos and locations, so that I can find abandoned places.
+- As a user, I want to check the electromagnetic field to check for paranormal activities.
+- As a user, I want to find like-minded people to share stories and interests.
 
+### Admin Stories
+
+- As an admin, I want to check the posts for unethical photos.
+- As an admin, I want to check the statistics of the app.
+- As an admin, I want to add new abandoned locations on the map.
+
+<a id="wireframes"></a>
 <br><br>
 
+
 <img src="./readme/title3.svg"/>
+
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 > Note that i didn't use any styling library or theme, all from scratch and using pure css modules
@@ -31,6 +43,7 @@
 > <br><br>
 > <kbd><img src="./readme/wireframes/first_page.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/discover.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/location_info.jpg" width="245"></kbd> <br><br> <kbd><img src="./readme/wireframes/profile_page.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/post_per_profile.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/emf_tracker.jpg" width="245"></kbd>
 
+<a id="tech-stack"></a>
 <br><br>
 
 <img src="./readme/title4.svg"/>
@@ -41,6 +54,7 @@ Here's a brief high-level overview of the tech stack the Forsaken app uses:
 - For the admin page, the app uses the [React Javascript library](https://reactjs.org/) which allows the admin to acces the dashboard and monitor the data running through the app.
 - As for the backend, the app uses a php framework called [Laravel](https://laravel.com/) along with a database management system called [phpMyAdmin](https://www.phpmyadmin.net/) to manage the api calls and to store data.
 
+<a id="implementation"></a>
 <br><br>
 <img src="./readme/title5.svg"/>
 
@@ -66,6 +80,7 @@ Here's a brief high-level overview of the tech stack the Forsaken app uses:
 >
 > <kbd><img src="./readme/admin_screenshots/1.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/2.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/3.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/4.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/5.jpg" width="350"></kbd> 
 
+<a id="how-to-run"></a>
 <br><br>
 
 <img src="./readme/title6.svg"/>
