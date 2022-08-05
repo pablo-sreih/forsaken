@@ -28,7 +28,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 | Landing  | Home/Search  |
 | -----------------| -----|
-<br><br> <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/first_page.jpg" width="250"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/discover.jpg" width="250"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/location_info.jpg" width="250"></kbd>  <br><br> <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/profile_page.jpg" width="250"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/post_per_profile.jpg" width="250"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/emf_tracker.jpg" width="250"></kbd>
+<br><br> <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/first_page.jpg" width="230"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/discover.jpg" width="230"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/location_info.jpg" width="230"></kbd>  <br><br> <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/profile_page.jpg" width="230"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/post_per_profile.jpg" width="230"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/emf_tracker.jpg" width="230"></kbd>
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
