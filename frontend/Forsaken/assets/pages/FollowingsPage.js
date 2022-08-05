@@ -47,6 +47,7 @@ export default function FollowingsPage() {
       <Header name="FOLLOWING" />
       {refreshing ? <ActivityIndicator /> : null}
       <ScrollView
+        style={{ marginBottom: 80 }}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={getData} />
         }

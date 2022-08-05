@@ -74,6 +74,7 @@ export default function SignUpForm({ navigation }) {
               placeholder="Password"
               onChangeText={props.handleChange("password")}
               value={props.values.password}
+              secureTextEntry={true}
             />
             <TouchableOpacity
               style={styles.button}

@@ -21,4 +21,5 @@ class UserFollowing extends Model
     public function UserFollowing(){
         return $this->belongsTo(User::class, 'follower_id'); 
     }
+    
 }

@@ -3,19 +3,20 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-**[PROJECT PHILOSOPHY](https://github.com/julescript/well_app#-project-philosophy) • [WIREFRAMES](https://github.com/julescript/well_app#-wireframes) • [TECH STACK](https://github.com/julescript/well_app#-tech-stack) • [IMPLEMENTATION](https://github.com/julescript/well_app#-impplementation) • [HOW TO RUN?](https://github.com/julescript/well_app#-how-to-run)**
+> **[PROJECT PHILOSOPHY](https://github.com/julescript/well_app#-project-philosophy) • [WIREFRAMES](https://github.com/julescript/well_app#-wireframes) • [TECH STACK](https://github.com/julescript/well_app#-tech-stack) • [IMPLEMENTATION](https://github.com/julescript/well_app#-impplementation) • [HOW TO RUN?](https://github.com/julescript/well_app#-how-to-run)**
 
 </div>
 
 <br><br>
 
-
 <img src="./readme/title2.svg"/>
 
 > The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
-> 
+>
 > There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
+
 ### User Stories
+
 - As a user, I want to browsse ablums, so that I can find quick links
 - As a user, I want to browsse ablums, so that I can find quick links
 - As a user, I want to browsse ablums, so that I can find quick links
@@ -25,15 +26,14 @@
 <img src="./readme/title3.svg"/>
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
-Note that i didn't use any styling library or theme, all from scratch and using pure css modules
-| Landing  | Home/Search  |
-| -----------------| -----|
-<br><br> <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/first_page.jpg" width="245"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/discover.jpg" width="245"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/location_info.jpg" width="245"></kbd>  <br><br> <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/profile_page.jpg" width="245"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/post_per_profile.jpg" width="245"></kbd>  <kbd><img src="https://github.com/pablo-sreih/forsaken/blob/main/readme/wireframes/emf_tracker.jpg" width="245"></kbd>
+> Note that i didn't use any styling library or theme, all from scratch and using pure css modules
+> | Landing | Home/Search |
+> | -----------------| -----|
+> <br><br> <kbd><img src="./readme/wireframes/first_page.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/discover.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/location_info.jpg" width="245"></kbd> <br><br> <kbd><img src="./readme/wireframes/profile_page.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/post_per_profile.jpg" width="245"></kbd> <kbd><img src="./readme/wireframes/emf_tracker.jpg" width="245"></kbd>
 
-| Artists results  | Artist's Albums  |
-| -----------------| -----|
+| Artists results                                                                                | Artist's Albums                                                                               |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | ![Artists results](https://github.com/julescript/spotifyndr/blob/master/demo/Artists_Page.jpg) | ![Artist's Albums](https://github.com/julescript/spotifyndr/blob/master/demo/Albums_Page.jpg) |
-
 
 <br><br>
 
@@ -47,27 +47,32 @@ Here's a brief high-level overview of the tech stack the Well app uses:
   - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
 - The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
 
-
-
 <br><br>
 <img src="./readme/title5.svg"/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
-| Landing  | Home/Search  |
-| -----------------| -----|
-| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+> | App | Gifs |
+> | -----------------| -----|
+> | <kbd><img src="./readme/gifs/1.gif" width="245"></kbd> <kbd><img src="./readme/gifs/2.gif" width="245"></kbd> <kbd><img src="./readme/gifs/3.gif" width="245"></kbd> <kbd><img src="./readme/gifs/4.gif" width="245"></kbd> <kbd><img src="./readme/gifs/5.gif" width="245"></kbd> <kbd><img src="./readme/gifs/6.gif" width="245"></kbd> <kbd><img src="./readme/gifs/7.gif" width="245"></kbd> <kbd><img src="./readme/gifs/8.gif" width="245"></kbd> <kbd><img src="./readme/gifs/9.gif" width="245"></kbd>
 
+<br><br>
+
+> | App | Screenshots |
+> | --- | ----------- |
+>
+> |<kbd><img src="./readme/screenshots/1.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/2.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/3.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/4.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/5.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/6.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/7.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/8.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/9.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/10.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/11.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/12.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/13.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/14.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/15.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/16.jpg" width="245"></kbd>
 
 <br><br>
 <img src="./readme/title6.svg"/>
 
-
 > This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+> To get a local copy up and running follow these simple example steps.
+
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+- npm
   ```sh
   npm install npm@latest -g
   ```
@@ -87,8 +92,5 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 4. Enter your API in `config.js`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   const API_KEY = "ENTER YOUR API";
    ```
-
-
- 
