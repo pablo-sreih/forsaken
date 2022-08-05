@@ -35,13 +35,11 @@
 
 <img src="./readme/title4.svg"/>
 
-Here's a brief high-level overview of the tech stack the Well app uses:
+Here's a brief high-level overview of the tech stack the Forsaken app uses:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+- This project uses the [React Native development library](https://reactnative.dev/). React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.
+- For the admin page, the app uses the [React Javascript library](https://reactjs.org/) which allows the admin to acces the dashboard and monitor the data running through the app.
+- As for the backend, the app uses a php framework called [Laravel](https://laravel.com/) along with a database management system called [phpMyAdmin](https://www.phpmyadmin.net/) to manage the api calls and to store data.
 
 <br><br>
 <img src="./readme/title5.svg"/>
@@ -59,7 +57,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 > | App Screenshots |
 > | --------------- |
 >
-> |<kbd><img src="./readme/screenshots/1.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/2.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/3.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/4.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/5.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/6.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/7.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/8.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/9.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/10.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/11.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/12.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/13.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/15.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/16.jpg" width="245"></kbd>
+> <kbd><img src="./readme/screenshots/1.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/2.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/3.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/4.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/5.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/6.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/7.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/8.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/9.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/10.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/11.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/12.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/13.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/15.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/16.jpg" width="245"></kbd>
 
 <br><br>
 
@@ -72,32 +70,58 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 <img src="./readme/title6.svg"/>
 
-> This is an example of how you may give instructions on setting up your project locally.
-> To get a local copy up and running follow these simple example steps.
+<br><br>
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+_Below are the prerequisite software you need to run the app_
+
+- VSCode: Download from [here](https://code.visualstudio.com/)
+
+_Then run the following commands in the terminal_
 
 - npm
   ```sh
   npm install npm@latest -g
   ```
 
+- expo cli
+  ```sh
+  npm install --global expo-cli
+  ```
+
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below are the instructions on how to run the App and the Admin Panel_
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/pablo-sreih/forsaken.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. For the app you need to run
    ```js
-   const API_KEY = "ENTER YOUR API";
+   expo start
    ```
+4. For the admin page you need to run
+   ```js
+   npm start
+   ```
+5. To run the server in Laravel
+
+   1. First you need to install Composer from [here](https://getcomposer.org/download/)
+      then run the below command to install the dependencies
+      ```js
+      composer install
+      ```
+   2. Migrate to the database by running 
+      ```js
+      php artisan migrate
+      ```
+   3. Finally run the server with
+      ```js
+      php artisan serve
+      ```
