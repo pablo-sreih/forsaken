@@ -66,7 +66,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 > | Admin Screenshots |
 > | --------------- |
 >
-> |<kbd><img src="./readme/admin_screenshots/1.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/2.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/3.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/4.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/5.jpg" width="350"></kbd> 
+> <kbd><img src="./readme/admin_screenshots/1.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/2.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/3.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/4.jpg" width="350"></kbd> <kbd><img src="./readme/admin_screenshots/5.jpg" width="350"></kbd> 
 
 <br><br>
 
