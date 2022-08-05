@@ -51,13 +51,12 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="./readme/title5.svg"/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
-> <br><br>
-> <kbd><img src="./readme/gifs/1.gif" width="245"></kbd> <kbd><img src="./readme/gifs/2.gif" width="245"></kbd> <kbd><img src="./readme/gifs/3.gif" width="245"></kbd> <kbd><img src="./readme/gifs/4.gif" width="245"></kbd> <kbd><img src="./readme/gifs/5.gif" width="245"></kbd> <kbd><img src="./readme/gifs/6.gif" width="245"></kbd> <kbd><img src="./readme/gifs/7.gif" width="245"></kbd> <kbd><img src="./readme/gifs/8.gif" width="245"></kbd> <kbd><img src="./readme/gifs/9.gif" width="245"></kbd>
+> <br><br> > <kbd><img src="./readme/gifs/1.gif" width="245"></kbd> <kbd><img src="./readme/gifs/2.gif" width="245"></kbd> <kbd><img src="./readme/gifs/3.gif" width="245"></kbd> <kbd><img src="./readme/gifs/4.gif" width="245"></kbd> <kbd><img src="./readme/gifs/5.gif" width="245"></kbd> <kbd><img src="./readme/gifs/6.gif" width="245"></kbd> <kbd><img src="./readme/gifs/7.gif" width="245"></kbd> <kbd><img src="./readme/gifs/8.gif" width="245"></kbd> <kbd><img src="./readme/gifs/9.gif" width="245"></kbd>
 
 <br><br>
 
-> | App | Screenshots |
-> | --- | ----------- |
+> | App Screenshots |
+> | --------------- |
 >
 > |<kbd><img src="./readme/screenshots/1.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/2.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/3.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/4.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/5.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/6.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/7.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/8.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/9.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/10.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/11.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/12.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/13.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/14.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/15.jpg" width="245"></kbd> <kbd><img src="./readme/screenshots/16.jpg" width="245"></kbd>
 
