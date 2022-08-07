@@ -43,7 +43,7 @@ export default function FeedPage({ navigation }) {
           array.push(response[i]);
         }
         setData(array);
-        console.log(response[0][0]);
+        console.log(array[2]["id"]);
       });
   }
 
@@ -81,6 +81,7 @@ export default function FeedPage({ navigation }) {
               key={index}
               id={data.user["id"]}
               navigation={navigation}
+              photo_id={data.id}
               image={data.image}
               prof={data.user["profile_pic"]}
               lat={data.location["latitude"]}

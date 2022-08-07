@@ -6,15 +6,61 @@ import FollowButton from "./FollowButton";
 import { Icon } from "react-native-elements";
 import { useState, useEffect } from "react";
 import * as Sharing from "expo-sharing";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 export default function Card(props) {
   const [color, setColor] = useState("black");
   const [likes, setLikes] = useState(props.likes);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const [token, setToken] = useState("");
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
+
   useEffect(() => {
+    getToken();
     setSelectedImage(props.image);
   }, []);
+
+  async function like() {
+    await fetch("http://192.168.0.108:8000/api/addLike", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+      body: JSON.stringify({
+        photo_id: props.photo_id
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  async function unlike() {
+    await fetch("http://192.168.0.108:8000/api/deleteLike", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+      body: JSON.stringify({
+        photo_id: props.photo_id
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
 
   let openShareDialogAsync = async () => {
     await Sharing.shareAsync(selectedImage);
@@ -79,8 +125,8 @@ export default function Card(props) {
           <TouchableOpacity
             onPress={() => {
               color === "black"
-                ? (setColor("red"), setLikes(likes + 1))
-                : (setColor("black"), setLikes(likes - 1));
+                ? (like(), setColor("red"), setLikes(likes + 1))
+                : (unlike(), setColor("black"), setLikes(likes - 1));
             }}
             style={styles.iconContainer}
           >

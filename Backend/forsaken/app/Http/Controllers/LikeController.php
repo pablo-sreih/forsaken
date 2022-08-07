@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Like;
+use App\Models\User;
+
 
 class LikeController extends Controller
 {
     public function addLike(Request $request) {
         $like = new Like();
-        $user_id = Auth::id();
+        $user_id = auth()->user()->id;
         $like->user_id = $user_id;
         $like->photo_id = $request->photo_id;
         $like->save();
@@ -21,7 +23,7 @@ class LikeController extends Controller
     }
 
     public function deleteLike(Request $request) {
-        $user_id = Auth::id();
+        $user_id = auth()->user()->id;
         $photo_id = $request->photo_id;
         $like = Like::where("user_id", $user_id)->where("photo_id", $photo_id)->delete();
         $result = [
