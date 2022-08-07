@@ -25,7 +25,7 @@ export default function ProfilePageByID({ navigation, route }) {
     });
 
   async function getData() {
-    await fetch("http://192.168.0.105:8000/api/getFollowings", {
+    await fetch("http://192.168.0.108:8000/api/getFollowings", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -46,7 +46,7 @@ export default function ProfilePageByID({ navigation, route }) {
   }
 
   async function getProfileInfo() {
-    await fetch("http://192.168.0.105:8000/api/getUser", {
+    await fetch("http://192.168.0.108:8000/api/getUser", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -111,7 +111,7 @@ export default function ProfilePageByID({ navigation, route }) {
         </View>
         <Text style={styles.profileName}>{name}</Text>
         <View style={{ marginTop: 10, alignSelf: "center", marginBottom: 10 }}>
-          <FollowButton state={true} />
+          <FollowButton id={route.params.id} state={true} />
         </View>
         <View style={styles.profileInfo}>
           <View

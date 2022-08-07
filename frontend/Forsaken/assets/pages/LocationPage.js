@@ -20,7 +20,7 @@ export default function LocationPage({ route, navigation }) {
   }, []);
 
   async function getLocation() {
-    await fetch("http://192.168.0.105:8000/api/get_location", {
+    await fetch("http://192.168.0.108:8000/api/get_location", {
       method: "POST",
       headers: {
         Accept: "application/json",

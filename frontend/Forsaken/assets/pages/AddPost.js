@@ -28,7 +28,7 @@ export default function AddPost() {
   }, []);
 
   async function getData() {
-    await fetch("http://192.168.0.105:8000/api/testGetAllLocations", {
+    await fetch("http://192.168.0.108:8000/api/testGetAllLocations", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -53,7 +53,7 @@ export default function AddPost() {
   }
 
   async function addPost() {
-    await fetch("http://192.168.0.105:8000/api/add_post", {
+    await fetch("http://192.168.0.108:8000/api/add_post", {
       method: "POST",
       headers: {
         Accept: "application/json",

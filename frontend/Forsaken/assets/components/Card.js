@@ -50,9 +50,9 @@ export default function Card(props) {
           <Text style={styles.name}>{props.prof_name}</Text>
           <Text style={styles.time}>{props.time}</Text>
         </View>
-        <View style={{ marginRight: 20 }}>
+        {/* <View style={{ marginRight: 20 }}>
           <FollowButton />
-        </View>
+        </View> */}
       </View>
       <View style={styles.container}>
         <Image

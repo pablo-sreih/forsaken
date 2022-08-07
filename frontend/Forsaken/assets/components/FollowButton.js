@@ -1,6 +1,8 @@
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { useFonts } from "expo-font";
 import { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 export default function FollowButton(props) {
   useEffect(() => {
@@ -22,6 +24,32 @@ export default function FollowButton(props) {
   const [followTextColor, setFollowTextColor] = useState(
     props.state === true ? "white" : "black"
   );
+  const [token, setToken] = useState("");
+
+  const getToken = async () =>
+    await AsyncStorage.getItem("token").then((token) => {
+      setToken(token);
+    });
+
+  async function addFollow() {
+    await fetch("http://192.168.0.108:8000/api/follow", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+      body: JSON.stringify({
+        location_id: value,
+        caption: "caption",
+        uri: image,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
 
   const [loaded] = useFonts({
     montserratBlack: require("../fonts/Montserrat-Black.ttf"),

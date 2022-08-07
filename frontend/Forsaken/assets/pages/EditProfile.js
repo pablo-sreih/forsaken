@@ -28,7 +28,7 @@ export default function EditProfile() {
   }, []);
 
   async function editPhoto() {
-    await fetch("http://192.168.0.105:8000/api/addProfilePic", {
+    await fetch("http://192.168.0.108:8000/api/addProfilePic", {
       method: "POST",
       headers: {
         Accept: "application/json",
