@@ -62,8 +62,8 @@ Route::post('/addActivity', [ActivityController::class, 'addActivity']);
 
 Route::post('/addRating', [RatingController::class, 'addRating']);
 
-Route::post('/follow', [FollowingController::class, 'follow']);
-Route::post('/addFollower', [FollowingController::class, 'addFollower']);
+// Route::post('/follow', [FollowingController::class, 'follow']);
+// Route::post('/addFollower', [FollowingController::class, 'addFollower']);
 Route::post('/getFollowers', [UserFollowingController::class, 'getFollowers']);
 
 Route::get('/testAPI', [TestController::class, 'testAPI']);

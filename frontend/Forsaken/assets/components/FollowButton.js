@@ -6,6 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function FollowButton(props) {
   useEffect(() => {
+    getToken();
     props.state === true
       ? (setFollowColor("#24A0ED"),
         setFollowText("Following"),
@@ -31,7 +32,7 @@ export default function FollowButton(props) {
       setToken(token);
     });
 
-  async function addFollow() {
+  async function follow() {
     await fetch("http://192.168.0.108:8000/api/follow", {
       method: "POST",
       headers: {
@@ -40,9 +41,25 @@ export default function FollowButton(props) {
         Authorization: `Bearer  ${token}`,
       },
       body: JSON.stringify({
-        location_id: value,
-        caption: "caption",
-        uri: image,
+        user_id: props.id
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  async function unfollow() {
+    await fetch("http://192.168.0.108:8000/api/unfollow", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer  ${token}`,
+      },
+      body: JSON.stringify({
+        user_id: props.id
       }),
     })
       .then((response) => response.json())
@@ -67,10 +84,10 @@ export default function FollowButton(props) {
     <TouchableOpacity
       onPress={() => {
         followColor === "white"
-          ? (setFollowColor("#24A0ED"),
+          ? (follow(), setFollowColor("#24A0ED"),
             setFollowText("Following"),
             setFollowTextColor("white"))
-          : (setFollowColor("white"),
+          : (unfollow(), setFollowColor("white"),
             setFollowText("Follow"),
             setFollowTextColor("black"));
       }}

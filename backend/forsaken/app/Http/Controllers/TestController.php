@@ -108,7 +108,7 @@ class TestController extends Controller
     public function follow(Request $request){
         $id = Auth::id();
         $following = new UserFollowing;
-        $following->user_id = Auth::id();
+        $following->user_id = $id;
         $following->follower_id = $request->user_id;
         $following->save();
 
