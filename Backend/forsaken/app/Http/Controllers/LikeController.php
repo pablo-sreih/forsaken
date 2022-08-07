@@ -9,7 +9,7 @@ class LikeController extends Controller
 {
     public function addLike(Request $request) {
         $like = new Like();
-        $user_id = auth()->user()->id;
+        $user_id = Auth::id();
         $like->user_id = $user_id;
         $like->photo_id = $request->photo_id;
         $like->save();
@@ -21,10 +21,12 @@ class LikeController extends Controller
     }
 
     public function deleteLike(Request $request) {
-        Like::where('id', $request->id)->delete();
-
-        return response()->json([
-            'status' => 'success'
-        ],200);
+        $user_id = Auth::id();
+        $photo_id = $request->photo_id;
+        $like = Like::where("user_id", $user_id)->where("photo_id", $photo_id)->delete();
+        $result = [
+            "success" => true
+        ];
+        return response()->json($result);
     }
 }
